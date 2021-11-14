@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+	NOTES:
+	1. All tokens are represented by '$' sign in the template.
+	2. You can write your code only wherever mentioned.
+	3. All occurrences of existing tokens will be replaced by their appropriate values.
+	4. Blank lines will be removed automatically.
+	5. Remove unnecessary comments before creating your template.
+-->
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0">
+<title>Crypto</title>
+<script>
+// refreshing page automatically when viewport size change  
+window.onresize = function(event) {
+  document.location.reload(true);
+}
+
+var href = window.location.href.split("/")
+var html_location = href[href.length-1]
+
+if (window.innerWidth >= 960 && html_location !== "desk.html") {
+    window.location = "desk.html";
+}
+
+if (window.innerWidth < 960 && html_location !== "mobile.html") {
+    window.location = "mobile.html";
+}
+</script>
+</body>
+</html>
