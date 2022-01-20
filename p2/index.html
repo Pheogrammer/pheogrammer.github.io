@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	
 	<!-- Load Fonts -->
-	<link href='https://fonts.googleapis.com/css99f1.css?family=Roboto+Mono:400,100,300italic,300,100italic,400italic,500,500italic,700,700italic&amp;subset=latin,cyrillic' rel='stylesheet'>
+	<link href='fonts.googleapis.com/css99f1.css?family=Roboto+Mono:400,100,300italic,300,100italic,400italic,500,500italic,700,700italic&amp;subset=latin,cyrillic' rel='stylesheet'>
 	
 	<!-- CSS -->
 
@@ -35,7 +35,15 @@
 	<!-- Favicons -->
 	<link rel="shortcut icon" href="images/favicons/favicon.ico">
 	
-
+<style>
+	.partcile-dec {
+	position: absolute;
+	
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+</style>
 
 </head>
 
@@ -76,6 +84,7 @@
 		
 			<!-- Started -->
 			<div class="section started">
+				<div class="partcile-dec" data-parcount="60"></div>
 				<div class="centrize full-width">
 					<div class="vertical-center">
 						<div class="started-content">
@@ -123,7 +132,8 @@
 	<script src="js/isotope.pkgd.js"></script>
 	
 	<script src="js/glitche-scripts.js"></script>
-	
+	<script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
 </body>
 
 </html>
