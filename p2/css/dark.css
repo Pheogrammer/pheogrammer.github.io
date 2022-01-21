@@ -11,6 +11,22 @@
 */
 
 /* 1. Template Dark */
+.partcile-dec {
+	position: absolute;
+	
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+header .head-top .top-menu ul li .lnk:hover {
+	color: #ffffff;
+	padding: 10px;
+	border: 1px solid #f26b38;
+	-moz-transition: background 0.3s ease 0s;
+	-webkit-transition: background 0.3s ease 0s;
+	-o-transition: background 0.3s ease 0s;
+}
 
 input:focus,
 textarea:focus,
