@@ -107,7 +107,7 @@
 					</div>
 					<div class="desc">
 						<p>
-							I am an experienced Software Developer with a demonstrated history of working in the IT,
+							I am an experienced Software Developer with a demonstrated experience of working in the IT,
 							Science and Engineering industry. <br> Skilled in Web & Mobile Applications Development,
 							Information Systems Development, Database Management, APIs and Systems Integration, Servers
 							Configurations & Management, Technical Documentation, and IT Technical Support. <br>
@@ -116,7 +116,17 @@
 						<div class="info-list">
 							<ul>
 								<li><strong>Name:</strong> Alfeo Raymond</li>
-								<li><strong>Age:</strong> 22 Years</li>
+								<li><strong>Age:</strong>
+								 <script>  
+									var dob = new Date("04/19/1998");  
+									var month_diff = Date.now() - dob.getTime();  									  
+									var age_dt = new Date(month_diff);   									  
+									var year = age_dt.getUTCFullYear();  									  
+									var age = Math.abs(year - 1970);  
+									  
+									//display the calculated age  
+									document.write(" " + age + " Years");  
+								</script> </li>
 
 								<li><strong>Citizenship:</strong> Tanzanian</li>
 								<li><strong>Job:</strong> Software Developer</li>
