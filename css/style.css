@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;700&display=swap");
+
+body {
+  font-family: "Overpass", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: hsl(216, 12%, 8%);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: hsl(216, 12%, 8%);
+}
+
+.rating-card {
+  background-color: hsl(215, 20%, 16%);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  width: 80%;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.star-text {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-bottom: 20px;
+}
+
+#rating-form img {
+  background-color: hsl(211, 20%, 22%);
+  border-radius: 50%;
+  padding: 15px;
+  width: 15px;
+  margin-bottom: 10px;
+  float: left;
+  margin-right: 10px;
+}
+
+.rating label {
+  background-color: hsl(211, 20%, 22%);
+  border-radius: 50%;
+  padding: 10px;
+  width: 25px;
+  height: 25px;
+  color: hsl(217, 12%, 63%);
+  cursor: pointer;
+  font-size: 18px;
+  margin: 0 10px;
+  font-family: "Overpass", sans-serif;
+  font-weight: 700;
+}
+
+.thank-you-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+h1 {
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+  font-family: "Overpass", sans-serif;
+}
+
+p {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: hsl(217, 12%, 63%);
+  font-family: "Overpass", sans-serif;
+  font-weight: 400;
+}
+
+h1,
+p {
+  text-align: center;
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.rating input[type="radio"] {
+  display: none;
+}
+
+button {
+  background-color: hsl(25, 97%, 53%);
+  color: #fff;
+  border: none;
+  border: 1px solid hsl(25, 97%, 53%);
+  border-radius: 100px;
+  padding: 10px 0;
+  width: 100%;
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 20px;
+  border-radius: 50px;
+  font-family: "Overpass", sans-serif;
+  font-weight: 700;
+}
+
+.thank-you {
+  display: none;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.total-ratings {
+  font-weight: 700;
+  color: hsl(25, 97%, 53%);
+  background-color: hsl(211, 20%, 22%);
+  border-radius: 50px;
+  display: inline-block;
+  padding: 5px 15px;
+  margin-top: 30px;
+}
+.rating label:hover {
+  background-color: hsl(25, 97%, 53%);
+  color: hsl(0, 0%, 100%);
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.rating label:not(:hover) {
+  transition: background-color 1s;
+}
+
+button:hover {
+  background-color: hsl(0, 0%, 100%);
+  border: 1px solid hsl(0, 0%, 100%);
+  color: hsl(25, 97%, 53%);
+  transition: background-color 0.5s, color 0.5s, border 0.5s;
+}
+.rating label.selected {
+  background-color: hsl(217, 12%, 63%);
+  color: hsl(0, 0%, 100%);
+}
+
+.rating label:not(:hover):not(.selected) {
+  transition: background-color 1s;
+}
+
+@media (max-width: 375px) {
+  .rating-card {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .star-text {
+    margin-bottom: 10px;
+  }
+
+  .rating label {
+    width: 20px;
+    height: 20px;
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .total-ratings {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .rating-card {
+    max-width: 450px;
+  }
+
+  .rating label {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+}
