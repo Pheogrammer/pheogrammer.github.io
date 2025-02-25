@@ -1,70 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfeo Raymond - Retro Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Alfeo Raymond</h1>
+        <p>ICT & Digital Transformation Specialist | Innovations Consultant | Human-Centered Design Advocate</p>
+        <nav>
+            <ul>
+                <li><a href="#about">[About]</a></li>
+                <li><a href="#experience">[Experience]</a></li>
+                <li><a href="#certifications">[Certifications]</a></li>
+                <li><a href="#education">[Education]</a></li>
+                <li><a href="#skills">[Skills]</a></li>
+                <li><a href="#honors">[Honors]</a></li>
+                <li><a href="#volunteering">[Volunteering]</a></li>
+                <li><a href="#contact">[Contact]</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
+    <section id="about">
+        <h2>> About Me</h2>
+        <p>> I am an ICT and Digital Transformation Specialist with over five years of experience in designing and implementing innovative, scalable solutions across health, education, and humanitarian sectors. My expertise spans software development, systems integration, logistics support, and data-driven decision-making, all grounded in a Human-Centered Design (HCD) approach to solving complex challenges.</p>
+        <p>> Throughout my career, I’ve combined technical expertise with a passion for innovation to deliver impactful solutions. I’ve developed and maintained user-friendly systems for e-learning, operational support, and management, enhanced program efficiency through AI-powered tools, and empowered teams through capacity building and strategic partnerships.</p>
+    </section>
 
-    <title>Interactive rating component</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="js/app.js"></script>
-  </head>
-
-  <body>
-    <div class="container">
-      <div class="rating-card">
-        <!-- Rating state start -->
-        <form id="rating-form">
-          <div class="star-text">
-            <img src="images/icon-star.svg" alt="" />
-            <h1>How did we do?</h1>
-          </div>
-          <p>
-            Please let us know how we did with your support request. All
-            feedback is appreciated to help us improve our offering!
-          </p>
-          <div class="rating">
-            <input type="radio" name="rating" id="rating1" value="1" />
-            <label for="rating1">1</label>
-            <input type="radio" name="rating" id="rating2" value="2" />
-            <label for="rating2">2</label>
-            <input type="radio" name="rating" id="rating3" value="3" />
-            <label for="rating3">3</label>
-            <input type="radio" name="rating" id="rating4" value="4" />
-            <label for="rating4">4</label>
-            <input type="radio" name="rating" id="rating5" value="5" />
-            <label for="rating5">5</label>
-          </div>
-          <button type="submit">SUBMIT</button>
-        </form>
-        <!-- Rating state end -->
-        <div class="thank-you" id="thank-you">
-          <div class="thank-you-content">
-            <img src="images/illustration-thank-you.svg" alt="" />
-            <div class="total-ratings">
-              You selected
-              <span id="selected-rating"></span> out of 5
-            </div>
-            <h1>Thank you!</h1>
-            <p>
-              We appreciate you taking the time to give a rating. If you ever
-              need more support, don’t hesitate to get in touch!
-            </p>
-          </div>
+    <section id="experience">
+        <h2>> Experience</h2>
+        <div class="job">
+            <h3>> Innovative Technologies - UNICC</h3>
+            <p>> Brindisi, Apulia, Italy | Sep 2024 - Present</p>
+            <ul>
+                <li>> Researched emerging technologies like AI, ML, Blockchain, and IoT for humanitarian applications.</li>
+                <li>> Analyzed data trends to suggest innovative tech solutions aligned with organizational goals.</li>
+                <li>> Collaborated with cross-functional teams to gather user requirements and ensure tech solutions met their needs.</li>
+            </ul>
         </div>
-        <!-- Thank you state start -->
-      </div>
-    </div>
+        <!-- Add more job entries similarly -->
+    </section>
 
-    <!-- Thank you state end -->
-  </body>
+    <section id="certifications">
+        <h2>> Certifications</h2>
+        <ul>
+            <li>> Cybersecurity for Businesses - EC-Council (Jul 2024)</li>
+            <li>> Google Cloud Engineer - Google for Developers (Mar 2023)</li>
+            <li>> MLH Prep Fellow - Major League Hacking (Apr 2023)</li>
+            <!-- Add more certifications -->
+        </ul>
+    </section>
+
+    <section id="education">
+        <h2>> Education</h2>
+        <div class="education-item">
+            <h3>> Bachelor's Degree in Information Technology</h3>
+            <p>> College of Business Education | Nov 2020 - Jul 2023</p>
+        </div>
+        <!-- Add more education entries -->
+    </section>
+
+    <section id="skills">
+        <h2>> Skills</h2>
+        <ul>
+            <li>> Healthcare Information Technology (HIT)</li>
+            <li>> Strategic Human Resource Planning</li>
+            <li>> Customer Satisfaction</li>
+            <li>> Data Analytics & Visualization</li>
+            <!-- Add more skills -->
+        </ul>
+    </section>
+
+    <section id="honors">
+        <h2>> Honors & Awards</h2>
+        <div class="award">
+            <h3>> TechGig Code Gladiators 2021</h3>
+            <p>> Issued by TechGig · May 2021</p>
+            <p>> Participated in a coding competition focused on AI, ML, Blockchain, Cloud Computing, and IoT.</p>
+        </div>
+        <!-- Add more awards -->
+    </section>
+
+    <section id="volunteering">
+        <h2>> Volunteering</h2>
+        <div class="volunteer">
+            <h3>> GitHub DPG Community Manager</h3>
+            <p>> GitHub | Jul 2024 - Jan 2025</p>
+            <ul>
+                <li>> Attracted and onboarded new contributors to open-source projects.</li>
+                <li>> Organized community events and managed GitHub issues and discussions.</li>
+            </ul>
+        </div>
+        <!-- Add more volunteering entries -->
+    </section>
+
+    <section id="contact">
+        <h2>> Contact</h2>
+        <p>> Kijitonyama, Dar es Salaam, Tanzania</p>
+        <p>> +255 745 909 129</p>
+        <p>> Email: <a href="mailto:ngelime07@gmail.com">ngelime07@gmail.com</a></p>
+        <p>> LinkedIn: <a href="https://www.linkedin.com/in/pheogrammer" target="_blank">pheogrammer</a></p>
+    </section>
+
+    <footer>
+        <p>> &copy; 2023 Alfeo Raymond. All rights reserved.</p>
+    </footer>
+</body>
 </html>
