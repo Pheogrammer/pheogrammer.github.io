@@ -29,7 +29,6 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #333;
-            background-color: var(--light);
             overflow-x: hidden;
         }
         
@@ -51,6 +50,19 @@
             position: relative;
             overflow-y: auto;
             transition: var(--transition);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+        
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+            opacity: 0.3;
         }
         
         /* Navigation */
@@ -91,9 +103,12 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
-            background: white;
+            background: rgba(255,255,255,0.9);
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            color: var(--dark);
+            position: relative;
+            z-index: 1;
         }
         
         h1, h2, h3 {
@@ -125,19 +140,6 @@
         }
         
         /* About Section */
-        #about {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-        }
-        
-        #about .container {
-            background: rgba(255,255,255,0.9);
-            color: var(--dark);
-        }
-        
         .tagline {
             font-size: 1.5rem;
             font-weight: 300;
@@ -151,6 +153,7 @@
             background: rgba(52, 152, 219, 0.1);
             border-left: 4px solid var(--secondary);
             margin: 2rem 0;
+            color: var(--primary);
         }
         
         /* Experience Section */
@@ -195,6 +198,22 @@
             color: #666;
             font-style: italic;
             margin-bottom: 1rem;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .tech-tags span {
+            padding: 0.3rem 0.8rem;
+            background: rgba(52, 152, 219, 0.1);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--secondary);
+            font-weight: 600;
         }
         
         /* Certifications */
@@ -242,6 +261,45 @@
             transform: scale(1.05);
         }
         
+        /* Education */
+        .education-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .education-item:last-child {
+            border-bottom: none;
+        }
+        
+        /* Volunteering */
+        .volunteer {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Contact */
+        .contact-info {
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-item i {
+            margin-right: 1rem;
+            color: var(--secondary);
+            font-size: 1.2rem;
+            width: 2rem;
+            text-align: center;
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
@@ -254,6 +312,10 @@
             
             .cert-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
@@ -338,7 +400,21 @@
                         </div>
                     </div>
                     
-                    <!-- Additional roles would follow the same pattern -->
+                    <!-- Human-Centered Design Consultant -->
+                    <div class="job">
+                        <h3>Human-Centered Design Consultant</h3>
+                        <p class="meta">Tanzania Ministry of Health (UNICEF Project) | Apr - Nov 2023</p>
+                        <ul>
+                            <li>Co-designed interventions increasing childhood vaccination rates by <strong>25%</strong> in Ilala District through community engagement</li>
+                            <li>Trained <strong>50+ health workers</strong> in HCD methodologies to identify barriers and co-design solutions</li>
+                            <li>Facilitated prototyping sessions that resulted in <strong>3 field-tested solutions</strong> for vaccine delivery challenges</li>
+                        </ul>
+                        <div class="tech-tags">
+                            <span>HCD</span>
+                            <span>Prototyping</span>
+                            <span>User Research</span>
+                        </div>
+                    </div>
                     
                     <!-- UDSM Role -->
                     <div class="job">
@@ -355,6 +431,8 @@
                             <span>MySQL</span>
                         </div>
                     </div>
+                    
+                    <!-- Additional roles would follow the same pattern -->
                 </div>
             </div>
         </section>
@@ -387,13 +465,186 @@
                         <p>Mastered prototyping and user research methodologies for developing solutions with real-world impact.</p>
                     </div>
                     
+                    <!-- Cybersecurity -->
+                    <div class="cert-card">
+                        <h3>Cybersecurity for Businesses</h3>
+                        <p class="meta">EC-Council | Jul 2024</p>
+                        <p>Comprehensive training in organizational cybersecurity strategies and risk mitigation.</p>
+                    </div>
+                    
+                    <!-- Innovation Management -->
+                    <div class="cert-card">
+                        <h3>Innovation Management</h3>
+                        <p class="meta">Erasmus University | Jun 2024</p>
+                        <p>Strategies for driving innovation in technology and social impact organizations.</p>
+                    </div>
+                    
                     <!-- Additional certifications would follow the same pattern -->
                 </div>
             </div>
         </section>
 
-        <!-- Continue with other sections (Education, Skills, etc.) following the same detailed pattern -->
-        
+        <!-- Education Section -->
+        <section id="education">
+            <div class="container">
+                <h2>Education</h2>
+                
+                <div class="education-item">
+                    <h3>Bachelor's Degree in Information Technology</h3>
+                    <p class="meta">College of Business Education | Nov 2020 - Jul 2023</p>
+                    <p>Specialized in software engineering and systems analysis, with coursework in AI fundamentals and cloud computing.</p>
+                </div>
+                
+                <div class="education-item">
+                    <h3>Diploma in Computer Science</h3>
+                    <p class="meta">University of Dar es Salaam (UDSM) | 2017 - 2019</p>
+                    <p>Focus on programming fundamentals, database systems, and network administration.</p>
+                </div>
+                
+                <div class="education-item">
+                    <h3>Certificate in Information Technology</h3>
+                    <p class="meta">College of Business Education | Aug 2016 - May 2017</p>
+                    <p>Introductory program covering computer systems, basic programming, and IT fundamentals.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="container">
+                <h2>Technical & Professional Skills</h2>
+                
+                <div class="skills-grid">
+                    <div class="skill">Human-Centered Design (HCD)</div>
+                    <div class="skill">Software Development</div>
+                    <div class="skill">Cloud Engineering</div>
+                    <div class="skill">AI/ML Applications</div>
+                    <div class="skill">Project Management</div>
+                    <div class="skill">Cybersecurity</div>
+                    <div class="skill">Data Analytics</div>
+                    <div class="skill">Open Source Leadership</div>
+                    <div class="skill">Team Mentoring</div>
+                    <div class="skill">Stakeholder Engagement</div>
+                    <div class="skill">Innovation Strategy</div>
+                    <div class="skill">Technical Documentation</div>
+                </div>
+                
+                <h3 style="margin-top: 3rem;">Technical Proficiencies</h3>
+                <div class="tech-tags" style="margin-top: 1rem;">
+                    <span>JavaScript (React, Node)</span>
+                    <span>Python</span>
+                    <span>PHP (Laravel)</span>
+                    <span>Google Cloud</span>
+                    <span>Docker</span>
+                    <span>Git/GitHub</span>
+                    <span>AI/ML Basics</span>
+                    <span>MySQL</span>
+                    <span>Twilio API</span>
+                    <span>Figma</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Volunteering Section -->
+        <section id="volunteering">
+            <div class="container">
+                <h2>Community Engagement</h2>
+                <p class="subheading">Contributing to tech education and open source ecosystems</p>
+                
+                <div class="volunteer">
+                    <h3>GitHub DPG Community Manager</h3>
+                    <p class="meta">GitHub | Jul 2024 - Jan 2025</p>
+                    <ul>
+                        <li>Attracted and onboarded <strong>50+ new contributors</strong> to open-source projects</li>
+                        <li>Organized <strong>community events</strong> and managed GitHub issues and discussions</li>
+                        <li>Created onboarding materials that reduced new contributor setup time by <strong>30%</strong></li>
+                    </ul>
+                </div>
+                
+                <div class="volunteer">
+                    <h3>Project Advisor - SmartGirlz in ICT Tanzania</h3>
+                    <p class="meta">Dec 2023 - May 2024</p>
+                    <ul>
+                        <li>Trained <strong>200+ girls</strong> in tech entrepreneurship and HCD methodologies</li>
+                        <li>Led school recruitment drives reaching <strong>15 schools</strong> across Dar es Salaam</li>
+                        <li>Facilitated prototype development sessions resulting in <strong>12 working projects</strong></li>
+                    </ul>
+                </div>
+                
+                <div class="volunteer">
+                    <h3>Open Source Maintainer - Laravel-Lang</h3>
+                    <p class="meta">Oct 2021 - Present</p>
+                    <ul>
+                        <li>Maintained localization package with <strong>3.6k+ GitHub stars</strong></li>
+                        <li>Merged <strong>100+ pull requests</strong> from international contributors</li>
+                        <li>Improved documentation reducing support requests by <strong>40%</strong></li>
+                    </ul>
+                </div>
+                
+                <!-- Additional volunteering would follow the same pattern -->
+            </div>
+        </section>
+
+        <!-- Honors Section -->
+        <section id="honors">
+            <div class="container">
+                <h2>Honors & Awards</h2>
+                
+                <div class="volunteer">
+                    <h3>TechGig Code Gladiators 2021</h3>
+                    <p class="meta">Issued by TechGig · May 2021</p>
+                    <ul>
+                        <li>Selected from thousands of applicants for prestigious coding competition</li>
+                        <li>Competed in Cloud Computing, E-commerce, and IoT challenges</li>
+                        <li>Implemented solutions addressing real-world technical problems</li>
+                    </ul>
+                </div>
+                
+                <div class="volunteer">
+                    <h3>Best Facilities Mapper, dLab Mapathon 2021</h3>
+                    <p class="meta">Issued by Tanzania Dat Lab · Mar 2021</p>
+                    <ul>
+                        <li>Won first place in HIV/AIDS Hot-spots and Testing Facilities mapping challenge</li>
+                        <li>Contributed geospatial data supporting healthcare resource allocation</li>
+                        <li>Recognized by MCC-PEPFAR Data Collaboratives for Local Impact</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Liwale, Lindi Region, Tanzania</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+255 745 909 129</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p><a href="mailto:ngelime07@gmail.com">ngelime07@gmail.com</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <p><a href="https://linkedin.com/in/pheogrammer" target="_blank">linkedin.com/in/pheogrammer</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <p><a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+                    </div>
+                </div>
+                
+                <div class="quote" style="margin-top: 3rem;">
+                    "Let's collaborate on projects that leverage technology for social good. I'm particularly interested in opportunities at the intersection of healthcare, education, and innovative technology solutions."
+                </div>
+            </div>
+        </section>
     </div>
 
     <script>
