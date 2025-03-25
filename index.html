@@ -347,6 +347,248 @@
         border-radius: 8px;
     }
 }
+        /* Experience Section */
+#experience {
+    padding: 5rem 2rem;
+}
+
+.experience-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.experience-header h2 {
+    font-size: 2.8rem;
+    color: white;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.experience-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--accent);
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background: var(--secondary);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    border-radius: 10px;
+}
+
+.job {
+    padding: 1.5rem 2rem;
+    position: relative;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    margin-bottom: 3rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.job:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.job::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid var(--accent);
+    top: 30px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    left: 50%;
+}
+
+.job-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.job-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.job-logo img {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.job-title {
+    flex: 1;
+}
+
+.job-title h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+    color: var(--primary);
+}
+
+.job-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.meta-item i {
+    margin-right: 0.5rem;
+    color: var(--secondary);
+}
+
+.job-content {
+    margin-bottom: 1.5rem;
+}
+
+.job-content ul {
+    list-style-type: none;
+    padding-left: 1.5rem;
+}
+
+.job-content li {
+    position: relative;
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+.job-content li::before {
+    content: '▹';
+    position: absolute;
+    left: -1.5rem;
+    color: var(--accent);
+}
+
+.tech-skills {
+    margin-top: 1.5rem;
+}
+
+.tech-skills h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    color: var(--primary);
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-tag {
+    background: rgba(52, 152, 219, 0.1);
+    color: var(--secondary);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.project-highlight {
+    margin-top: 1.5rem;
+    padding: 1.2rem;
+    background: rgba(231, 76, 60, 0.08);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+}
+
+.project-highlight h4 {
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+/* Responsive Timeline */
+@media screen and (max-width: 768px) {
+    .timeline::before {
+        left: 31px;
+    }
+    
+    .job {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    
+    .job::after {
+        left: 18px;
+    }
+    
+    .left::after, .right::after {
+        left: 18px;
+    }
+    
+    .right {
+        left: 0%;
+    }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.job {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.job:nth-child(1) { animation-delay: 0.1s; }
+.job:nth-child(2) { animation-delay: 0.2s; }
+.job:nth-child(3) { animation-delay: 0.3s; }
+.job:nth-child(4) { animation-delay: 0.4s; }
+.job:nth-child(5) { animation-delay: 0.5s; }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -397,72 +639,53 @@
                 <h2>Professional Journey</h2>
                 
                 <div class="timeline">
-                    <!-- Current Role -->
-                    <div class="job">
-                        <h3>ICT Supervisor</h3>
-                        <p class="meta">Médecins Sans Frontières (Switzerland) | Liwale, Tanzania | May 2024 - Present</p>
-                        <ul>
-                            <li>Manage IT/Telecom infrastructure ensuring <strong>100% operational continuity</strong> for remote healthcare services in challenging environments</li>
-                            <li>Implement security protocols that reduced system vulnerabilities by <strong>40%</strong> through firewall optimization and access controls</li>
-                            <li>Lead a team maintaining servers, communication tools, and field equipment serving <strong>50+ healthcare staff</strong></li>
-                        </ul>
-                        <div class="tech-tags">
-                            <span>Windows Server</span>
-                            <span>Network Security</span>
-                            <span>Cloud Storage</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Save the Children -->
-                    <div class="job">
-                        <h3>Technology for Development Officer</h3>
-                        <p class="meta">Save the Children International | Dar es Salaam | Nov 2023 - Apr 2024</p>
-                        <ul>
-                            <li>Developed <strong>AI-powered USSD/SMS platform</strong> delivering maternal health education to <strong>3,000+ beneficiaries</strong> in Dodoma/Morogoro</li>
-                            <li>Implemented monitoring systems that improved program evaluation efficiency by <strong>60%</strong></li>
-                            <li>Conducted security audits achieving <strong>100% compliance</strong> with international data protection standards</li>
-                        </ul>
-                        <div class="tech-tags">
-                            <span>Python</span>
-                            <span>Twilio API</span>
-                            <span>AI Analytics</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Human-Centered Design Consultant -->
-                    <div class="job">
-                        <h3>Human-Centered Design Consultant</h3>
-                        <p class="meta">Tanzania Ministry of Health (UNICEF Project) | Apr - Nov 2023</p>
-                        <ul>
-                            <li>Co-designed interventions increasing childhood vaccination rates by <strong>25%</strong> in Ilala District through community engagement</li>
-                            <li>Trained <strong>50+ health workers</strong> in HCD methodologies to identify barriers and co-design solutions</li>
-                            <li>Facilitated prototyping sessions that resulted in <strong>3 field-tested solutions</strong> for vaccine delivery challenges</li>
-                        </ul>
-                        <div class="tech-tags">
-                            <span>HCD</span>
-                            <span>Prototyping</span>
-                            <span>User Research</span>
-                        </div>
-                    </div>
-                    
-                    <!-- UDSM Role -->
-                    <div class="job">
-                        <h3>Software & Systems Engineer</h3>
-                        <p class="meta">University of Dar es Salaam | Nov 2019 - Nov 2023</p>
-                        <ul>
-                            <li>Built e-learning platforms serving <strong>10,000+ students</strong>, reducing system downtime by <strong>30%</strong></li>
-                            <li>Developed operational management systems that improved administrative efficiency by <strong>25%</strong></li>
-                            <li>Mentored <strong>50+ student developers</strong> in software engineering best practices</li>
-                        </ul>
-                        <div class="tech-tags">
-                            <span>PHP</span>
-                            <span>Laravel</span>
-                            <span>MySQL</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Additional roles would follow the same pattern -->
+    <!-- UNICC Experience -->
+    <div class="job left">
+        <div class="job-header">
+            <div class="job-logo">
+                <img src="path/to/unicc-logo.png" alt="UNICC Logo">
+            </div>
+            <div class="job-title">
+                <h3>Innovative Technologies - UNICC</h3>
+                <div class="job-meta">
+                    <span class="meta-item"><i class="fas fa-briefcase"></i> Internship</span>
+                    <span class="meta-item"><i class="fas fa-calendar-alt"></i> Sep 2024 - Present · 7 mos</span>
+                    <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Brindisi, Italy (Remote)</span>
                 </div>
+            </div>
+        </div>
+        
+        <div class="job-content">
+            <ul>
+                <li>Researched emerging technologies like AI, ML, Blockchain, and IoT for humanitarian applications</li>
+                <li>Analyzed data trends to suggest innovative tech solutions aligned with organizational goals</li>
+                <li>Collaborated with cross-functional teams to gather user requirements and ensure tech solutions met their needs</li>
+                <li>Designed eLearning contents using Articulate 360 and tested learning management systems</li>
+                <li>Managed Microsoft SharePoint sites including content design, access management, and reporting</li>
+                <li>Conducted AI tools analysis, testing and prototyping for organizational adoption</li>
+            </ul>
+        </div>
+        
+        <div class="tech-skills">
+            <h4>Key Skills Applied:</h4>
+            <div class="skill-tags">
+                <span class="skill-tag">Procedural Analysis</span>
+                <span class="skill-tag">AI/ML Research</span>
+                <span class="skill-tag">Articulate 360</span>
+                <span class="skill-tag">SharePoint</span>
+                <span class="skill-tag">Data Analysis</span>
+                <span class="skill-tag">Technical Documentation</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- MSF Experience -->
+    <div class="job right">
+        <!-- Similar structure for MSF role -->
+    </div>
+    
+    <!-- Continue with other roles -->
+</div>
             </div>
         </section>
 
