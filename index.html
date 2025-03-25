@@ -99,17 +99,29 @@
         }
         
         /* Section Styling */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-            background: rgba(255,255,255,0.9);
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            color: var(--dark);
-            position: relative;
-            z-index: 1;
-        }
+       .container {
+    max-width: 1200px;
+    margin: 4rem auto 2rem; /* Top margin reduced to 4rem, keeps horizontal auto, bottom 2rem */
+    padding: 2.5rem; /* Slightly increased padding */
+    background: rgba(255, 255, 255, 0.95); /* Increased opacity for better readability */
+    border-radius: 12px; /* Smoother corners */
+    box-shadow: 
+        0 6px 18px rgba(0, 0, 0, 0.12), 
+        inset 0 1px 0 rgba(255, 255, 255, 0.3); /* Added inner glow */
+    color: var(--dark);
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for depth */
+    backdrop-filter: blur(4px); /* Frosted glass effect */
+    transition: all 0.3s ease-out; /* Smooth transitions */
+}
+        /* Add a subtle hover effect */
+.container:hover {
+    box-shadow: 
+        0 8px 22px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px); /* Slight lift effect */
+}
         
         h1, h2, h3 {
             color: var(--primary);
@@ -318,6 +330,23 @@
                 grid-template-columns: repeat(2, 1fr);
             }
         }
+
+        /* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        margin: 3rem auto 1.5rem; /* Smaller margins on mobile */
+        padding: 1.8rem;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 2.5rem auto 1rem;
+        padding: 1.5rem;
+        border-radius: 8px;
+    }
+}
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
