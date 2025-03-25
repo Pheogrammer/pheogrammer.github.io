@@ -193,31 +193,35 @@
         /* Experience Section */
         .timeline {
             position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-left: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 3rem;
+    padding-bottom: 2rem; /* Add bottom padding */
         }
 
         .timeline::before {
-            content: '';
-            position: absolute;
-            left: 1.5rem;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: var(--secondary);
-            border-radius: 10px;
-        }
+    content: '';
+    position: absolute;
+    left: 1.5rem;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--secondary);
+    border-radius: 10px;
+    z-index: 1; /* Keep below jobs */
+}
 
         .job {
-            position: relative;
-            margin-bottom: 3rem;
-            padding: 2rem;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-            border-left: 5px solid var(--secondary);
+             position: relative;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    border-left: 5px solid var(--secondary);
+    z-index: 2; /* Ensure jobs appear above timeline */
+             min-height: 200px;
         }
 
         .job:hover {
@@ -226,17 +230,17 @@
         }
 
         .job::before {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            left: -3.5rem;
-            top: 2.5rem;
-            border-radius: 50%;
-            background: var(--accent);
-            border: 4px solid var(--secondary);
-            z-index: 1;
-        }
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: -3.5rem;
+    top: 2.5rem;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 4px solid var(--secondary);
+    z-index: 3; /* Above timeline line */
+}
 
         .job-header {
             display: flex;
@@ -310,7 +314,7 @@
         }
 
         .nested-list li {
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
             position: relative;
         }
 
@@ -702,6 +706,7 @@
                 width: 100%;
                 padding-left: 70px;
                 padding-right: 25px;
+                
             }
             
             .job::before {
@@ -711,7 +716,11 @@
             .job::after {
                 left: 18px;
             }
-            
+            .job-content::after {
+    content: "";
+    display: table;
+    clear: both;
+}
             .right {
                 left: 0%;
             }
@@ -743,6 +752,20 @@
                 margin-bottom: 1rem;
             }
         }
+
+        @media (max-width: 768px) {
+    .timeline {
+        padding-left: 70px;
+    }
+    
+    .timeline::before {
+        left: 35px;
+    }
+    
+    .job::before {
+        left: -50px;
+    }
+}
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
