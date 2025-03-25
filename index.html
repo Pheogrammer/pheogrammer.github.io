@@ -3,21 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Portfolio</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
     <header id="hero">
         <div class="container">
-            <h1>Welcome, I'm [Your Name]</h1>
-            <p>Innovative Technologies Analyst | Software Engineer | ICT Specialist</p>
-            <p>With over five years of experience in ICT management, HCD, software development, and digital solutions.</p>
+            <h1 class="animate">Welcome to My Portfolio</h1>
+            <p class="animate">Innovative Technologies Analyst | Software Engineer | ICT Consultant</p>
         </div>
     </header>
-    
+
+    <section id="about" class="hidden">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I am an experienced <strong>Innovative Technologies Analyst</strong> with a background in <strong>software development, ICT management, human-centered design (HCD), and data-driven digital solutions</strong>. Over the past five years, I have contributed to <strong>health, humanitarian, educational, and technology-based projects</strong>, ensuring impactful digital transformation.</p>
+            <p>Currently working at <strong>UNICC</strong>, I specialize in exploring and integrating <strong>emerging technologies</strong> to enhance digital solutions. My journey includes roles in academia, consulting, and open-source community management, where I have led teams, developed platforms, and championed inclusive technology adoption.</p>
+            <p>My philosophy: <em>"Technology should empower, innovate, and transform lives."</em></p>
+        </div>
+    </section>
+
     <script>
-        gsap.from("#hero .container", { opacity: 0, x: -100, duration: 1, ease: "power2.out" });
+        document.addEventListener("DOMContentLoaded", function() {
+            gsap.from(".animate", { opacity: 0, y: 50, duration: 1, stagger: 0.3 });
+            
+            const sections = document.querySelectorAll(".hidden");
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        gsap.fromTo(entry.target, { opacity: 0, x: -100 }, { opacity: 1, x: 0, duration: 1 });
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            sections.forEach(section => observer.observe(section));
+        });
     </script>
 </body>
 </html>
