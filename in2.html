@@ -1,0 +1,2409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfeo Raymond | Digital Transformation Specialist</title>
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #1a252f;
+            --transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        /* Horizontal Scroll Sections */
+        .horizontal-scroll {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            width: 100vw;
+            overflow-y: auto;
+            scroll-snap-type: y mandatory;
+        }
+        
+        section {
+            scroll-snap-align: start;
+            min-height: 100vh;
+            width: 100vw;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow-y: auto;
+            transition: var(--transition);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+        
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+            opacity: 0.3;
+        }
+        
+        /* Navigation */
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 1rem 2rem;
+        }
+        
+        #navbar ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        #navbar a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+        
+        #navbar a:hover, #navbar a.active {
+            background: var(--secondary);
+            color: white;
+        }
+        
+        /* Section Styling */
+       .container {
+    max-width: 1200px;
+    margin: 4rem auto 2rem; /* Top margin reduced to 4rem, keeps horizontal auto, bottom 2rem */
+    padding: 2.5rem; /* Slightly increased padding */
+    background: rgba(255, 255, 255, 0.95); /* Increased opacity for better readability */
+    border-radius: 12px; /* Smoother corners */
+    box-shadow: 
+        0 6px 18px rgba(0, 0, 0, 0.12), 
+        inset 0 1px 0 rgba(255, 255, 255, 0.3); /* Added inner glow */
+    color: var(--dark);
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for depth */
+    backdrop-filter: blur(4px); /* Frosted glass effect */
+    transition: all 0.3s ease-out; /* Smooth transitions */
+}
+        /* Add a subtle hover effect */
+.container:hover {
+    box-shadow: 
+        0 8px 22px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px); /* Slight lift effect */
+}
+        
+        h1, h2, h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--secondary);
+            display: inline-block;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            color: var(--secondary);
+        }
+        
+        p, li {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        /* About Section */
+        .tagline {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: var(--secondary);
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 1.5rem;
+            background: rgba(52, 152, 219, 0.1);
+            border-left: 4px solid var(--secondary);
+            margin: 2rem 0;
+            color: var(--primary);
+        }
+        
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+            margin: 3rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 1.5rem;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--secondary);
+        }
+        
+        .job {
+            position: relative;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .job::before {
+            content: '';
+            position: absolute;
+            left: -3.5rem;
+            top: 2.5rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid var(--secondary);
+        }
+        
+        .meta {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .tech-tags span {
+            padding: 0.3rem 0.8rem;
+            background: rgba(52, 152, 219, 0.1);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+        
+        /* Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .cert-card {
+            padding: 1.5rem;
+            border-radius: 8px;
+            background: white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--secondary);
+            transition: var(--transition);
+        }
+        
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .skill {
+            padding: 1rem;
+            background: var(--secondary);
+            color: white;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .skill:hover {
+            background: var(--accent);
+            transform: scale(1.05);
+        }
+        
+        /* Education */
+        .education-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .education-item:last-child {
+            border-bottom: none;
+        }
+        
+        /* Volunteering */
+        .volunteer {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Contact */
+        .contact-info {
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-item i {
+            margin-right: 1rem;
+            color: var(--secondary);
+            font-size: 1.2rem;
+            width: 2rem;
+            text-align: center;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            
+            #navbar ul {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+            
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        margin: 3rem auto 1.5rem; /* Smaller margins on mobile */
+        padding: 1.8rem;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 2.5rem auto 1rem;
+        padding: 1.5rem;
+        border-radius: 8px;
+    }
+}
+        /* Experience Section */
+#experience {
+    padding: 5rem 2rem;
+}
+
+.experience-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.experience-header h2 {
+    font-size: 2.8rem;
+    color: white;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.experience-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--accent);
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background: var(--secondary);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    border-radius: 10px;
+}
+
+.job {
+    padding: 1.5rem 2rem;
+    position: relative;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    margin-bottom: 3rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.job:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.job::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid var(--accent);
+    top: 30px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    left: 50%;
+}
+
+.job-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.job-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.job-logo img {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.job-title {
+    flex: 1;
+}
+
+.job-title h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+    color: var(--primary);
+}
+
+.job-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.meta-item i {
+    margin-right: 0.5rem;
+    color: var(--secondary);
+}
+
+.job-content {
+    margin-bottom: 1.5rem;
+}
+
+.job-content ul {
+    list-style-type: none;
+    padding-left: 1.5rem;
+}
+
+.job-content li {
+    position: relative;
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+.job-content li::before {
+    content: '▹';
+    position: absolute;
+    left: -1.5rem;
+    color: var(--accent);
+}
+
+.tech-skills {
+    margin-top: 1.5rem;
+}
+
+.tech-skills h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    color: var(--primary);
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-tag {
+    background: rgba(52, 152, 219, 0.1);
+    color: var(--secondary);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.project-highlight {
+    margin-top: 1.5rem;
+    padding: 1.2rem;
+    background: rgba(231, 76, 60, 0.08);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+}
+
+.project-highlight h4 {
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+/* Responsive Timeline */
+@media screen and (max-width: 768px) {
+    .timeline::before {
+        left: 31px;
+    }
+    
+    .job {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    
+    .job::after {
+        left: 18px;
+    }
+    
+    .left::after, .right::after {
+        left: 18px;
+    }
+    
+    .right {
+        left: 0%;
+    }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.job {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.job:nth-child(1) { animation-delay: 0.1s; }
+.job:nth-child(2) { animation-delay: 0.2s; }
+.job:nth-child(3) { animation-delay: 0.3s; }
+.job:nth-child(4) { animation-delay: 0.4s; }
+.job:nth-child(5) { animation-delay: 0.5s; }
+
+        /* Nested list styling */
+.nested-list {
+    list-style-type: circle;
+    margin: 0.5rem 0 0.5rem 2rem;
+    padding-left: 1rem;
+}
+
+.nested-list li {
+    margin-bottom: 0.3rem;
+    position: relative;
+}
+
+.nested-list li::before {
+    content: '';
+    position: absolute;
+    left: -1rem;
+    top: 0.5rem;
+    width: 6px;
+    height: 6px;
+    background: var(--secondary);
+    border-radius: 50%;
+}
+
+/* Project media */
+.project-media {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: rgba(255,255,255,0.7);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.project-media img {
+    max-width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.caption {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+/* Skill tag icons */
+.skill-tag i {
+    margin-right: 0.3rem;
+    font-size: 0.8em;
+}
+
+        /* Enhanced Job Entry Styling */
+.job {
+    padding: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-left: 5px solid var(--secondary);
+}
+
+.job:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Timeline Connectors */
+.job::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 30px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 4px solid var(--secondary);
+}
+
+.left::before {
+    right: -10px;
+}
+
+.right::before {
+    left: -10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .job {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .job::before {
+        display: none;
+    }
+    
+    .left, .right {
+        margin-left: 0;
+    }
+}
+
+/* Animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.job {
+    animation: slideIn 0.6s ease forwards;
+}
+
+.job:nth-child(odd) {
+    animation-delay: 0.1s;
+}
+
+.job:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+        .volunteering-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.volunteer-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.volunteer-card.highlight {
+    border-left: 4px solid #2b6cb0;
+}
+
+.volunteer-card:hover {
+    transform: translateY(-5px);
+}
+
+.volunteer-header {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+.org-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.org-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.volunteer-title h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #2d3748;
+}
+
+.volunteer-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 0.8rem;
+    color: #718096;
+    margin-top: 5px;
+}
+
+.volunteer-body {
+    padding: 15px;
+}
+
+.responsibility-area {
+    margin-bottom: 15px;
+}
+
+.responsibility-area h4 {
+    margin: 0 0 8px 0;
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+
+.volunteer-body ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.volunteer-body li {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.volunteer-media {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed #ddd;
+}
+
+.media-link {
+    display: block;
+    margin-bottom: 10px;
+    color: #3182ce;
+    font-size: 0.8rem;
+}
+
+.media-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.media-images img {
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #eee;
+}
+
+.project-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.project-link {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: #3182ce;
+    word-break: break-all;
+}
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav id="navbar">
+        <ul>
+            <li><a href="#about" class="active">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#volunteering">Volunteering</a></li>
+            <li><a href="#honors">Honors</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="horizontal-scroll">
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <h1>Alfeo Raymond</h1>
+                <p class="tagline">ICT & Digital Transformation Specialist | Human-Centered Design Advocate</p>
+                
+                <div class="quote">
+                    "Technology is most powerful when it empowers people. My mission is to bridge innovation with humanitarian needs through human-centered solutions."
+                </div>
+                
+                <div class="content">
+                    <p>I am an ICT and Digital Transformation Specialist with over six years of experience designing and implementing innovative, scalable solutions across health, education, and humanitarian sectors. My expertise spans:</p>
+                    
+                    <ul>
+                        <li><strong>Software Development</strong>: Full-stack web/mobile solutions with React, Node, and cloud technologies</li>
+                        <li><strong>Human-Centered Design</strong>: Creating solutions that truly meet user needs through iterative prototyping</li>
+                        <li><strong>AI/ML Applications</strong>: Implementing predictive analytics for healthcare and development programs</li>
+                        <li><strong>Open Source Leadership</strong>: Maintaining projects like Laravel-Lang with 3.6k+ GitHub stars</li>
+                    </ul>
+                    
+                    <p>Throughout my career, I've combined technical expertise with a passion for social impact, delivering solutions that have transformed lives for thousands across Tanzania and beyond.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <div class="container">
+                <h2>Professional Journey</h2>
+               <div class="timeline">  
+                  <div class="timeline">
+
+    <!-- 1. UNICC Experience -->
+    <div class="job left">
+        <div class="job-header">
+            <div class="job-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/UNICC_logo.svg/1200px-UNICC_logo.svg.png" alt="UNICC Logo">
+            </div>
+            <div class="job-title">
+                <h3>Innovative Technologies Intern</h3>
+                <p class="company">United Nations International Computing Centre</p>
+                <div class="job-meta">
+                    <span class="meta-item"><i class="fas fa-briefcase"></i> Internship</span>
+                    <span class="meta-item"><i class="fas fa-calendar-alt"></i> Sep 2024 - Present · 7 mos</span>
+                    <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Brindisi, Italy (Remote)</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="job-content">
+            <ul>
+                <li><strong>Emerging Tech Research</strong>: Conducted in-depth analysis of AI, ML, Blockchain and IoT applications for humanitarian work, producing 5 technical briefs for UN agencies</li>
+                <li><strong>Data Analysis</strong>: Identified trends across 3+ data sources to recommend tech solutions aligned with SDGs</li>
+                <li><strong>Cross-functional Collaboration</strong>: Worked with 8+ UN teams to document system requirements and user stories</li>
+                <li><strong>eLearning Development</strong>:
+                    <ul class="nested-list">
+                        <li>Designed 12+ interactive courses using Articulate 360</li>
+                        <li>Tested LMS compatibility across 3 platforms (Moodle, Canvas, Blackboard)</li>
+                        <li>Created assessment tools with 95% completion rate</li>
+                    </ul>
+                </li>
+                <li><strong>SharePoint Management</strong>:
+                    <ul class="nested-list">
+                        <li>Developed 4 department sites with custom workflows</li>
+                        <li>Migrated 500+ documents with metadata tagging</li>
+                        <li>Implemented permission protocols for 200+ users</li>
+                        <li>Produced monthly analytics reports on usage patterns</li>
+                    </ul>
+                </li>
+                <li><strong>AI Prototyping</strong>: Tested 7 AI tools for document processing, creating comparative analysis matrices</li>
+            </ul>
+            
+            <div class="tech-skills">
+                <h4><i class="fas fa-tools"></i> Technologies & Methodologies:</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag"><i class="fas fa-robot"></i> AI/ML Research</span>
+                    <span class="skill-tag"><i class="fas fa-link"></i> Blockchain</span>
+                    <span class="skill-tag"><i class="fas fa-satellite-dish"></i> IoT</span>
+                    <span class="skill-tag"><i class="fas fa-graduation-cap"></i> Articulate 360</span>
+                    <span class="skill-tag"><i class="fab fa-microsoft"></i> SharePoint</span>
+                    <span class="skill-tag"><i class="fas fa-database"></i> Data Analysis</span>
+                    <span class="skill-tag"><i class="fas fa-file-alt"></i> Technical Documentation</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. MSF Experience -->
+    <div class="job left">
+        <div class="job-header">
+            <div class="job-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/M%C3%A9decins_Sans_Fronti%C3%A8res_Logo.svg/1200px-M%C3%A9decins_Sans_Fronti%C3%A8res_Logo.svg.png" alt="MSF Logo">
+            </div>
+            <div class="job-title">
+                <h3>ICT Supervisor</h3>
+                <p class="company">Médecins Sans Frontières (Switzerland)</p>
+                <div class="job-meta">
+                    <span class="meta-item"><i class="fas fa-briefcase"></i> Full-time</span>
+                    <span class="meta-item"><i class="fas fa-calendar-alt"></i> May 2024 - Present · 11 mos</span>
+                    <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Liwale, Tanzania (On-site)</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="job-content">
+            <ul>
+                <li><strong>IT Infrastructure Management</strong>:
+                    <ul class="nested-list">
+                        <li>Maintained 50+ devices across 3 clinics with 99.8% uptime</li>
+                        <li>Standardized configurations for Windows/Linux systems</li>
+                        <li>Reduced equipment downtime by 35% through preventive maintenance</li>
+                    </ul>
+                </li>
+                <li><strong>Telecom Systems</strong>:
+                    <ul class="nested-list">
+                        <li>Installed 8 HF/VHF radios with emergency channel mapping</li>
+                        <li>Configured 3 satellite communication terminals</li>
+                        <li>Trained 12 staff on radio protocols and troubleshooting</li>
+                    </ul>
+                </li>
+                <li><strong>Data Security</strong>:
+                    <ul class="nested-list">
+                        <li>Implemented daily encrypted backups for patient records</li>
+                        <li>Established firewall rules reducing unauthorized access attempts by 60%</li>
+                        <li>Conducted 4 security audits meeting MSF international standards</li>
+                    </ul>
+                </li>
+                <li><strong>SharePoint Administration</strong>:
+                    <ul class="nested-list">
+                        <li>Developed 3 departmental sites with document version control</li>
+                        <li>Created automated approval workflows for supply requests</li>
+                        <li>Managed permissions for 75+ clinical and logistics staff</li>
+                    </ul>
+                </li>
+                <li><strong>GIS Mapping</strong>: Produced 15+ maps for epidemic tracking and supply routes</li>
+                <li><strong>Technical Training</strong>: Conducted 8 workshops on system usage for medical teams</li>
+            </ul>
+            
+            <div class="project-highlight">
+                <h4><i class="fas fa-medal"></i> Key Achievement:</h4>
+                <p>Designed an emergency communication protocol integrating radio, satellite and mobile systems that reduced response times by 40% during the 2024 cholera outbreak.</p>
+            </div>
+            
+            <div class="tech-skills">
+                <h4><i class="fas fa-tools"></i> Technologies & Methodologies:</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag"><i class="fas fa-hospital"></i> Healthcare IT</span>
+                    <span class="skill-tag"><i class="fas fa-shield-alt"></i> Cybersecurity</span>
+                    <span class="skill-tag"><i class="fas fa-broadcast-tower"></i> Radio Systems</span>
+                    <span class="skill-tag"><i class="fas fa-satellite"></i> Satellite Comms</span>
+                    <span class="skill-tag"><i class="fas fa-map-marked-alt"></i> GIS Mapping</span>
+                    <span class="skill-tag"><i class="fab fa-microsoft"></i> SharePoint</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Bookbot Experience -->
+    <div class="job left">
+        <div class="job-header">
+            <div class="job-logo">
+                <img src="https://via.placeholder.com/150?text=Bookbot" alt="Bookbot Logo">
+            </div>
+            <div class="job-title">
+                <h3>Graphics & UI/UX Design Consultant</h3>
+                <p class="company">Bookbot</p>
+                <div class="job-meta">
+                    <span class="meta-item"><i class="fas fa-briefcase"></i> Part-time</span>
+                    <span class="meta-item"><i class="fas fa-calendar-alt"></i> Jun 2024 - Aug 2024 · 3 mos</span>
+                    <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Melbourne, Australia (Remote)</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="job-content">
+            <ul>
+                <li><strong>UI/UX Design</strong>:
+                    <ul class="nested-list">
+                        <li>Created 25+ screen designs for Kiswahili learning app</li>
+                        <li>Developed 3 interactive prototypes in Figma</li>
+                        <li>Conducted usability testing with 15 Swahili learners</li>
+                    </ul>
+                </li>
+                <li><strong>Content Localization</strong>:
+                    <ul class="nested-list">
+                        <li>Adapted 50+ storybooks maintaining cultural authenticity</li>
+                        <li>Designed 12 book covers reflecting Tanzanian themes</li>
+                        <li>Ensured age-appropriate vocabulary grading</li>
+                    </ul>
+                </li>
+                <li><strong>Audiobook Production</strong>:
+                    <ul class="nested-list">
+                        <li>Edited 30+ audio recordings for clarity</li>
+                        <li>Created listening comprehension activities</li>
+                        <li>Implemented progress tracking features</li>
+                    </ul>
+                </li>
+                <li><strong>Collaboration</strong>: Worked with UDSM linguists on content validation</li>
+            </ul>
+            
+            <div class="tech-skills">
+                <h4><i class="fas fa-tools"></i> Technologies & Methodologies:</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag"><i class="fab fa-figma"></i> Figma</span>
+                    <span class="skill-tag"><i class="fab fa-canva"></i> Canva</span>
+                    <span class="skill-tag"><i class="fas fa-mobile-alt"></i> UI/UX</span>
+                    <span class="skill-tag"><i class="fas fa-language"></i> Localization</span>
+                    <span class="skill-tag"><i class="fas fa-book"></i> EdTech</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Save the Children Experience -->
+    <div class="job left">
+        <div class="job-header">
+            <div class="job-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Save_the_Children_logo.svg/1200px-Save_the_Children_logo.svg.png" alt="Save the Children Logo">
+            </div>
+            <div class="job-title">
+                <h3>Technology for Development Officer</h3>
+                <p class="company">Save the Children International</p>
+                <div class="job-meta">
+                    <span class="meta-item"><i class="fas fa-briefcase"></i> Contract</span>
+                    <span class="meta-item"><i class="fas fa-calendar-alt"></i> Nov 2023 - Apr 2024 · 6 mos</span>
+                    <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Dar es Salaam, Tanzania</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="job-content">
+            <ul>
+                <li><strong>Digital Parental Kit Development</strong>:
+                    <ul class="nested-list">
+                        <li>Built USSD/SMS platform serving 3,000+ mothers</li>
+                        <li>Integrated with KoboToolbox for data collection</li>
+                        <li>Developed AI analysis module for usage patterns</li>
+                    </ul>
+                </li>
+                <li><strong>System Integration</strong>:
+                    <ul class="nested-list">
+                        <li>Connected mobile platform to PowerBI dashboards</li>
+                        <li>Created API bridges between 3 health information systems</li>
+                        <li>Automated weekly reports for program officers</li>
+                    </ul>
+                </li>
+                <li><strong>Field Implementation</strong>:
+                    <ul class="nested-list">
+                        <li>Trained 45 CHWs on data collection protocols</li>
+                        <li>Conducted 8 community sensitization sessions</li>
+                        <li>Monitored system usage across 12 health facilities</li>
+                    </ul>
+                </li>
+                <li><strong>Security Compliance</strong>:
+                    <ul class="nested-list">
+                        <li>Implemented GDPR-compliant data handling</li>
+                        <li>Conducted penetration testing</li>
+                        <li>Established audit trails for all data access</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <div class="project-highlight">
+                <h4><i class="fas fa-medal"></i> Key Achievement:</h4>
+                <p>The Digital Parental Kit reduced missed pediatric appointments by 28% in Dodoma region through automated SMS reminders and nutrition guidance.</p>
+                <div class="project-media">
+                    <img src="digital-parental-kit-screenshot.jpg" alt="Digital Parental Kit Interface">
+                    <p class="caption">USSD interface for maternal health information</p>
+                </div>
+            </div>
+            
+            <div class="tech-skills">
+                <h4><i class="fas fa-tools"></i> Technologies & Methodologies:</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag"><i class="fas fa-sms"></i> USSD/SMS</span>
+                    <span class="skill-tag"><i class="fas fa-robot"></i> AI Analytics</span>
+                    <span class="skill-tag"><i class="fas fa-database"></i> KoboToolbox</span>
+                    <span class="skill-tag"><i class="fas fa-chart-bar"></i> PowerBI</span>
+                    <span class="skill-tag"><i class="fas fa-lock"></i> Data Security</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 5. Ministry of Health Experience -->
+    <div class="job left">
+        <div class="job-header">
+            <div class="job-logo">
+                <img src="https://via.placeholder.com/150?text=MoH" alt="Ministry of Health Logo">
+            </div>
+            <div class="job-title">
+                <h3>Human-Centered Design Consultant</h3>
+                <p class="company">Tanzania Ministry of Health (UNICEF Collaboration)</p>
+                <div class="job-meta">
+                    <span class="meta-item"><i class="fas fa-briefcase"></i> Contract</span>
+                    <span class="meta-item"><i class="fas fa-calendar-alt"></i> Apr 2023 - Nov 2023 · 8 mos</span>
+                    <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Dar es Salaam, Tanzania</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="job-content">
+            <ul>
+                <li><strong>Vaccination Program Redesign</strong>:
+                    <ul class="nested-list">
+                        <li>Increased childhood vaccination rates by 25% in Ilala District</li>
+                        <li>Conducted 12 community workshops identifying barriers</li>
+                        <li>Developed 3 prototype solutions with health workers</li>
+                    </ul>
+                </li>
+                <li><strong>Field Research</strong>:
+                    <ul class="nested-list">
+                        <li>Interviewed 150+ parents in high-risk communities</li>
+                        <li>Mapped vaccination journey for 5 age cohorts</li>
+                        <li>Identified 7 key pain points in service delivery</li>
+                    </ul>
+                </li>
+                <li><strong>Capacity Building</strong>:
+                    <ul class="nested-list">
+                        <li>Trained 50 health workers in HCD methodologies</li>
+                        <li>Created facilitator guides for community engagement</li>
+                        <li>Established monitoring framework for solutions</li>
+                    </ul>
+                </li>
+                <li><strong>Prototype Development</strong>:
+                    <ul class="nested-list">
+                        <li>Designed "Ilala Prototype" notification system</li>
+                        <li>Tested 4 versions with 200 families</li>
+                        <li>Refined based on 3 rounds of feedback</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <div class="project-highlight">
+                <h4><i class="fas fa-medal"></i> Key Achievement:</h4>
+                <p>The "Ilala Prototype" reduced missed vaccinations by 40% through community-designed reminder systems and local health ambassador networks.</p>
+                <div class="project-media">
+                    <img src="hcd-training.jpg" alt="HCD Training Session">
+                    <p class="caption">Training health workers in HCD methodologies</p>
+                </div>
+            </div>
+            
+            <div class="tech-skills">
+                <h4><i class="fas fa-tools"></i> Technologies & Methodologies:</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag"><i class="fas fa-users"></i> Human-Centered Design</span>
+                    <span class="skill-tag"><i class="fas fa-clipboard-check"></i> Prototyping</span>
+                    <span class="skill-tag"><i class="fas fa-chart-line"></i> Impact Measurement</span>
+                    <span class="skill-tag"><i class="fas fa-comments"></i> Community Engagement</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. UDSM Experience -->
+    <div class="job left">
+        <div class="job-header">
+            <div class="job-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/10/University_of_Dar_es_Salaam_logo.svg/1200px-University_of_Dar_es_Salaam_logo.svg.png" alt="UDSM Logo">
+            </div>
+            <div class="job-title">
+                <h3>Software & Systems Engineer</h3>
+                <p class="company">University of Dar es Salaam</p>
+                <div class="job-meta">
+                    <span class="meta-item"><i class="fas fa-briefcase"></i> Contract</span>
+                    <span class="meta-item"><i class="fas fa-calendar-alt"></i> Nov 2019 - Nov 2023 · 4 yrs</span>
+                    <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Dar es Salaam, Tanzania</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="job-content">
+            <ul>
+                <li><strong>eLearning Systems</strong>:
+                    <ul class="nested-list">
+                        <li>Developed 3 Moodle plugins for 10,000+ students</li>
+                        <li>Created video lecture platform with 500+ hours content</li>
+                        <li>Reduced system downtime from 5% to 0.2% annually</li>
+                    </ul>
+                </li>
+                <li><strong>Content Production</strong>:
+                    <ul class="nested-list">
+                        <li>Produced 120+ educational videos</li>
+                        <li>Designed 15 interactive course templates</li>
+                        <li>Developed assessment tools with auto-grading</li>
+                    </ul>
+                </li>
+                <li><strong>Infrastructure Management</strong>:
+                    <ul class="nested-list">
+                        <li>Administered 5 Ubuntu/Debian servers</li>
+                        <li>Implemented Zabbix monitoring system</li>
+                        <li>Managed 3 campus network segments</li>
+                    </ul>
+                </li>
+                <li><strong>User Training</strong>:
+                    <ul class="nested-list">
+                        <li>Trained 75+ lecturers on LMS usage</li>
+                        <li>Created 8 video tutorial series</li>
+                        <li>Established faculty support helpdesk</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <div class="tech-skills">
+                <h4><i class="fas fa-tools"></i> Technologies & Methodologies:</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag"><i class="fas fa-graduation-cap"></i> Moodle</span>
+                    <span class="skill-tag"><i class="fab fa-php"></i> PHP</span>
+                    <span class="skill-tag"><i class="fab fa-ubuntu"></i> Linux Admin</span>
+                    <span class="skill-tag"><i class="fas fa-network-wired"></i> Networking</span>
+                    <span class="skill-tag"><i class="fas fa-video"></i> Video Production</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. dLab Experience -->
+    <div class="job left">
+        <div class="job-header">
+            <div class="job-logo">
+                <img src="https://via.placeholder.com/150?text=dLab" alt="dLab Logo">
+            </div>
+            <div class="job-title">
+                <h3>Software Engineering Consultant</h3>
+                <p class="company">dLab Tanzania</p>
+                <div class="job-meta">
+                    <span class="meta-item"><i class="fas fa-briefcase"></i> Part-time</span>
+                    <span class="meta-item"><i class="fas fa-calendar-alt"></i> Sep 2023 - Oct 2023 · 2 mos</span>
+                    <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Dar es Salaam, Tanzania</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="job-content">
+            <ul>
+                <li><strong>Census Data Platform</strong>:
+                    <ul class="nested-list">
+                        <li>Streamlined workflows processing 5M+ records</li>
+                        <li>Reduced data cleaning time by 40%</li>
+                        <li>Implemented quality validation checks</li>
+                    </ul>
+                </li>
+                <li><strong>Dashboard Development</strong>:
+                    <ul class="nested-list">
+                        <li>Created 8 interactive PowerBI dashboards</li>
+                        <li>Visualized demographic trends for 20+ indicators</li>
+                        <li>Enabled district-level data filtering</li>
+                    </ul>
+                </li>
+                <li><strong>System Integration</strong>:
+                    <ul class="nested-list">
+                        <li>Connected census data to health facility records</li>
+                        <li>Developed API for education sector use</li>
+                        <li>Automated regional report generation</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <div class="project-highlight">
+                <h4><i class="fas fa-medal"></i> Key Achievement:</h4>
+                <p>The census visualization platform enabled policymakers to identify 15 underserved districts for targeted resource allocation.</p>
+                <div class="project-media">
+                    <img src="census-dashboard.jpg" alt="Census Data Dashboard">
+                    <p class="caption">Interactive census data visualization interface</p>
+                </div>
+            </div>
+            
+            <div class="tech-skills">
+                <h4><i class="fas fa-tools"></i> Technologies & Methodologies:</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag"><i class="fas fa-database"></i> Data Processing</span>
+                    <span class="skill-tag"><i class="fas fa-chart-bar"></i> PowerBI</span>
+                    <span class="skill-tag"><i class="fas fa-project-diagram"></i> API Development</span>
+                    <span class="skill-tag"><i class="fas fa-check-circle"></i> Data Quality</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 8. UDSM Internship -->
+    <div class="job left">
+        <div class="job-header">
+            <div class="job-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/10/University_of_Dar_es_Salaam_logo.svg/1200px-University_of_Dar_es_Salaam_logo.svg.png" alt="UDSM Logo">
+            </div>
+            <div class="job-title">
+                <h3>Software Developer Intern</h3>
+                <p class="company">University of Dar es Salaam</p>
+                <div class="job-meta">
+                    <span class="meta-item"><i class="fas fa-briefcase"></i> Internship</span>
+                    <span class="meta-item"><i class="fas fa-calendar-alt"></i> Sep 2019 - Nov 2019 · 3 mos</span>
+                    <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Dar es Salaam, Tanzania</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="job-content">
+            <ul>
+                <li><strong>User Research</strong>:
+                    <ul class="nested-list">
+                        <li>Conducted stakeholder interviews</li>
+                        <li>Identified key system requirements</li>
+                        <li>Created user personas for various departments</li>
+                    </ul>
+                </li>
+                <li><strong>System Testing</strong>:
+                    <ul class="nested-list">
+                        <li>Executed 150+ test cases</li>
+                        <li>Documented 30+ bug reports</li>
+                        <li>Improved UI based on user feedback</li>
+                    </ul>
+                </li>
+                <li><strong>Documentation</strong>:
+                    <ul class="nested-list">
+                        <li>Produced technical manuals</li>
+                        <li>Created system administration guides</li>
+                        <li>Developed training materials</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <div class="tech-skills">
+                <h4><i class="fas fa-tools"></i> Technologies & Methodologies:</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag"><i class="fas fa-user-check"></i> User Testing</span>
+                    <span class="skill-tag"><i class="fas fa-bug"></i> QA Testing</span>
+                    <span class="skill-tag"><i class="fas fa-file-alt"></i> Technical Writing</span>
+                    <span class="skill-tag"><i class="fas fa-laptop-code"></i> Web Development</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+               </div>
+                
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="slide">
+    <div class="container">
+        <h2><i class="fas fa-certificate"></i> Licenses & Certifications</h2>
+        <p class="section-subtitle">Demonstrated expertise through accredited credentials and continuous learning</p>
+        
+        <div class="certifications-grid">
+            <!-- GitHub -->
+            <div class="cert-card highlight">
+                <div class="cert-header">
+                    <div class="cert-logo">
+                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+                    </div>
+                    <div class="cert-title">
+                        <h3>GitHub Digital Public Goods Open Source Community Manager Program</h3>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Issued: Jan 2025</span>
+                            <span><i class="fas fa-external-link-alt"></i> <a href="#" class="credential-link">Show Credential</a></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cert-body">
+                    <p>Advanced training in open source community building, contributor onboarding, and project governance for digital public goods.</p>
+                </div>
+            </div>
+
+            <!-- Hindsight Ventures -->
+            <div class="cert-card">
+                <div class="cert-header">
+                    <div class="cert-logo">
+                        <img src="https://via.placeholder.com/150?text=HV" alt="Hindsight Ventures">
+                    </div>
+                    <div class="cert-title">
+                        <h3>Innovation Managers Executive Learning Program 2024</h3>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Issued: Dec 2024</span>
+                            <span><i class="fas fa-id-card"></i> ID: e9ed95ba-13c5-4d36-bfca-b2283da74ac9</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cert-body">
+                    <p>Executive education program focusing on innovation leadership and strategic management.</p>
+                    <a href="#" class="view-btn">View Credential <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- Acumen Academy - HCD -->
+            <div class="cert-card">
+                <div class="cert-header">
+                    <div class="cert-logo">
+                        <img src="https://acumenacademy.org/wp-content/themes/acumenacademy/assets/img/logo.svg" alt="Acumen Academy">
+                    </div>
+                    <div class="cert-title">
+                        <h3>Human-Centered Design</h3>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Issued: Aug 2024</span>
+                            <span><i class="fas fa-id-card"></i> ID: 34012-3759403</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cert-body">
+                    <p>Foundational training in human-centered design principles and practices.</p>
+                    <a href="Alfeo_Raymond_Introduction_to_Human-Centered_Design.pdf" class="view-btn"><i class="fas fa-file-pdf"></i> Download PDF</a>
+                </div>
+            </div>
+
+            <!-- Acumen Academy - HCD 201 -->
+            <div class="cert-card">
+                <div class="cert-header">
+                    <div class="cert-logo">
+                        <img src="https://acumenacademy.org/wp-content/themes/acumenacademy/assets/img/logo.svg" alt="Acumen Academy">
+                    </div>
+                    <div class="cert-title">
+                        <h3>Human-Centered Design 201: Prototyping</h3>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Issued: Aug 2024</span>
+                            <span><i class="fas fa-id-card"></i> ID: 35737-3759403</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cert-body">
+                    <p>Advanced training in prototyping and iterative design methodologies.</p>
+                    <a href="Alfeo_Raymond_Human-Centered_Design_201_Prototyping.pdf" class="view-btn"><i class="fas fa-file-pdf"></i> Download PDF</a>
+                </div>
+            </div>
+
+            <!-- OPSWAT Academy -->
+            <div class="cert-card">
+                <div class="cert-header">
+                    <div class="cert-logo">
+                        <img src="https://www.opswat.com/sites/default/files/2020-03/opswat-logo-color.svg" alt="OPSWAT">
+                    </div>
+                    <div class="cert-title">
+                        <h3>Critical Infrastructure Protection Certificate</h3>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Issued: Jul 2024</span>
+                            <span><i class="fas fa-calendar-times"></i> Expires: Jun 2025</span>
+                            <span><i class="fas fa-id-card"></i> ID: hqLOUi1Dkw</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cert-body">
+                    <p>Training in protecting industrial control systems and critical infrastructure.</p>
+                    <a href="#" class="view-btn">View Credential <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- EC-Council -->
+            <div class="cert-card">
+                <div class="cert-header">
+                    <div class="cert-logo">
+                        <img src="https://www.eccouncil.org/wp-content/uploads/2022/05/EC-Council-Logo.svg" alt="EC-Council">
+                    </div>
+                    <div class="cert-title">
+                        <h3>Cybersecurity for Businesses</h3>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Issued: Jul 2024</span>
+                            <span><i class="fas fa-id-card"></i> ID: 345539</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cert-body">
+                    <p>Comprehensive training in organizational cybersecurity strategies and risk mitigation.</p>
+                    <a href="#" class="view-btn">View Credential <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- University of Illinois -->
+            <div class="cert-card">
+                <div class="cert-header">
+                    <div class="cert-logo">
+                        <img src="https://illinois.edu/assets/img/wordmark_white.svg" alt="University of Illinois">
+                    </div>
+                    <div class="cert-title">
+                        <h3>Learning, Knowledge, and Human Development</h3>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Issued: Jul 2024</span>
+                            <span><i class="fas fa-id-card"></i> ID: SCSWTAK32J7X</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cert-body">
+                    <p>Coursework in educational theory and human development principles.</p>
+                    <a href="#" class="view-btn">View Credential <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- Cornerstone OnDemand -->
+            <div class="cert-card">
+                <div class="cert-header">
+                    <div class="cert-logo">
+                        <img src="https://via.placeholder.com/150?text=CSOD" alt="Cornerstone OnDemand">
+                    </div>
+                    <div class="cert-title">
+                        <h3>MEAL Essentials</h3>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Issued: Jul 2024</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cert-body">
+                    <p>Monitoring, Evaluation, Accountability and Learning fundamentals for development programs.</p>
+                    <div class="skill-tags">
+                        <span>MEAL Framework</span>
+                        <span>Impact Assessment</span>
+                        <span>Data Collection</span>
+                    </div>
+                    <a href="#" class="view-btn">View Credential <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- The Open University -->
+            <div class="cert-card">
+                <div class="cert-header">
+                    <div class="cert-logo">
+                        <img src="https://www.open.ac.uk/web-design-standards/img/ou-logo.svg" alt="Open University">
+                    </div>
+                    <div class="cert-title">
+                        <h3>Creativity, Community and ICT</h3>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Issued: Jun 2024</span>
+                            <span><i class="fas fa-id-card"></i> ID: TL_ICT_1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cert-body">
+                    <p>Exploring the intersection of technology, creativity and community development.</p>
+                    <a href="#" class="view-btn">View Credential <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- HKUST -->
+            <div class="cert-card">
+                <div class="cert-header">
+                    <div class="cert-logo">
+                        <img src="https://www.ust.hk/assets/images/logo.png" alt="HKUST">
+                    </div>
+                    <div class="cert-title">
+                        <h3>Information Systems Auditing, Controls and Assurance</h3>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Issued: Jun 2024</span>
+                            <span><i class="fas fa-id-card"></i> ID: QMZC9FFR5DL9</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cert-body">
+                    <p>Training in information systems auditing and security controls.</p>
+                    <div class="skill-tags">
+                        <span>Risk Management</span>
+                        <span>Information Security</span>
+                        <span>Auditing</span>
+                    </div>
+                    <a href="#" class="view-btn">View Credential <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+                       <!-- Erasmus University -->
+            <div class="cert-card">
+                <div class="cert-header">
+                    <div class="cert-logo">
+                        <img src="https://www.eur.nl/en/_media/logo-eur-colour.svg" alt="Erasmus University Rotterdam">
+                    </div>
+                    <div class="cert-title">
+                        <h3>Innovation Management</h3>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Issued: Jun 2024</span>
+                            <span><i class="fas fa-id-card"></i> ID: CZBQJ26V5L6B</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cert-body">
+                    <p>Training in innovation management principles and practices.</p>
+                    <div class="skill-tags">
+                        <span>Innovation Management</span>
+                        <span>Research Skills</span>
+                        <span>Business Development</span>
+                        <span>Change Management</span>
+                        <span>Communication</span>
+                        <span>Consulting</span>
+                    </div>
+                    <a href="#" class="view-btn">View Credential <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- EIT Digital -->
+            <div class="cert-card">
+                <div class="cert-header">
+                    <div class="cert-logo">
+                        <img src="https://www.eitdigital.eu/fileadmin/templates/img/logo.svg" alt="EIT Digital">
+                    </div>
+                    <div class="cert-title">
+                        <h3>Sustainable Digital Innovation</h3>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Issued: Jun 2024</span>
+                            <span><i class="fas fa-id-card"></i> ID: QMZL89SZNYHJ</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cert-body">
+                    <p>Training in sustainable digital innovation practices.</p>
+                    <div class="skill-tags">
+                        <span>Sustainable Leadership</span>
+                        <span>Corporate Sustainability</span>
+                        <span>Sustainable Innovation</span>
+                        <span>Business Modeling</span>
+                    </div>
+                    <a href="#" class="view-btn">View Credential <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- Open University - Technology -->
+            <div class="cert-card">
+                <div class="cert-header">
+                    <div class="cert-logo">
+                        <img src="https://www.open.ac.uk/web-design-standards/img/ou-logo.svg" alt="Open University">
+                    </div>
+                    <div class="cert-title">
+                        <h3>Technology, Innovation and Management</h3>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Issued: Jun 2024</span>
+                            <span><i class="fas fa-id-card"></i> ID: T848_1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cert-body">
+                    <p>Coursework in technology innovation and management principles.</p>
+                    <a href="#" class="view-btn">View Credential <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- UDSM - Safety -->
+            <div class="cert-card">
+                <div class="cert-header">
+                    <div class="cert-logo">
+                        <img src="https://www.udsm.ac.tz/themes/udsm/images/logo.png" alt="University of Dar es Salaam">
+                    </div>
+                    <div class="cert-title">
+                        <h3>Safety Considerations in Software Engineering</h3>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Issued: Jun 2023</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cert-body">
+                    <p>Training in safety considerations for software engineering.</p>
+                    <div class="skill-tags">
+                        <span>Cybersecurity</span>
+                        <span>Requirements Analysis</span>
+                        <span>System Monitoring</span>
+                        <span>Threat & Vulnerability Management</span>
+                        <span>Hazard Mitigation</span>
+                        <span>Management</span>
+                        <span>Incident Response</span>
+                        <span>Software Engineering Practices</span>
+                        <span>Software Development Life Cycle (SDLC)</span>
+                        <span>Risk Assessment</span>
+                    </div>
+                    <a href="#" class="view-btn">View Credential <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- MLH Prep -->
+            <div class="cert-card">
+                <div class="cert-header">
+                    <div class="cert-logo">
+                        <img src="https://mlh.io/assets/logos/mlh-prep-logo.svg" alt="Major League Hacking">
+                    </div>
+                    <div class="cert-title">
+                        <h3>MLH Prep Fellow</h3>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Issued: Apr 2023</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cert-body">
+                    <p>Prep fellowship program in software development.</p>
+                    <a href="Alfeo_Raymond.pdf" class="view-btn"><i class="fas fa-file-pdf"></i> Download PDF</a>
+                </div>
+            </div>
+
+            <!-- Google Cloud -->
+            <div class="cert-card">
+                <div class="cert-header">
+                    <div class="cert-logo">
+                        <img src="https://developers.google.com/static/profile/badges/events/community/devfest/2023/attendee/badge.svg" alt="Google for Developers">
+                    </div>
+                    <div class="cert-title">
+                        <h3>Google Cloud Engineer</h3>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Issued: Mar 2023</span>
+                            <span><i class="fas fa-id-card"></i> ID: 36AFB0471BB37A6</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cert-body">
+                    <p>Training in Google Cloud engineering principles.</p>
+                    <div class="skill-tags">
+                        <span>Cloud Storage</span>
+                        <span>Google Cloud Platform (GCP)</span>
+                        <span>Google Cloud Dataflow</span>
+                        <span>Cloud Firestore</span>
+                    </div>
+                    <a href="#" class="view-btn">View Credential <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- Forage - Agile -->
+            <div class="cert-card">
+                <div class="cert-header">
+                    <div class="cert-logo">
+                        <img src="https://www.theforage.com/static/images/favicon.ico" alt="Forage">
+                    </div>
+                    <div class="cert-title">
+                        <h3>Agile Methodology</h3>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Issued: Feb 2023</span>
+                            <span><i class="fas fa-id-card"></i> ID: SsRZ4tQtG4bcZYmvu</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cert-body">
+                    <p>Training in Agile methodology principles.</p>
+                    <a href="#" class="view-btn">View Credential <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- IOM - C4D -->
+            <div class="cert-card">
+                <div class="cert-header">
+                    <div class="cert-logo">
+                        <img src="https://www.iom.int/sites/g/files/tmzbdl486/files/styles/large/public/iom_logo_0.png" alt="IOM - UN Migration">
+                    </div>
+                    <div class="cert-title">
+                        <h3>Communication for Development (C4D)</h3>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Issued: Jan 2023</span>
+                            <span><i class="fas fa-id-card"></i> ID: 46422</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cert-body">
+                    <p>Training in communication for development principles.</p>
+                    <div class="skill-tags">
+                        <span>Conflict Resolution</span>
+                        <span>Project Management</span>
+                        <span>Cross-Cultural Communication Skills</span>
+                    </div>
+                    <a href="#" class="view-btn">View Credential <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- Forage - Data Analytics -->
+            <div class="cert-card">
+                <div class="cert-header">
+                    <div class="cert-logo">
+                        <img src="https://www.theforage.com/static/images/favicon.ico" alt="Forage">
+                    </div>
+                    <div class="cert-title">
+                        <h3>Data Analytics</h3>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Issued: Jan 2023</span>
+                            <span><i class="fas fa-id-card"></i> ID: tcMRs5ou3tzNnSzyH</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cert-body">
+                    <p>Training in data analytics principles.</p>
+                    <a href="#" class="view-btn">View Credential <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- Institute of Finance -->
+            <div class="cert-card">
+                <div class="cert-header">
+                    <div class="cert-logo">
+                        <img src="https://www.ifm.ac.tz/wp-content/uploads/2022/01/IFM-Logo.png" alt="Institute of Finance Management">
+                    </div>
+                    <div class="cert-title">
+                        <h3>Cyber Crime Detection and Prevention</h3>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Issued: Dec 2022</span>
+                            <span><i class="fas fa-id-card"></i> ID: qDIHF3bpYi</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cert-body">
+                    <p>Training in cyber crime detection and prevention.</p>
+                    <div class="skill-tags">
+                        <span>Social Engineering</span>
+                        <span>Backup & Recovery Systems</span>
+                        <span>Threat & Vulnerability Management</span>
+                        <span>Viruses</span>
+                        <span>Anti-phishing</span>
+                    </div>
+                    <a href="#" class="view-btn">View Credential <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <div class="container">
+                <h2>Education</h2>
+                
+                <div class="education-item">
+                    <h3>Bachelor's Degree in Information Technology</h3>
+                    <p class="meta">College of Business Education | Nov 2020 - Jul 2023</p>
+                    <p>Specialized in software engineering and systems analysis, with coursework in AI fundamentals and cloud computing.</p>
+                </div>
+                
+                <div class="education-item">
+                    <h3>Diploma in Computer Science</h3>
+                    <p class="meta">University of Dar es Salaam (UDSM) | 2017 - 2019</p>
+                    <p>Focus on programming fundamentals, database systems, and network administration.</p>
+                </div>
+                
+                <div class="education-item">
+                    <h3>Certificate in Information Technology</h3>
+                    <p class="meta">College of Business Education | Aug 2016 - May 2017</p>
+                    <p>Introductory program covering computer systems, basic programming, and IT fundamentals.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="container">
+                <h2>Technical & Professional Skills</h2>
+                
+                <div class="skills-grid">
+                    <div class="skill">Human-Centered Design (HCD)</div>
+                    <div class="skill">Software Development</div>
+                    <div class="skill">Cloud Engineering</div>
+                    <div class="skill">AI/ML Applications</div>
+                    <div class="skill">Project Management</div>
+                    <div class="skill">Cybersecurity</div>
+                    <div class="skill">Data Analytics</div>
+                    <div class="skill">Open Source Leadership</div>
+                    <div class="skill">Team Mentoring</div>
+                    <div class="skill">Stakeholder Engagement</div>
+                    <div class="skill">Innovation Strategy</div>
+                    <div class="skill">Technical Documentation</div>
+                </div>
+                
+                <h3 style="margin-top: 3rem;">Technical Proficiencies</h3>
+                <div class="tech-tags" style="margin-top: 1rem;">
+                    <span>JavaScript (React, Node)</span>
+                    <span>Python</span>
+                    <span>PHP (Laravel)</span>
+                    <span>Google Cloud</span>
+                    <span>Docker</span>
+                    <span>Git/GitHub</span>
+                    <span>AI/ML Basics</span>
+                    <span>MySQL</span>
+                    <span>Twilio API</span>
+                    <span>Figma</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Volunteering Section -->
+<section id="volunteering" class="slide">
+    <div class="container">
+        <h2><i class="fas fa-hands-helping"></i> Community Engagement</h2>
+        <p class="section-subtitle">Contributing to tech education, open source ecosystems, and youth empowerment</p>
+        
+        <div class="volunteering-grid">
+            <!-- GitHub DPG Community Manager -->
+            <div class="volunteer-card highlight">
+                <div class="volunteer-header">
+                    <div class="org-logo">
+                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+                    </div>
+                    <div class="volunteer-title">
+                        <h3>GitHub DPG Community Manager</h3>
+                        <div class="volunteer-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Jul 2024 - Jan 2025 · 7 mos</span>
+                            <span><i class="fas fa-tag"></i> Social Services</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="volunteer-body">
+                    <div class="responsibility-area">
+                        <h4>Community Building:</h4>
+                        <ul>
+                            <li>Attracting and onboarding new contributors</li>
+                            <li>Building and maintaining a strong online community (forums, social media, etc.)</li>
+                            <li>Organizing community events, meetups, or workshops</li>
+                        </ul>
+                    </div>
+                    <div class="responsibility-area">
+                        <h4>Project Management:</h4>
+                        <ul>
+                            <li>Assisting with project planning and execution</li>
+                            <li>Managing GitHub issues, discussions, and project boards</li>
+                            <li>Supporting project management tasks</li>
+                        </ul>
+                    </div>
+                    <div class="responsibility-area">
+                        <h4>Communication:</h4>
+                        <ul>
+                            <li>Effective communication with the DPG team and community members</li>
+                            <li>Creating and managing content (blog posts, documentation, etc.)</li>
+                            <li>Representing the DPG at conferences or events</li>
+                        </ul>
+                    </div>
+                    <div class="responsibility-area">
+                        <h4>Data Analysis:</h4>
+                        <ul>
+                            <li>Tracking community metrics and analyzing data to inform decisions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SmartGirlz in ICT Tanzania - Project Advisor -->
+            <div class="volunteer-card">
+                <div class="volunteer-header">
+                    <div class="org-logo">
+                        <img src="https://via.placeholder.com/150?text=SGICT" alt="SmartGirlz in ICT Tanzania">
+                    </div>
+                    <div class="volunteer-title">
+                        <h3>Project Advisor</h3>
+                        <div class="volunteer-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Dec 2023 - May 2024 · 6 mos</span>
+                            <span><i class="fas fa-tag"></i> Science and Technology</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="volunteer-body">
+                    <ul>
+                        <li>Recruited and trained facilitators and coordinators to ensure program success and alignment with project goals</li>
+                        <li>Led school recruitment and organized induction training for focal persons to establish program foundations</li>
+                        <li>Conducted stakeholder meetings to report program progress, showcase impact, and foster continued engagement</li>
+                        <li>Provided strategic guidance on planning, execution, budgeting, and partnership development to enhance program outcomes</li>
+                    </ul>
+                    <div class="volunteer-media">
+                        <a href="#" class="media-link">#HABARI,SMART GIRLZ IN ICT TANZANIA NA UKOMBOZI WA WASICHANA KATIKA TEHAMA</a>
+                        <div class="media-images">
+                            <img src="1722402977818.jpg" alt="SmartGirlz event">
+                            <img src="1722402915367.jpg" alt="SmartGirlz training">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SmartGirlz in ICT Tanzania - Project Manager -->
+            <div class="volunteer-card">
+                <div class="volunteer-header">
+                    <div class="org-logo">
+                        <img src="https://via.placeholder.com/150?text=SGICT" alt="SmartGirlz in ICT Tanzania">
+                    </div>
+                    <div class="volunteer-title">
+                        <h3>Project Manager</h3>
+                        <div class="volunteer-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Dec 2021 - Dec 2023 · 2 yrs 1 mo</span>
+                            <span><i class="fas fa-tag"></i> Science and Technology</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="volunteer-body">
+                    <ul>
+                        <li>Supervised student competitions, guiding participants in developing working prototypes tailored to user needs and teaching effective pitching techniques</li>
+                        <li>Recruited, trained, and managed facilitators to ensure program success and quality delivery</li>
+                        <li>Managed program accounting and optimized financial resources for program objectives</li>
+                        <li>Conducted stakeholder meetings to report program progress and showcase impact to sponsors</li>
+                    </ul>
+                    <div class="volunteer-media">
+                        <div class="media-images">
+                            <img src="1722404964095.jpg" alt="Student competition">
+                            <img src="1722404996708.jpg" alt="Program showcase">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SmartGirlz in ICT Tanzania - Learning Facilitator -->
+            <div class="volunteer-card">
+                <div class="volunteer-header">
+                    <div class="org-logo">
+                        <img src="https://via.placeholder.com/150?text=SGICT" alt="SmartGirlz in ICT Tanzania">
+                    </div>
+                    <div class="volunteer-title">
+                        <h3>Learning Facilitator</h3>
+                        <div class="volunteer-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Jun 2019 - Dec 2021 · 2 yrs 7 mos</span>
+                            <span><i class="fas fa-tag"></i> Science and Technology</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="volunteer-body">
+                    <ul>
+                        <li>Guided students in applying Human-Centered Design (HCD) principles to create user-centric products</li>
+                        <li>Taught HCD techniques for effective user data collection and processing</li>
+                        <li>Instructed students in HCD-driven business canvas modeling for sustainable ventures</li>
+                        <li>Provided training in pitching skills to communicate solutions effectively</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- StartHub Africa - HCD Facilitator -->
+            <div class="volunteer-card">
+                <div class="volunteer-header">
+                    <div class="org-logo">
+                        <img src="https://via.placeholder.com/150?text=StartHub" alt="StartHub Africa">
+                    </div>
+                    <div class="volunteer-title">
+                        <h3>HCD Facilitator</h3>
+                        <div class="volunteer-meta">
+                            <span><i class="fas fa-calendar-alt"></i> May 2023 · 1 mo</span>
+                            <span><i class="fas fa-tag"></i> Economic Empowerment</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="volunteer-body">
+                    <ul>
+                        <li>Trained students in human-centered design (HCD) principles</li>
+                        <li>Guided them in translating their ideas into code using HCD principles</li>
+                        <li>Developed and implemented HCD-based design and development methodologies for student app ideas</li>
+                        <li>Helped students conduct user research and impact analysis of their proposals</li>
+                        <li>Prepared presentations for students on HCD-based design and development methodologies</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- MLH Fellowship -->
+            <div class="volunteer-card">
+                <div class="volunteer-header">
+                    <div class="org-logo">
+                        <img src="https://mlh.io/assets/logos/mlh-prep-logo.svg" alt="MLH Fellowship">
+                    </div>
+                    <div class="volunteer-title">
+                        <h3>Software Engineering (Prep Fellowship)</h3>
+                        <div class="volunteer-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Mar 2023 · 1 mo</span>
+                            <span><i class="fas fa-tag"></i> Education</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="volunteer-body">
+                    <ul>
+                        <li>Selected from over 30,000 applicants and worked in a team of 15 remote engineers</li>
+                        <li>Developed a weather-based trip-planning web application using ReactJS, NodeJS, and OpenWeatherMap API</li>
+                        <li>Engineered a full stack web application end-to-end, earning a 4.7/5 endorsement from project mentors</li>
+                        <li>Implemented real-time weather data modules for over 75 locations, enhancing travel efficiency by 20%</li>
+                    </ul>
+                    <div class="volunteer-media">
+                        <a href="#" class="media-link">React App</a>
+                        <a href="#" class="media-link">Personal Portfolio</a>
+                        <a href="Alfeo_Raymond.pdf" class="media-link"><i class="fas fa-file-pdf"></i> Alfeo Raymond.pdf</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- dLab Tanzania - HCD & Web Dev Facilitator -->
+            <div class="volunteer-card">
+                <div class="volunteer-header">
+                    <div class="org-logo">
+                        <img src="https://via.placeholder.com/150?text=dLab" alt="dLab Tanzania">
+                    </div>
+                    <div class="volunteer-title">
+                        <h3>HCD & Web Development Facilitator</h3>
+                        <div class="volunteer-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Nov 2020 - Nov 2022 · 2 yrs 1 mo</span>
+                            <span><i class="fas fa-tag"></i> Education</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="volunteer-body">
+                    <ul>
+                        <li>Trained students in human-centered design (HCD) principles</li>
+                        <li>Guided them in translating their ideas into code using good design principles</li>
+                        <li>Prepared presentations for students on app design and development methodologies</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- GitHub Campus Expert -->
+            <div class="volunteer-card">
+                <div class="volunteer-header">
+                    <div class="org-logo">
+                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+                    </div>
+                    <div class="volunteer-title">
+                        <h3>GitHub Campus Expert</h3>
+                        <div class="volunteer-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Oct 2021 - Jul 2024 · 2 yrs 10 mos</span>
+                            <span><i class="fas fa-tag"></i> Education</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="volunteer-body">
+                    <ul>
+                        <li>Collaborated with other Campus Experts to plan and execute events including hackathons, meetups, and code clinics</li>
+                        <li>Worked with local sponsors to secure funding and resources for these events</li>
+                        <li>Developed relationships with student groups, faculty, and administrators to promote the program</li>
+                        <li>Contributed to program development through feedback and suggestions to GitHub staff</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- dLab Tanzania - Conference Organizer -->
+            <div class="volunteer-card">
+                <div class="volunteer-header">
+                    <div class="org-logo">
+                        <img src="https://via.placeholder.com/150?text=dLab" alt="dLab Tanzania">
+                    </div>
+                    <div class="volunteer-title">
+                        <h3>Conference Organizer</h3>
+                        <div class="volunteer-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Nov 2021 · 1 mo</span>
+                            <span><i class="fas fa-tag"></i> Science and Technology</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="volunteer-body">
+                    <ul>
+                        <li>Participated in planning and organizing the "Data Tamasha" conference and exhibition</li>
+                        <li>Showcased the impact of data on development and humanitarian activities while implementing the SDGs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Laravel - Open Source Maintainer -->
+            <div class="volunteer-card">
+                <div class="volunteer-header">
+                    <div class="org-logo">
+                        <img src="https://laravel.com/img/logomark.min.svg" alt="Laravel">
+                    </div>
+                    <div class="volunteer-title">
+                        <h3>Open Source Maintainer (Laravel-Lang)</h3>
+                        <div class="volunteer-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Oct 2021 - Present · 3 yrs 6 mos</span>
+                            <span><i class="fas fa-tag"></i> Science and Technology</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="volunteer-body">
+                    <ul>
+                        <li>Contributing to improving and shaping the future of technology through open source</li>
+                        <li>Maintained Laravel-Lang package for language localization (laravel-lang.com)</li>
+                        <li>Contributed to Githut package for monitoring GitHub activity (trending languages, forks, pulls)</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/laravel-lang/lang" target="_blank" class="project-link">Laravel-Lang Repository</a>
+                        <a href="https://madnight.github.io/githut" target="_blank" class="project-link">Githut Visualization</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Y4C Innovation Hub -->
+            <div class="volunteer-card">
+                <div class="volunteer-header">
+                    <div class="org-logo">
+                        <img src="https://via.placeholder.com/150?text=Y4C" alt="YOUTH FOR CHILDREN">
+                    </div>
+                    <div class="volunteer-title">
+                        <h3>Graphic Designer & Web Developer</h3>
+                        <div class="volunteer-meta">
+                            <span><i class="fas fa-calendar-alt"></i> May 2018 - Jul 2019 · 1 yr 3 mos</span>
+                            <span><i class="fas fa-tag"></i> Education</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="volunteer-body">
+                    <ul>
+                        <li>Designed graphics for events, printing, and mediation materials</li>
+                        <li>Collaborated on planning and executing weekly talk shows</li>
+                        <li>Participated in developing and planning the Hub's magazine</li>
+                        <li>Helped manage and maintain the Hub's website</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Honors Section -->
+        <section id="honors">
+            <div class="container">
+                <h2>Honors & Awards</h2>
+                
+                <div class="volunteer">
+                    <h3>TechGig Code Gladiators 2021</h3>
+                    <p class="meta">Issued by TechGig · May 2021</p>
+                    <ul>
+                        <li>Selected from thousands of applicants for prestigious coding competition</li>
+                        <li>Competed in Cloud Computing, E-commerce, and IoT challenges</li>
+                        <li>Implemented solutions addressing real-world technical problems</li>
+                    </ul>
+                </div>
+                
+                <div class="volunteer">
+                    <h3>Best Facilities Mapper, dLab Mapathon 2021</h3>
+                    <p class="meta">Issued by Tanzania Dat Lab · Mar 2021</p>
+                    <ul>
+                        <li>Won first place in HIV/AIDS Hot-spots and Testing Facilities mapping challenge</li>
+                        <li>Contributed geospatial data supporting healthcare resource allocation</li>
+                        <li>Recognized by MCC-PEPFAR Data Collaboratives for Local Impact</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Liwale, Lindi Region, Tanzania</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+255 745 909 129</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p><a href="mailto:ngelime07@gmail.com">ngelime07@gmail.com</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <p><a href="https://linkedin.com/in/pheogrammer" target="_blank">linkedin.com/in/pheogrammer</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <p><a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+                    </div>
+                </div>
+                
+                <div class="quote" style="margin-top: 3rem;">
+                    "Let's collaborate on projects that leverage technology for social good. I'm particularly interested in opportunities at the intersection of healthcare, education, and innovative technology solutions."
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // JavaScript for scroll animations and active section detection
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('#navbar a');
+            
+            // Highlight active section in nav
+            window.addEventListener('scroll', function() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (pageYOffset >= (sectionTop - sectionHeight/3)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+            
+            // Smooth scroll for anchor links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    window.scrollTo({
+                        top: targetSection.offsetTop,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Horizontal scroll effect between sections
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            document.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, false);
+            
+            document.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, false);
+            
+            function handleSwipe() {
+                if (touchEndX < touchStartX) {
+                    // Swipe left - next section
+                    scrollToNextSection();
+                }
+                
+                if (touchEndX > touchStartX) {
+                    // Swipe right - previous section
+                    scrollToPrevSection();
+                }
+            }
+            
+            function scrollToNextSection() {
+                const currentScroll = window.scrollY;
+                let nextSection = null;
+                
+                sections.forEach(section => {
+                    if (section.offsetTop > currentScroll + 100) {
+                        if (!nextSection || section.offsetTop < nextSection.offsetTop) {
+                            nextSection = section;
+                        }
+                    }
+                });
+                
+                if (nextSection) {
+                    window.scrollTo({
+                        top: nextSection.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+            
+            function scrollToPrevSection() {
+                const currentScroll = window.scrollY;
+                let prevSection = null;
+                
+                sections.forEach(section => {
+                    if (section.offsetTop < currentScroll - 100) {
+                        if (!prevSection || section.offsetTop > prevSection.offsetTop) {
+                            prevSection = section;
+                        }
+                    }
+                });
+                
+                if (prevSection) {
+                    window.scrollTo({
+                        top: prevSection.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
