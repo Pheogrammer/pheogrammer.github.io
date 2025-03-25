@@ -23,41 +23,24 @@
             box-sizing: border-box;
         }
         
-        html, body {
-            height: 100%;
-            overflow: hidden;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
-            line-height: 1.6;
-        }
-        /* Horizontal Scroll Container */
-        .horizontal-scroll-container {
-            display: flex;
-            flex-direction: row;
-            height: 100vh;
-            width: 100vw;
-            overflow-x: scroll;
-            scroll-snap-type: x mandatory;
+        html {
             scroll-behavior: smooth;
-        }
-        section {
-            scroll-snap-align: start;
-            min-width: 100vw;
-            height: 100vh;
-            padding: 4rem 2rem;
-            position: relative;
-            color: white;
-            box-sizing: border-box;
-            overflow-y: auto;
+            overflow-x: hidden;
         }
       body {
-            background: 
-                url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg=='),
-                linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
-        }
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    overflow-x: hidden;
+    line-height: 1.6;
+    background: 
+        url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg=='),
+        linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Ensures the body takes up the full viewport height */
+    margin: 0; /* Removes any default margin */
+}
 
 
 
@@ -166,7 +149,7 @@
             transform: translateY(-2px);
         }
 
-      /* Navigation */
+        /* Navigation */
         #navbar {
             position: fixed;
             top: 0;
@@ -178,15 +161,13 @@
             padding: 1rem 2rem;
         }
         
-        #navbar a {
-            text-decoration: none;
-            color: var(--primary);
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            transition: var(--transition);
+        #navbar ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 1.5rem;
+            flex-wrap: wrap;
         }
-        
         
         #navbar a {
             text-decoration: none;
@@ -267,22 +248,7 @@
             border: 4px solid var(--secondary);
             z-index: 1;
         }
-/* Hide scrollbar for cleaner look */
-        .horizontal-scroll-container::-webkit-scrollbar {
-            display: none;
-        }
-        
-        .horizontal-scroll-container {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            section {
-                padding: 3rem 1.5rem;
-            }
-        }
         .job-header {
             display: flex;
             align-items: center;
@@ -875,7 +841,8 @@
         </ul>
     </nav>
 
-    <div class="horizontal-scroll-container">        <!-- About Section -->
+    <div class="horizontal-scroll">
+        <!-- About Section -->
         <section id="about">
             <div class="container">
                 <h1>Alfeo Raymond</h1>
@@ -2315,154 +2282,8 @@
     </div>
 </section>
     </div>
-<script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('#navbar a');
-            const container = document.querySelector('.horizontal-scroll-container');
-            
-            // Highlight active section in nav
-            function updateActiveNav() {
-                const scrollPosition = container.scrollLeft;
-                let currentSection = null;
-                let minDistance = Infinity;
-                
-                sections.forEach(section => {
-                    const sectionLeft = section.offsetLeft;
-                    const sectionWidth = section.offsetWidth;
-                    const sectionCenter = sectionLeft + sectionWidth / 2;
-                    const distance = Math.abs(scrollPosition + window.innerWidth / 2 - sectionCenter);
-                    
-                    if (distance < minDistance) {
-                        minDistance = distance;
-                        currentSection = section;
-                    }
-                });
-                
-                if (currentSection) {
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${currentSection.id}`) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
-            }
-            
-            // Initial call and event listener
-            updateActiveNav();
-            container.addEventListener('scroll', updateActiveNav);
-            
-            // Smooth scroll for anchor links
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetSection = document.querySelector(targetId);
-                    
-                    if (targetSection) {
-                        container.scrollTo({
-                            left: targetSection.offsetLeft,
-                            behavior: 'smooth'
-                        });
-                        
-                        // Update URL without page reload
-                        history.pushState(null, null, targetId);
-                    }
-                });
-            });
-            
-            // Handle swipe gestures for touch devices
-            let touchStartX = 0;
-            let touchEndX = 0;
-            
-            container.addEventListener('touchstart', e => {
-                touchStartX = e.touches[0].clientX;
-            }, { passive: true });
-            
-            container.addEventListener('touchend', e => {
-                touchEndX = e.changedTouches[0].clientX;
-                handleSwipe();
-            }, { passive: true });
-            
-            function handleSwipe() {
-                if (touchEndX < touchStartX - 50) {
-                    // Swipe left - next section
-                    scrollToNextSection();
-                }
-                
-                if (touchEndX > touchStartX + 50) {
-                    // Swipe right - previous section
-                    scrollToPrevSection();
-                }
-            }
-            
-            function scrollToNextSection() {
-                const currentScroll = container.scrollLeft;
-                let nextSection = null;
-                
-                sections.forEach(section => {
-                    if (section.offsetLeft > currentScroll + 100) {
-                        if (!nextSection || section.offsetLeft < nextSection.offsetLeft) {
-                            nextSection = section;
-                        }
-                    }
-                });
-                
-                if (nextSection) {
-                    container.scrollTo({
-                        left: nextSection.offsetLeft,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-            
-            function scrollToPrevSection() {
-                const currentScroll = container.scrollLeft;
-                let prevSection = null;
-                
-                sections.forEach(section => {
-                    if (section.offsetLeft < currentScroll - 100) {
-                        if (!prevSection || section.offsetLeft > prevSection.offsetLeft) {
-                            prevSection = section;
-                        }
-                    }
-                });
-                
-                if (prevSection) {
-                    container.scrollTo({
-                        left: prevSection.offsetLeft,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-            
-            // Keyboard navigation
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'ArrowRight') {
-                    scrollToNextSection();
-                    e.preventDefault();
-                } else if (e.key === 'ArrowLeft') {
-                    scrollToPrevSection();
-                    e.preventDefault();
-                }
-            });
-            
-            // Handle browser back/forward buttons
-            window.addEventListener('popstate', function() {
-                const hash = window.location.hash;
-                if (hash) {
-                    const targetSection = document.querySelector(hash);
-                    if (targetSection) {
-                        container.scrollTo({
-                            left: targetSection.offsetLeft,
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            });
-        });
-   
+
+    <script>
         // JavaScript for scroll animations and active section detection
         document.addEventListener('DOMContentLoaded', function() {
             const sections = document.querySelectorAll('section');
