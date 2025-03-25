@@ -254,7 +254,73 @@
             align-items: center;
             margin-bottom: 1.5rem;
         }
+/* Contact Section Layout */
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
 
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.contact-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Contact items styling */
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.contact-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
+}
+
+.contact-item i {
+    margin-right: 1rem;
+    color: var(--secondary);
+    font-size: 1.2rem;
+    width: 2rem;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-wrapper {
+        flex-direction: column;
+    }
+    
+    .contact-info,
+    .contact-image {
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .contact-image {
+        order: -1; /* Image first on mobile */
+        margin-bottom: 2rem;
+    }
+}
         .job-logo {
             width: 60px;
             height: 60px;
@@ -2179,40 +2245,43 @@
 
         <!-- Contact Section -->
         <section id="contact">
-            <div class="container">
-                <h2>Get In Touch</h2>
-                
-                <div class="contact-info col">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Liwale, Lindi Region, Tanzania</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <p>+255 745 909 129</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <p><a href="mailto:ngelime07@gmail.com">ngelime07@gmail.com</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <p><a href="https://linkedin.com/in/pheogrammer" target="_blank" rel="noopener noreferrer">linkedin.com/in/pheogrammer</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-github"></i>
-                        <p><a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">github.com/yourusername</a></p>
-                    </div>
+    <div class="container">
+        <h2>Get In Touch</h2>
+        
+        <div class="contact-wrapper">  <!-- New wrapper for flex layout -->
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Liwale, Lindi Region, Tanzania</p>
                 </div>
-                <div class="col-md-7">
-                    <img src="https://i.pinimg.com/originals/d7/ae/01/d7ae0170d3d5ffcbaa7f02fdda387a3b.gif" />
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+255 745 909 129</p>
                 </div>
-                
-                <div class="quote" style="margin-top: 3rem;">
-                    "Let's collaborate on projects that leverage technology for social good. I'm particularly interested in opportunities at the intersection of healthcare, education, and innovative technology solutions."
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p><a href="mailto:ngelime07@gmail.com">ngelime07@gmail.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <p><a href="https://linkedin.com/in/pheogrammer" target="_blank" rel="noopener noreferrer">linkedin.com/in/pheogrammer</a></p>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <p><a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">github.com/yourusername</a></p>
                 </div>
             </div>
-        </section>
+            
+            <div class="contact-image">
+                <img src="https://i.pinimg.com/originals/d7/ae/01/d7ae0170d3d5ffcbaa7f02fdda387a3b.gif" alt="Contact illustration" />
+            </div>
+        </div>
+        
+        <div class="quote" style="margin-top: 3rem;">
+            "Let's collaborate on projects that leverage technology for social good. I'm particularly interested in opportunities at the intersection of healthcare, education, and innovative technology solutions."
+        </div>
+    </div>
+</section>
     </div>
 
     <script>
