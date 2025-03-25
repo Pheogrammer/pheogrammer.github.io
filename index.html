@@ -3,86 +3,504 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <title>Alfeo Raymond | Digital Transformation Specialist</title>
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #1a252f;
+            --transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        /* Horizontal Scroll Sections */
+        .horizontal-scroll {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            width: 100vw;
+            overflow-y: auto;
+            scroll-snap-type: y mandatory;
+        }
+        
+        section {
+            scroll-snap-align: start;
+            min-height: 100vh;
+            width: 100vw;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow-y: auto;
+            transition: var(--transition);
+        }
+        
+        /* Navigation */
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 1rem 2rem;
+        }
+        
+        #navbar ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        #navbar a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+        
+        #navbar a:hover, #navbar a.active {
+            background: var(--secondary);
+            color: white;
+        }
+        
+        /* Section Styling */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        h1, h2, h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--secondary);
+            display: inline-block;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            color: var(--secondary);
+        }
+        
+        p, li {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        /* About Section */
+        #about {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+        
+        #about .container {
+            background: rgba(255,255,255,0.9);
+            color: var(--dark);
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: var(--secondary);
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 1.5rem;
+            background: rgba(52, 152, 219, 0.1);
+            border-left: 4px solid var(--secondary);
+            margin: 2rem 0;
+        }
+        
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+            margin: 3rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 1.5rem;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--secondary);
+        }
+        
+        .job {
+            position: relative;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .job::before {
+            content: '';
+            position: absolute;
+            left: -3.5rem;
+            top: 2.5rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid var(--secondary);
+        }
+        
+        .meta {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        /* Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .cert-card {
+            padding: 1.5rem;
+            border-radius: 8px;
+            background: white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--secondary);
+            transition: var(--transition);
+        }
+        
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .skill {
+            padding: 1rem;
+            background: var(--secondary);
+            color: white;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .skill:hover {
+            background: var(--accent);
+            transform: scale(1.05);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            
+            #navbar ul {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+            
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header id="hero">
-        <div class="container">
-            <h1 class="animate">Welcome to My Portfolio</h1>
-            <p class="animate">Innovative Technologies Analyst | Software Engineer | ICT Consultant</p>
-        </div>
-    </header>
+    <nav id="navbar">
+        <ul>
+            <li><a href="#about" class="active">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#volunteering">Volunteering</a></li>
+            <li><a href="#honors">Honors</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <section id="about" class="hidden">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>I am an experienced <strong>Innovative Technologies Analyst</strong> with a background in <strong>software development, ICT management, human-centered design (HCD), and data-driven digital solutions</strong>. Over the past five years, I have contributed to <strong>health, humanitarian, educational, and technology-based projects</strong>, ensuring impactful digital transformation.</p>
-            <p>Currently working at <strong>UNICC</strong>, I specialize in exploring and integrating <strong>emerging technologies</strong> to enhance digital solutions. My journey includes roles in academia, consulting, and open-source community management, where I have led teams, developed platforms, and championed inclusive technology adoption.</p>
-            <p>My philosophy: <em>"Technology should empower, innovate, and transform lives."</em></p>
-        </div>
-    </section>
-<section class="experience">
-    <div class="container">
-        <h2>Work Experience</h2>
-        <div class="job">
-            <h3>Innovative Technologies Analyst</h3>
-            <div class="meta">UNICC | Jan 2023 – Present</div>
-            <ul>
-                <li>Specialized in the application of technology in humanitarian work and digital transformation.</li>
-                <li>Involved in developing and supporting innovative tech solutions that enhance operations and contribute to the achievement of sustainable development goals.</li>
-                <li>Collaborated with global teams to ensure technology meets operational needs while also addressing accessibility and scalability concerns.</li>
-                <li>Contributed to projects that enhance operational efficiency within UNICC.</li>
-            </ul>
-        </div>
-        <div class="job">
-            <h3>Systems and Software Engineer</h3>
-            <div class="meta">University of Dar es Salaam | 2019 – Present</div>
-            <ul>
-                <li>Collaborated with TATAKI to develop an online exam system for Kiswahili learners worldwide.</li>
-                <li>Contributed to a Tanzania Education Authority project to digitize learning materials through video recording, sound editing, image design, and content scriptwriting.</li>
-                <li>Enhanced Moodle functionality by introducing advanced capabilities like autograding, certificate issuance, and enabling students to perform complex mathematical calculations.</li>
-                <li>Developed an Open Educational Resources (OER) system to provide accessible content to university students and the public.</li>
-                <li>Built an online system for the Public Services section at UDSM for course cataloging and learning management.</li>
-            </ul>
-        </div>
-        <div class="job">
-            <h3>ICT Technical Consultant</h3>
-            <div class="meta">Tanzania Data Lab | 2021 – 2023</div>
-            <ul>
-                <li>Assisted in creating technology-driven solutions for national data management and analysis projects.</li>
-                <li>Collaborated with stakeholders to ensure smooth integration of ICT solutions within local and national programs.</li>
-                <li>Provided guidance and support in the adoption of digital tools in the development sector.</li>
-            </ul>
-        </div>
-        <div class="job">
-            <h3>E-learning Content Developer</h3>
-            <div class="meta">Center for Virtual Learning, University of Dar es Salaam | 2021 – 2023</div>
-            <ul>
-                <li>Developed interactive e-learning content, incorporating videos, quizzes, and simulations to enhance online learning experiences.</li>
-                <li>Worked on improving the design and delivery of online courses, ensuring they met international learning standards.</li>
-                <li>Collaborated with subject-matter experts to curate course material that was accessible, engaging, and pedagogically sound.</li>
-            </ul>
-        </div>
+    <div class="horizontal-scroll">
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <h1>Alfeo Raymond</h1>
+                <p class="tagline">ICT & Digital Transformation Specialist | Human-Centered Design Advocate</p>
+                
+                <div class="quote">
+                    "Technology is most powerful when it empowers people. My mission is to bridge innovation with humanitarian needs through human-centered solutions."
+                </div>
+                
+                <div class="content">
+                    <p>I am an ICT and Digital Transformation Specialist with over six years of experience designing and implementing innovative, scalable solutions across health, education, and humanitarian sectors. My expertise spans:</p>
+                    
+                    <ul>
+                        <li><strong>Software Development</strong>: Full-stack web/mobile solutions with React, Node, and cloud technologies</li>
+                        <li><strong>Human-Centered Design</strong>: Creating solutions that truly meet user needs through iterative prototyping</li>
+                        <li><strong>AI/ML Applications</strong>: Implementing predictive analytics for healthcare and development programs</li>
+                        <li><strong>Open Source Leadership</strong>: Maintaining projects like Laravel-Lang with 3.6k+ GitHub stars</li>
+                    </ul>
+                    
+                    <p>Throughout my career, I've combined technical expertise with a passion for social impact, delivering solutions that have transformed lives for thousands across Tanzania and beyond.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <div class="container">
+                <h2>Professional Journey</h2>
+                
+                <div class="timeline">
+                    <!-- Current Role -->
+                    <div class="job">
+                        <h3>ICT Supervisor</h3>
+                        <p class="meta">Médecins Sans Frontières (Switzerland) | Liwale, Tanzania | May 2024 - Present</p>
+                        <ul>
+                            <li>Manage IT/Telecom infrastructure ensuring <strong>100% operational continuity</strong> for remote healthcare services in challenging environments</li>
+                            <li>Implement security protocols that reduced system vulnerabilities by <strong>40%</strong> through firewall optimization and access controls</li>
+                            <li>Lead a team maintaining servers, communication tools, and field equipment serving <strong>50+ healthcare staff</strong></li>
+                        </ul>
+                        <div class="tech-tags">
+                            <span>Windows Server</span>
+                            <span>Network Security</span>
+                            <span>Cloud Storage</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Save the Children -->
+                    <div class="job">
+                        <h3>Technology for Development Officer</h3>
+                        <p class="meta">Save the Children International | Dar es Salaam | Nov 2023 - Apr 2024</p>
+                        <ul>
+                            <li>Developed <strong>AI-powered USSD/SMS platform</strong> delivering maternal health education to <strong>3,000+ beneficiaries</strong> in Dodoma/Morogoro</li>
+                            <li>Implemented monitoring systems that improved program evaluation efficiency by <strong>60%</strong></li>
+                            <li>Conducted security audits achieving <strong>100% compliance</strong> with international data protection standards</li>
+                        </ul>
+                        <div class="tech-tags">
+                            <span>Python</span>
+                            <span>Twilio API</span>
+                            <span>AI Analytics</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional roles would follow the same pattern -->
+                    
+                    <!-- UDSM Role -->
+                    <div class="job">
+                        <h3>Software & Systems Engineer</h3>
+                        <p class="meta">University of Dar es Salaam | Nov 2019 - Nov 2023</p>
+                        <ul>
+                            <li>Built e-learning platforms serving <strong>10,000+ students</strong>, reducing system downtime by <strong>30%</strong></li>
+                            <li>Developed operational management systems that improved administrative efficiency by <strong>25%</strong></li>
+                            <li>Mentored <strong>50+ student developers</strong> in software engineering best practices</li>
+                        </ul>
+                        <div class="tech-tags">
+                            <span>PHP</span>
+                            <span>Laravel</span>
+                            <span>MySQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications">
+            <div class="container">
+                <h2>Certifications & Continuous Learning</h2>
+                <p class="subheading">Commitment to professional growth through recognized credentials</p>
+                
+                <div class="cert-grid">
+                    <!-- GitHub Certification -->
+                    <div class="cert-card">
+                        <h3>GitHub Open Source Community Manager</h3>
+                        <p class="meta">GitHub | Jan 2025</p>
+                        <p>Advanced training in building and sustaining open source communities, including contributor onboarding and project governance.</p>
+                    </div>
+                    
+                    <!-- Google Cloud -->
+                    <div class="cert-card">
+                        <h3>Google Cloud Engineer</h3>
+                        <p class="meta">Google for Developers | Mar 2023</p>
+                        <p>Certified in designing, developing, and managing cloud solutions on Google Cloud Platform.</p>
+                    </div>
+                    
+                    <!-- Human-Centered Design -->
+                    <div class="cert-card">
+                        <h3>Human-Centered Design</h3>
+                        <p class="meta">Acumen Academy | Aug 2024</p>
+                        <p>Mastered prototyping and user research methodologies for developing solutions with real-world impact.</p>
+                    </div>
+                    
+                    <!-- Additional certifications would follow the same pattern -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Continue with other sections (Education, Skills, etc.) following the same detailed pattern -->
+        
     </div>
-</section>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            gsap.from(".animate", { opacity: 0, y: 50, duration: 1, stagger: 0.3 });
+        // JavaScript for scroll animations and active section detection
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('#navbar a');
             
-            const sections = document.querySelectorAll(".hidden");
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        gsap.fromTo(entry.target, { opacity: 0, x: -100 }, { opacity: 1, x: 0, duration: 1 });
+            // Highlight active section in nav
+            window.addEventListener('scroll', function() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (pageYOffset >= (sectionTop - sectionHeight/3)) {
+                        current = section.getAttribute('id');
                     }
                 });
-            }, { threshold: 0.1 });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
             
-            sections.forEach(section => observer.observe(section));
+            // Smooth scroll for anchor links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    window.scrollTo({
+                        top: targetSection.offsetTop,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Horizontal scroll effect between sections
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            document.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, false);
+            
+            document.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, false);
+            
+            function handleSwipe() {
+                if (touchEndX < touchStartX) {
+                    // Swipe left - next section
+                    scrollToNextSection();
+                }
+                
+                if (touchEndX > touchStartX) {
+                    // Swipe right - previous section
+                    scrollToPrevSection();
+                }
+            }
+            
+            function scrollToNextSection() {
+                const currentScroll = window.scrollY;
+                let nextSection = null;
+                
+                sections.forEach(section => {
+                    if (section.offsetTop > currentScroll + 100) {
+                        if (!nextSection || section.offsetTop < nextSection.offsetTop) {
+                            nextSection = section;
+                        }
+                    }
+                });
+                
+                if (nextSection) {
+                    window.scrollTo({
+                        top: nextSection.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+            
+            function scrollToPrevSection() {
+                const currentScroll = window.scrollY;
+                let prevSection = null;
+                
+                sections.forEach(section => {
+                    if (section.offsetTop < currentScroll - 100) {
+                        if (!prevSection || section.offsetTop > prevSection.offsetTop) {
+                            prevSection = section;
+                        }
+                    }
+                });
+                
+                if (prevSection) {
+                    window.scrollTo({
+                        top: prevSection.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            }
         });
     </script>
 </body>
