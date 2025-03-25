@@ -3,166 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alfeo Raymond - Portfolio</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Your Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
-    <!-- Floating Fixed Menu -->
-    <nav id="navbar">
+    <header id="hero">
         <div class="container">
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#honors">Honors</a></li>
-                <li><a href="#volunteering">Volunteering</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <h1>Welcome, I'm [Your Name]</h1>
+            <p>Innovative Technologies Analyst | Software Engineer | ICT Specialist</p>
+            <p>With over five years of experience in ICT management, HCD, software development, and digital solutions.</p>
         </div>
-    </nav>
-
-    <!-- Slideshow Sections -->
-    <section id="about" class="slide">
-        <div class="container">
-            <br/>
-            <h1>Alfeo Raymond</h1>
-            <p>ICT & Digital Transformation Specialist | Innovations Consultant | Human-Centered Design Advocate</p>
-            <div class="content">
-                <p>I am an ICT and Digital Transformation Specialist with over five years of experience in designing and implementing innovative, scalable solutions across health, education, and humanitarian sectors. My expertise spans software development, systems integration, logistics support, and data-driven decision-making, all grounded in a Human-Centered Design (HCD) approach to solving complex challenges.</p>
-                <p>Throughout my career, I’ve combined technical expertise with a passion for innovation to deliver impactful solutions. I’ve developed and maintained user-friendly systems for e-learning, operational support, and management, enhanced program efficiency through AI-powered tools, and empowered teams through capacity building and strategic partnerships.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience" class="slide">
-        <div class="container">
-            <h2>Experience</h2>
-            <div class="job">
-                <h3>Innovative Technologies - UNICC</h3>
-                <p class="meta">Brindisi, Apulia, Italy | Sep 2024 - Present</p>
-                <ul>
-                    <li>Researched emerging technologies like AI, ML, Blockchain, and IoT for humanitarian applications.</li>
-                    <li>Analyzed data trends to suggest innovative tech solutions aligned with organizational goals.</li>
-                    <li>Collaborated with cross-functional teams to gather user requirements and ensure tech solutions met their needs.</li>
-                </ul>
-            </div>
-            <div class="job">
-                <h3>ICT Supervisor - Médecins Sans Frontières (Switzerland)</h3>
-                <p class="meta">Liwale, Lindi Region, Tanzania | May 2024 - Present</p>
-                <ul>
-                    <li>Managed IT and Telecom equipment to ensure operational continuity and adherence to MSF standards.</li>
-                    <li>Supervised data security protocols, including backups, user access, and firewall maintenance.</li>
-                    <li>Provided technical support for communication tools, servers, and operational equipment.</li>
-                </ul>
-            </div>
-            <!-- Add more job entries similarly -->
-        </div>
-    </section>
-
-    <section id="certifications" class="slide">
-        <div class="container">
-            <h2>Certifications</h2>
-            <ul>
-                <li>Cybersecurity for Businesses - EC-Council (Jul 2024)</li>
-                <li>Cyber Crime Detection and Prevention - Institute of Finance Management (Dec 2022)</li>
-                <li>MLH Prep Fellow - Major League Hacking (Apr 2023)</li>
-                <li>Google Cloud Engineer - Google for Developers (Mar 2023)</li>
-                <li>Monitoring, Evaluation, Accountability and Learning (MEAL) Essentials - Cornerstone OnDemand Foundation (Jul 2024)</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="education" class="slide">
-        <div class="container">
-            <h2>Education</h2>
-            <div class="education-item">
-                <h3>Bachelor's Degree in Information Technology</h3>
-                <p class="meta">College of Business Education | Nov 2020 - Jul 2023</p>
-            </div>
-            <div class="education-item">
-                <h3>Diploma in Computer Science</h3>
-                <p class="meta">University of Dar es Salaam (UDSM) | 2017 - 2019</p>
-            </div>
-            <div class="education-item">
-                <h3>Certificate in Information Technology</h3>
-                <p class="meta">College of Business Education | Aug 2016 - May 2017</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="slide">
-        <div class="container">
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill">Healthcare Information Technology (HIT)</div>
-                <div class="skill">Strategic Human Resource Planning</div>
-                <div class="skill">Customer Satisfaction</div>
-                <div class="skill">Data Analytics & Visualization</div>
-                <div class="skill">Artificial Intelligence (AI)</div>
-                <div class="skill">Project Management</div>
-                <div class="skill">Human-Centered Design (HCD)</div>
-                <div class="skill">Cloud Computing</div>
-                <div class="skill">Cybersecurity</div>
-                <div class="skill">Innovation Management</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="honors" class="slide">
-        <div class="container">
-            <h2>Honors & Awards</h2>
-            <div class="award">
-                <h3>TechGig Code Gladiators 2021</h3>
-                <p class="meta">Issued by TechGig · May 2021</p>
-                <p>Participated in a coding competition focused on AI, ML, Blockchain, Cloud Computing, and IoT.</p>
-            </div>
-            <div class="award">
-                <h3>Best Facilities Mapper, dLab Mapathon 2021</h3>
-                <p class="meta">Issued by Tanzania Dat Lab · Mar 2021</p>
-                <p>Won first place in the HIV/AIDS Hot-spots and Testing Facilities Mapathon.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="volunteering" class="slide">
-        <div class="container">
-            <h2>Volunteering</h2>
-            <div class="volunteer">
-                <h3>GitHub DPG Community Manager</h3>
-                <p class="meta">GitHub | Jul 2024 - Jan 2025</p>
-                <ul>
-                    <li>Attracted and onboarded new contributors to open-source projects.</li>
-                    <li>Organized community events and managed GitHub issues and discussions.</li>
-                </ul>
-            </div>
-            <div class="volunteer">
-                <h3>HCD Facilitator - StartHub Africa</h3>
-                <p class="meta">May 2023 · 1 month</p>
-                <ul>
-                    <li>Trained students in human-centered design (HCD) principles.</li>
-                    <li>Guided them in translating their ideas into code using HCD principles.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="slide">
-        <div class="container">
-            <h2>Contact</h2>
-            <p>Kijitonyama, Dar es Salaam, Tanzania</p>
-            <p>+255 745 909 129</p>
-            <p>Email: <a href="mailto:ngelime07@gmail.com">ngelime07@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/pheogrammer" target="_blank">pheogrammer</a></p>
-        </div>
-    </section>
-
-    <!-- Base64 Background Shapes -->
-    <div class="shape shape-1"></div>
-    <div class="shape shape-2"></div>
-    <div class="shape shape-3"></div>
+    </header>
+    
+    <script>
+        gsap.from("#hero .container", { opacity: 0, x: -100, duration: 1, ease: "power2.out" });
+    </script>
 </body>
 </html>
