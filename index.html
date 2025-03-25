@@ -717,6 +717,127 @@
 .job:nth-child(even) {
     animation-delay: 0.2s;
 }
+
+        .volunteering-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.volunteer-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.volunteer-card.highlight {
+    border-left: 4px solid #2b6cb0;
+}
+
+.volunteer-card:hover {
+    transform: translateY(-5px);
+}
+
+.volunteer-header {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+.org-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.org-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.volunteer-title h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #2d3748;
+}
+
+.volunteer-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 0.8rem;
+    color: #718096;
+    margin-top: 5px;
+}
+
+.volunteer-body {
+    padding: 15px;
+}
+
+.responsibility-area {
+    margin-bottom: 15px;
+}
+
+.responsibility-area h4 {
+    margin: 0 0 8px 0;
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+
+.volunteer-body ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.volunteer-body li {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.volunteer-media {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed #ddd;
+}
+
+.media-link {
+    display: block;
+    margin-bottom: 10px;
+    color: #3182ce;
+    font-size: 0.8rem;
+}
+
+.media-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.media-images img {
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #eee;
+}
+
+.project-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.project-link {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: #3182ce;
+    word-break: break-all;
+}
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -1799,44 +1920,321 @@
         </section>
 
         <!-- Volunteering Section -->
-        <section id="volunteering">
-            <div class="container">
-                <h2>Community Engagement</h2>
-                <p class="subheading">Contributing to tech education and open source ecosystems</p>
-                
-                <div class="volunteer">
-                    <h3>GitHub DPG Community Manager</h3>
-                    <p class="meta">GitHub | Jul 2024 - Jan 2025</p>
-                    <ul>
-                        <li>Attracted and onboarded <strong>50+ new contributors</strong> to open-source projects</li>
-                        <li>Organized <strong>community events</strong> and managed GitHub issues and discussions</li>
-                        <li>Created onboarding materials that reduced new contributor setup time by <strong>30%</strong></li>
-                    </ul>
+<section id="volunteering" class="slide">
+    <div class="container">
+        <h2><i class="fas fa-hands-helping"></i> Community Engagement</h2>
+        <p class="section-subtitle">Contributing to tech education, open source ecosystems, and youth empowerment</p>
+        
+        <div class="volunteering-grid">
+            <!-- GitHub DPG Community Manager -->
+            <div class="volunteer-card highlight">
+                <div class="volunteer-header">
+                    <div class="org-logo">
+                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+                    </div>
+                    <div class="volunteer-title">
+                        <h3>GitHub DPG Community Manager</h3>
+                        <div class="volunteer-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Jul 2024 - Jan 2025 · 7 mos</span>
+                            <span><i class="fas fa-tag"></i> Social Services</span>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="volunteer">
-                    <h3>Project Advisor - SmartGirlz in ICT Tanzania</h3>
-                    <p class="meta">Dec 2023 - May 2024</p>
-                    <ul>
-                        <li>Trained <strong>200+ girls</strong> in tech entrepreneurship and HCD methodologies</li>
-                        <li>Led school recruitment drives reaching <strong>15 schools</strong> across Dar es Salaam</li>
-                        <li>Facilitated prototype development sessions resulting in <strong>12 working projects</strong></li>
-                    </ul>
+                <div class="volunteer-body">
+                    <div class="responsibility-area">
+                        <h4>Community Building:</h4>
+                        <ul>
+                            <li>Attracting and onboarding new contributors</li>
+                            <li>Building and maintaining a strong online community (forums, social media, etc.)</li>
+                            <li>Organizing community events, meetups, or workshops</li>
+                        </ul>
+                    </div>
+                    <div class="responsibility-area">
+                        <h4>Project Management:</h4>
+                        <ul>
+                            <li>Assisting with project planning and execution</li>
+                            <li>Managing GitHub issues, discussions, and project boards</li>
+                            <li>Supporting project management tasks</li>
+                        </ul>
+                    </div>
+                    <div class="responsibility-area">
+                        <h4>Communication:</h4>
+                        <ul>
+                            <li>Effective communication with the DPG team and community members</li>
+                            <li>Creating and managing content (blog posts, documentation, etc.)</li>
+                            <li>Representing the DPG at conferences or events</li>
+                        </ul>
+                    </div>
+                    <div class="responsibility-area">
+                        <h4>Data Analysis:</h4>
+                        <ul>
+                            <li>Tracking community metrics and analyzing data to inform decisions</li>
+                        </ul>
+                    </div>
                 </div>
-                
-                <div class="volunteer">
-                    <h3>Open Source Maintainer - Laravel-Lang</h3>
-                    <p class="meta">Oct 2021 - Present</p>
-                    <ul>
-                        <li>Maintained localization package with <strong>3.6k+ GitHub stars</strong></li>
-                        <li>Merged <strong>100+ pull requests</strong> from international contributors</li>
-                        <li>Improved documentation reducing support requests by <strong>40%</strong></li>
-                    </ul>
-                </div>
-                
-                <!-- Additional volunteering would follow the same pattern -->
             </div>
-        </section>
+
+            <!-- SmartGirlz in ICT Tanzania - Project Advisor -->
+            <div class="volunteer-card">
+                <div class="volunteer-header">
+                    <div class="org-logo">
+                        <img src="https://via.placeholder.com/150?text=SGICT" alt="SmartGirlz in ICT Tanzania">
+                    </div>
+                    <div class="volunteer-title">
+                        <h3>Project Advisor</h3>
+                        <div class="volunteer-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Dec 2023 - May 2024 · 6 mos</span>
+                            <span><i class="fas fa-tag"></i> Science and Technology</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="volunteer-body">
+                    <ul>
+                        <li>Recruited and trained facilitators and coordinators to ensure program success and alignment with project goals</li>
+                        <li>Led school recruitment and organized induction training for focal persons to establish program foundations</li>
+                        <li>Conducted stakeholder meetings to report program progress, showcase impact, and foster continued engagement</li>
+                        <li>Provided strategic guidance on planning, execution, budgeting, and partnership development to enhance program outcomes</li>
+                    </ul>
+                    <div class="volunteer-media">
+                        <a href="#" class="media-link">#HABARI,SMART GIRLZ IN ICT TANZANIA NA UKOMBOZI WA WASICHANA KATIKA TEHAMA</a>
+                        <div class="media-images">
+                            <img src="1722402977818.jpg" alt="SmartGirlz event">
+                            <img src="1722402915367.jpg" alt="SmartGirlz training">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SmartGirlz in ICT Tanzania - Project Manager -->
+            <div class="volunteer-card">
+                <div class="volunteer-header">
+                    <div class="org-logo">
+                        <img src="https://via.placeholder.com/150?text=SGICT" alt="SmartGirlz in ICT Tanzania">
+                    </div>
+                    <div class="volunteer-title">
+                        <h3>Project Manager</h3>
+                        <div class="volunteer-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Dec 2021 - Dec 2023 · 2 yrs 1 mo</span>
+                            <span><i class="fas fa-tag"></i> Science and Technology</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="volunteer-body">
+                    <ul>
+                        <li>Supervised student competitions, guiding participants in developing working prototypes tailored to user needs and teaching effective pitching techniques</li>
+                        <li>Recruited, trained, and managed facilitators to ensure program success and quality delivery</li>
+                        <li>Managed program accounting and optimized financial resources for program objectives</li>
+                        <li>Conducted stakeholder meetings to report program progress and showcase impact to sponsors</li>
+                    </ul>
+                    <div class="volunteer-media">
+                        <div class="media-images">
+                            <img src="1722404964095.jpg" alt="Student competition">
+                            <img src="1722404996708.jpg" alt="Program showcase">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SmartGirlz in ICT Tanzania - Learning Facilitator -->
+            <div class="volunteer-card">
+                <div class="volunteer-header">
+                    <div class="org-logo">
+                        <img src="https://via.placeholder.com/150?text=SGICT" alt="SmartGirlz in ICT Tanzania">
+                    </div>
+                    <div class="volunteer-title">
+                        <h3>Learning Facilitator</h3>
+                        <div class="volunteer-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Jun 2019 - Dec 2021 · 2 yrs 7 mos</span>
+                            <span><i class="fas fa-tag"></i> Science and Technology</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="volunteer-body">
+                    <ul>
+                        <li>Guided students in applying Human-Centered Design (HCD) principles to create user-centric products</li>
+                        <li>Taught HCD techniques for effective user data collection and processing</li>
+                        <li>Instructed students in HCD-driven business canvas modeling for sustainable ventures</li>
+                        <li>Provided training in pitching skills to communicate solutions effectively</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- StartHub Africa - HCD Facilitator -->
+            <div class="volunteer-card">
+                <div class="volunteer-header">
+                    <div class="org-logo">
+                        <img src="https://via.placeholder.com/150?text=StartHub" alt="StartHub Africa">
+                    </div>
+                    <div class="volunteer-title">
+                        <h3>HCD Facilitator</h3>
+                        <div class="volunteer-meta">
+                            <span><i class="fas fa-calendar-alt"></i> May 2023 · 1 mo</span>
+                            <span><i class="fas fa-tag"></i> Economic Empowerment</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="volunteer-body">
+                    <ul>
+                        <li>Trained students in human-centered design (HCD) principles</li>
+                        <li>Guided them in translating their ideas into code using HCD principles</li>
+                        <li>Developed and implemented HCD-based design and development methodologies for student app ideas</li>
+                        <li>Helped students conduct user research and impact analysis of their proposals</li>
+                        <li>Prepared presentations for students on HCD-based design and development methodologies</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- MLH Fellowship -->
+            <div class="volunteer-card">
+                <div class="volunteer-header">
+                    <div class="org-logo">
+                        <img src="https://mlh.io/assets/logos/mlh-prep-logo.svg" alt="MLH Fellowship">
+                    </div>
+                    <div class="volunteer-title">
+                        <h3>Software Engineering (Prep Fellowship)</h3>
+                        <div class="volunteer-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Mar 2023 · 1 mo</span>
+                            <span><i class="fas fa-tag"></i> Education</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="volunteer-body">
+                    <ul>
+                        <li>Selected from over 30,000 applicants and worked in a team of 15 remote engineers</li>
+                        <li>Developed a weather-based trip-planning web application using ReactJS, NodeJS, and OpenWeatherMap API</li>
+                        <li>Engineered a full stack web application end-to-end, earning a 4.7/5 endorsement from project mentors</li>
+                        <li>Implemented real-time weather data modules for over 75 locations, enhancing travel efficiency by 20%</li>
+                    </ul>
+                    <div class="volunteer-media">
+                        <a href="#" class="media-link">React App</a>
+                        <a href="#" class="media-link">Personal Portfolio</a>
+                        <a href="Alfeo_Raymond.pdf" class="media-link"><i class="fas fa-file-pdf"></i> Alfeo Raymond.pdf</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- dLab Tanzania - HCD & Web Dev Facilitator -->
+            <div class="volunteer-card">
+                <div class="volunteer-header">
+                    <div class="org-logo">
+                        <img src="https://via.placeholder.com/150?text=dLab" alt="dLab Tanzania">
+                    </div>
+                    <div class="volunteer-title">
+                        <h3>HCD & Web Development Facilitator</h3>
+                        <div class="volunteer-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Nov 2020 - Nov 2022 · 2 yrs 1 mo</span>
+                            <span><i class="fas fa-tag"></i> Education</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="volunteer-body">
+                    <ul>
+                        <li>Trained students in human-centered design (HCD) principles</li>
+                        <li>Guided them in translating their ideas into code using good design principles</li>
+                        <li>Prepared presentations for students on app design and development methodologies</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- GitHub Campus Expert -->
+            <div class="volunteer-card">
+                <div class="volunteer-header">
+                    <div class="org-logo">
+                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+                    </div>
+                    <div class="volunteer-title">
+                        <h3>GitHub Campus Expert</h3>
+                        <div class="volunteer-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Oct 2021 - Jul 2024 · 2 yrs 10 mos</span>
+                            <span><i class="fas fa-tag"></i> Education</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="volunteer-body">
+                    <ul>
+                        <li>Collaborated with other Campus Experts to plan and execute events including hackathons, meetups, and code clinics</li>
+                        <li>Worked with local sponsors to secure funding and resources for these events</li>
+                        <li>Developed relationships with student groups, faculty, and administrators to promote the program</li>
+                        <li>Contributed to program development through feedback and suggestions to GitHub staff</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- dLab Tanzania - Conference Organizer -->
+            <div class="volunteer-card">
+                <div class="volunteer-header">
+                    <div class="org-logo">
+                        <img src="https://via.placeholder.com/150?text=dLab" alt="dLab Tanzania">
+                    </div>
+                    <div class="volunteer-title">
+                        <h3>Conference Organizer</h3>
+                        <div class="volunteer-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Nov 2021 · 1 mo</span>
+                            <span><i class="fas fa-tag"></i> Science and Technology</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="volunteer-body">
+                    <ul>
+                        <li>Participated in planning and organizing the "Data Tamasha" conference and exhibition</li>
+                        <li>Showcased the impact of data on development and humanitarian activities while implementing the SDGs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Laravel - Open Source Maintainer -->
+            <div class="volunteer-card">
+                <div class="volunteer-header">
+                    <div class="org-logo">
+                        <img src="https://laravel.com/img/logomark.min.svg" alt="Laravel">
+                    </div>
+                    <div class="volunteer-title">
+                        <h3>Open Source Maintainer (Laravel-Lang)</h3>
+                        <div class="volunteer-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Oct 2021 - Present · 3 yrs 6 mos</span>
+                            <span><i class="fas fa-tag"></i> Science and Technology</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="volunteer-body">
+                    <ul>
+                        <li>Contributing to improving and shaping the future of technology through open source</li>
+                        <li>Maintained Laravel-Lang package for language localization (laravel-lang.com)</li>
+                        <li>Contributed to Githut package for monitoring GitHub activity (trending languages, forks, pulls)</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/laravel-lang/lang" target="_blank" class="project-link">Laravel-Lang Repository</a>
+                        <a href="https://madnight.github.io/githut" target="_blank" class="project-link">Githut Visualization</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Y4C Innovation Hub -->
+            <div class="volunteer-card">
+                <div class="volunteer-header">
+                    <div class="org-logo">
+                        <img src="https://via.placeholder.com/150?text=Y4C" alt="YOUTH FOR CHILDREN">
+                    </div>
+                    <div class="volunteer-title">
+                        <h3>Graphic Designer & Web Developer</h3>
+                        <div class="volunteer-meta">
+                            <span><i class="fas fa-calendar-alt"></i> May 2018 - Jul 2019 · 1 yr 3 mos</span>
+                            <span><i class="fas fa-tag"></i> Education</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="volunteer-body">
+                    <ul>
+                        <li>Designed graphics for events, printing, and mediation materials</li>
+                        <li>Collaborated on planning and executing weekly talk shows</li>
+                        <li>Participated in developing and planning the Hub's magazine</li>
+                        <li>Helped manage and maintain the Hub's website</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
         <!-- Honors Section -->
         <section id="honors">
