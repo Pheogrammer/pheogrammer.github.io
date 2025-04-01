@@ -16,6 +16,56 @@
     --container-bg: rgba(255, 255, 255, 0.95);
     --shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
+        .skills-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.skill-category {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.skill-category h3 {
+    color: #2c3e50;
+    margin-top: 0;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.skill-details {
+    padding-left: 1.2rem;
+    margin-bottom: 0;
+}
+
+.skill-details li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.tech-tags span {
+    background: #e1f5fe;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #0277bd;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
         
         * {
             margin: 0;
