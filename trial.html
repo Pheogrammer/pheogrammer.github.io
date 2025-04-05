@@ -2574,32 +2574,39 @@ blockquote {
 
     <!-- Custom JavaScript -->
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function() {
     // Preloader
     window.addEventListener('load', function() {
         const preloader = document.querySelector('.preloader');
         preloader.classList.add('fade-out');
+        
+        // Remove preloader from DOM after animation finishes
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 500);
     });
 
     // Mobile Navigation
     const hamburger = document.getElementById('hamburger');
     const navList = document.getElementById('nav-list');
 
-    hamburger.addEventListener('click', function() {
-        navList.classList.toggle('active');
-        hamburger.innerHTML = navList.classList.contains('active') 
-            ? '<i class="fas fa-times"></i>' 
-            : '<i class="fas fa-bars"></i>';
-    });
-
-    // Close mobile nav when clicking on a nav link
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            navList.classList.remove('active');
-            hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+    if (hamburger && navList) {
+        hamburger.addEventListener('click', function() {
+            navList.classList.toggle('active');
+            hamburger.innerHTML = navList.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
         });
-    });
+
+        // Close mobile nav when clicking on a nav link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navList.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+    }
 
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -2611,8 +2618,9 @@ blockquote {
             
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
+                const headerHeight = document.querySelector('.header').offsetHeight;
                 window.scrollTo({
-                    top: targetElement.offsetTop - 70,
+                    top: targetElement.offsetTop - headerHeight,
                     behavior: 'smooth'
                 });
             }
@@ -2622,21 +2630,39 @@ blockquote {
     // Back to top button
     const backToTop = document.getElementById('back-to-top');
     
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-            backToTop.classList.add('active');
-        } else {
-            backToTop.classList.remove('active');
-        }
-    });
-
-    backToTop.addEventListener('click', function(e) {
-        e.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    if (backToTop) {
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
         });
-    });
+
+        backToTop.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // Certifications View More/Less functionality
+    const viewMoreCertsBtn = document.getElementById('view-more-certs');
+    const moreCerts = document.getElementById('more-certs');
+    
+    if (viewMoreCertsBtn && moreCerts) {
+        viewMoreCertsBtn.addEventListener('click', function() {
+            if (moreCerts.style.display === 'none') {
+                moreCerts.style.display = 'grid';
+                viewMoreCertsBtn.textContent = 'View Less Certifications';
+            } else {
+                moreCerts.style.display = 'none';
+                viewMoreCertsBtn.textContent = 'View More Certifications';
+            }
+        });
+    }
 
     // Animation on scroll
     const animateElements = document.querySelectorAll('.animate');
@@ -2664,18 +2690,63 @@ blockquote {
     window.addEventListener('resize', checkIfInView);
     window.addEventListener('load', checkIfInView);
     
-    // Form submission (if you decide to implement it)
+    // Form submission
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            // Form submission logic would go here
             
-            // For demonstration purposes, show a success message
-            alert('Form submitted successfully! This is a demo, so no actual submission occurred.');
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            // Basic validation
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            // For demonstration purposes - in a real implementation, 
+            // you would send the form data to a server
+            alert('Thank you for your message! This is a demo form, so no actual submission occurred. In a live implementation, your message would have been sent.');
             contactForm.reset();
         });
     }
+    
+    // Active navigation highlighting
+    const sections = document.querySelectorAll('section[id]');
+    
+    function highlightNavigation() {
+        const scrollY = window.pageYOffset;
+        
+        sections.forEach(section => {
+            const sectionHeight = section.offsetHeight;
+            const sectionTop = section.offsetTop - 100;
+            const sectionId = section.getAttribute('id');
+            
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                document.querySelector('.nav-link[href="#' + sectionId + '"]')?.classList.add('active');
+            } else {
+                document.querySelector('.nav-link[href="#' + sectionId + '"]')?.classList.remove('active');
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', highlightNavigation);
+    
+    // Add .active class style to nav-link
+    const style = document.createElement('style');
+    style.textContent = `
+        .nav-link.active {
+            color: var(--primary-color);
+        }
+        .nav-link.active::after {
+            width: 100%;
+        }
+    `;
+    document.head.appendChild(style);
 });
     </script>
 </body>
