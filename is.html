@@ -1,0 +1,3678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfeo Raymond - ICT & Digital Transformation Specialist</title>
+    <meta name="description" content="Alfeo Raymond is an ICT & Digital Transformation Specialist with expertise in Human-Centered Design, Software Development, and AI/ML Applications.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
+</head>
+  <style>
+    /* Dark Theme CSS Stylesheet for Portfolio */
+:root {
+  /* Main color palette */
+  --primary-color: #4F6D7A; /* Payne's gray */
+  --secondary-color: #DD6E42; /* Burnt sienna */
+  --accent-color: #F1D302; /* School bus yellow */
+  --neutral-color: #E8DAB2; /* Dutch white */
+  --dark-bg: #121212; /* Dark background */
+  --darker-bg: #0A0A0A; /* Darker background for sections */
+  --light-text: #EAEAEA; /* Platinum */
+  --muted-text: #888888; /* Muted text color */
+  --card-bg: #1E1E1E; /* Card background */
+  --section-padding: 100px 0;
+  --transition-smooth: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  --font-main: 'Inter', sans-serif;
+  --font-heading: 'Montserrat', sans-serif;
+  --card-radius: 12px;
+  --header-height: 80px;
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) var(--dark-bg);
+}
+
+body {
+  font-family: var(--font-main);
+  line-height: 1.6;
+  color: var(--light-text);
+  background-color: var(--dark-bg);
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--light-text);
+}
+
+h1 {
+  font-size: 3.5rem;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: 2.5rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+  letter-spacing: -0.01em;
+  color: var(--secondary-color);
+}
+
+h4 {
+  font-size: 1.3rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+a {
+  color: var(--light-text);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-secondary {
+  color: var(--secondary-color);
+}
+
+.text-accent {
+  color: var(--accent-color);
+}
+
+.text-light {
+  color: var(--light-text);
+}
+
+.text-muted {
+  color: var(--muted-text);
+}
+
+.highlighted-text {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+/* Layout */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.section {
+  padding: var(--section-padding);
+  position: relative;
+  overflow: hidden;
+}
+
+.section:nth-child(odd) {
+  background-color: var(--darker-bg);
+}
+
+/* Grid System */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1rem;
+}
+
+.col {
+  flex: 1 0 0%;
+  padding: 0 1rem;
+}
+
+/* Responsive columns */
+.col-1 { flex: 0 0 8.333333%; max-width: 8.333333%; }
+.col-2 { flex: 0 0 16.666667%; max-width: 16.666667%; }
+.col-3 { flex: 0 0 25%; max-width: 25%; }
+.col-4 { flex: 0 0 33.333333%; max-width: 33.333333%; }
+.col-5 { flex: 0 0 41.666667%; max-width: 41.666667%; }
+.col-6 { flex: 0 0 50%; max-width: 50%; }
+.col-7 { flex: 0 0 58.333333%; max-width: 58.333333%; }
+.col-8 { flex: 0 0 66.666667%; max-width: 66.666667%; }
+.col-9 { flex: 0 0 75%; max-width: 75%; }
+.col-10 { flex: 0 0 83.333333%; max-width: 83.333333%; }
+.col-11 { flex: 0 0 91.666667%; max-width: 91.666667%; }
+.col-12 { flex: 0 0 100%; max-width: 100%; }
+
+@media (max-width: 992px) {
+  .col-lg-12 { flex: 0 0 100%; max-width: 100%; }
+  .col-lg-6 { flex: 0 0 50%; max-width: 50%; }
+}
+
+@media (max-width: 768px) {
+  .col-md-12 { flex: 0 0 100%; max-width: 100%; }
+  .col-md-6 { flex: 0 0 50%; max-width: 50%; }
+}
+
+@media (max-width: 576px) {
+  .col-sm-12 { flex: 0 0 100%; max-width: 100%; }
+}
+
+/* Utilities */
+.text-center {
+  text-align: center;
+}
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+.mb-5 { margin-bottom: 3rem; }
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+.mt-5 { margin-top: 3rem; }
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.gap-2 {
+  gap: 1rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--secondary-color);
+  color: var(--light-text);
+  border: 2px solid var(--secondary-color);
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--secondary-color);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--light-text);
+  border: 2px solid var(--light-text);
+}
+
+.btn-outline:hover {
+  background-color: var(--light-text);
+  color: var(--dark-bg);
+}
+
+.btn-accent {
+  background-color: var(--accent-color);
+  color: var(--dark-bg);
+  border: 2px solid var(--accent-color);
+}
+
+.btn-accent:hover {
+  background-color: transparent;
+  color: var(--accent-color);
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  background-color: rgba(18, 18, 18, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: var(--transition-smooth);
+}
+
+.header.scrolled {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  background-color: rgba(10, 10, 10, 0.98);
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--light-text);
+  display: flex;
+  align-items: center;
+}
+
+.logo-color {
+  color: var(--secondary-color);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+}
+
+.nav-item {
+  margin-left: 2rem;
+}
+
+.nav-link {
+  position: relative;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: var(--transition-smooth);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--secondary-color);
+  transition: var(--transition-smooth);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--secondary-color);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 20px;
+  position: relative;
+  z-index: 1010;
+}
+
+.hamburger span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: var(--light-text);
+  border-radius: 3px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: var(--transition-smooth);
+}
+
+.hamburger span:nth-child(1) {
+  top: 0px;
+}
+
+.hamburger span:nth-child(2), 
+.hamburger span:nth-child(3) {
+  top: 8px;
+}
+
+.hamburger span:nth-child(4) {
+  top: 16px;
+}
+
+.hamburger.open span:nth-child(1),
+.hamburger.open span:nth-child(4) {
+  top: 8px;
+  width: 0%;
+  left: 50%;
+}
+
+.hamburger.open span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-list {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--dark-bg);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    transform: translateX(100%);
+    transition: var(--transition-smooth);
+    z-index: 1000;
+  }
+
+  .nav-list.open {
+    transform: translateX(0);
+  }
+
+  .nav-item {
+    margin: 1.5rem 0;
+  }
+
+  .nav-link {
+    font-size: 1.5rem;
+  }
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-top: var(--header-height);
+  background-color: var(--dark-bg);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at top right, rgba(79, 109, 122, 0.3), transparent 55%),
+              radial-gradient(circle at bottom left, rgba(221, 110, 66, 0.2), transparent 35%);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.hero-title {
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.hero-description {
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+  font-size: 1.2rem;
+  color: var(--muted-text);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.hero-image {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  border: 5px solid var(--primary-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--light-text);
+  transition: var(--transition-smooth);
+}
+
+.social-link:hover {
+  background-color: var(--secondary-color);
+  color: var(--light-text);
+  transform: translateY(-3px);
+}
+
+/* Clients/Partners Section */
+.clients {
+  padding: 3rem 0;
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.clients-title {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--muted-text);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.clients-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.client-logo {
+  opacity: 0.6;
+  filter: grayscale(100%);
+  transition: var(--transition-smooth);
+  max-width: 120px;
+}
+
+.client-logo:hover {
+  opacity: 1;
+  filter: grayscale(0);
+}
+
+/* About Section */
+.about {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-content {
+  position: relative;
+  z-index: 1;
+}
+
+.section-title-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100px;
+  height: 3px;
+  background-color: var(--secondary-color);
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--muted-text);
+  margin-bottom: 2rem;
+  max-width: 800px;
+}
+
+.stats-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.stat-item {
+  flex: 1;
+  min-width: 150px;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--muted-text);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Skills Section */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.skill-card {
+  background-color: var(--card-bg);
+  border-radius: var(--card-radius);
+  padding: 2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: var(--secondary-color);
+  opacity: 0.8;
+}
+
+.skill-card h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.skill-list {
+  list-style: none;
+}
+
+.skill-list li {
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.skill-list li:before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--secondary-color);
+}
+
+.skill-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+}
+
+/* Experience Section */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background-color: rgba(255, 255, 255, 0.1);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+.timeline-item {
+  padding: 10px 50px;
+  position: relative;
+  width: 50%;
+  box-sizing: border-box;
+  margin-bottom: 4rem;
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--secondary-color);
+  border: 4px solid var(--dark-bg);
+  border-radius: 50%;
+  top: 15px;
+  z-index: 1;
+}
+
+.timeline-left {
+  left: 0;
+}
+
+.timeline-right {
+  left: 50%;
+}
+
+.timeline-left::after {
+  right: -14px;
+}
+
+.timeline-right::after {
+  left: -14px;
+}
+
+.timeline-content {
+  padding: 2rem;
+  background-color: var(--card-bg);
+  border-radius: var(--card-radius);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-date {
+  position: absolute;
+  top: 15px;
+  width: 115px;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  background-color: var(--secondary-color);
+  color: var(--light-text);
+  border-radius: 4px;
+}
+
+.timeline-left .timeline-date {
+  right: -160px;
+}
+
+.timeline-right .timeline-date {
+  left: -160px;
+}
+
+.timeline-title {
+  margin-bottom: 0.5rem;
+  color: var(--light-text);
+}
+
+.timeline-organization {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: var(--muted-text);
+}
+
+.timeline-organization img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.timeline-type {
+  display: inline-block;
+  padding: 0.2rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.timeline-type.fulltime {
+  background-color: rgba(40, 167, 69, 0.15);
+  color: #28a745;
+}
+
+.timeline-type.contract {
+  background-color: rgba(255, 193, 7, 0.15);
+  color: #ffc107;
+}
+
+.timeline-type.internship {
+  background-color: rgba(23, 162, 184, 0.15);
+  color: #17a2b8;
+}
+
+.timeline-location {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--muted-text);
+}
+
+.timeline-location i {
+  margin-right: 0.5rem;
+}
+
+.experience-details h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  color: var(--secondary-color);
+}
+
+.experience-details ul {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.experience-details ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.experience-details ul li:before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--secondary-color);
+}
+
+.key-achievement {
+  background-color: rgba(241, 211, 2, 0.1);
+  border-left: 3px solid var(--accent-color);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.key-achievement h4 {
+  color: var(--accent-color);
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.tech-tag {
+  padding: 0.3rem 0.8rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--muted-text);
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 992px) {
+  .timeline::after {
+    left: 31px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 0;
+  }
+
+  .timeline-left::after, 
+  .timeline-right::after {
+    left: 21px;
+  }
+
+  .timeline-right {
+    left: 0;
+  }
+
+  .timeline-left .timeline-date,
+  .timeline-right .timeline-date {
+    right: auto;
+    left: 70px;
+    top: -30px;
+  }
+}
+
+/* Certifications Section */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.cert-card {
+  background-color: var(--card-bg);
+  border-radius: var(--card-radius);
+  padding: 2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.cert-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.cert-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+}
+
+.cert-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.cert-info {
+  font-size: 0.85rem;
+  color: var(--muted-text);
+  margin-bottom: 1rem;
+}
+
+.cert-date {
+  color: var(--secondary-color);
+  font-weight: 500;
+}
+
+.cert-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.cert-tag {
+  padding: 0.2rem 0.7rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--muted-text);
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+/* Education Section */
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.education-card {
+  background-color: var(--card-bg);
+  border-radius: var(--card-radius);
+  padding: 2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.education-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.education-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--primary-color);
+  opacity: 0.1;
+  transition: var(--transition-smooth);
+}
+
+.education-card:hover::before {
+  width: 100%;
+}
+
+.education-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.education-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.education-institution {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: var(--muted-text);
+}
+
+.education-institution img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.education-date {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+/* Projects/Portfolio Section */
+.portfolio-filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+  gap: 1rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.5rem;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--muted-text);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  font-size: 0.9rem;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: var(--secondary-color);
+  color: var(--light-text);
+  border-color: var(--secondary-color);
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.portfolio-item {
+  position: relative;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: var(--transition-smooth);
+}
+
+.portfolio-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.portfolio-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.portfolio-content {
+  padding: 1.5rem;
+  background-color: var(--card-bg);
+}
+
+.portfolio-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-category {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.portfolio-description {
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  color: var(--muted-text);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition-smooth);
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.portfolio-overlay-content {
+  text-align: center;
+  padding: 2rem;
+}
+
+.portfolio-overlay-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.portfolio-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Testimonials Section */
+.testimonials-container {
+  position: relative;
+  overflow: hidden;
+  padding: 3rem 0;
+}
+
+.testimonial-slide {
+  padding: 2rem;
+  background-color: var(--card-bg);
+  border-radius: var(--card-radius);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin: 1rem;
+  transition: var(--transition-smooth);
+}
+
+.testimonial-content {
+  position: relative;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  font-style: italic;
+  color: var(--muted-text);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.testimonial-content::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  font-size: 5rem;
+  color: var(--secondary-color);
+  opacity: 0.2;
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+.testimonial-info {
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
+  border: 3px solid var(--secondary-color);
+}
+
+.testimonial-author {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.testimonial-position {
+  font-size: 0.9rem;
+  color: var(--muted-text);
+}
+
+/* Volunteering Section */
+.volunteer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.volunteer-card {
+  background-color: var(--card-bg);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: var(--transition-smooth);
+}
+
+.volunteer-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.volunteer-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.volunteer-content {
+  padding: 2rem;
+}
+
+.volunteer-org {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.volunteer-org img {
+  margin-right: 0.5rem;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.volunteer-role {
+  color: var(--secondary-color);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.volunteer-date {
+  font-size: 0.875rem;
+  color: var(--muted-text);
+  margin-bottom: 1rem;
+}
+
+.volunteer-desc {
+  margin-bottom: 1.5rem;
+  color: var(--muted-text);
+}
+
+.volunteer-desc ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.volunteer-desc ul li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.volunteer-desc ul li:before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--secondary-color);
+}
+
+/* Honors Section */
+.honors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.honor-card {
+  background-color: var(--card-bg);
+  border-radius: var(--card-radius);
+  padding: 2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  border-top: 4px solid var(--accent-color);
+}
+
+.honor-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.honor-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent-color);
+}
+
+.honor-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.honor-issuer {
+  font-size: 0.9rem;
+  color: var(--muted-text);
+  margin-bottom: 1.5rem;
+}
+
+/* Contact Section */
+.contact-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.contact-info h3 {
+  margin-bottom: 2rem;
+}
+
+.contact-info-item {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.contact-icon {
+  margin-right: 1.5rem;
+  width: 50px;
+  height: 50px;
+  background-color: var(--card-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  color: var(--secondary-color);
+  transition: var(--transition-smooth);
+}
+
+.contact-info-item:hover .contact-icon {
+  background-color: var(--secondary-color);
+  color: var(--light-text);
+  transform: scale(1.1);
+}
+
+.contact-info-details h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-info-details p,
+.contact-info-details a {
+  color: var(--muted-text);
+  font-size: 1rem;
+}
+
+.contact-map {
+  margin-top: 2rem;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  height: 200px;
+}
+
+.contact-form {
+  background-color: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: var(--card-radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--light-text);
+  font-size: 0.9rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  color: var(--light-text);
+  font-size: 1rem;
+  transition: var(--transition-smooth);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 2px rgba(221, 110, 66, 0.2);
+}
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+textarea.form-control {
+  min-height: 150px;
+  resize: vertical;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer */
+.footer {
+  background-color: var(--darker-bg);
+  padding: 5rem 0 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.footer-description {
+  color: var(--muted-text);
+  margin-bottom: 2rem;
+  max-width: 400px;
+}
+
+.footer-heading {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: var(--light-text);
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-link {
+  margin-bottom: 0.8rem;
+}
+
+.footer-link a {
+  color: var(--muted-text);
+  transition: var(--transition-smooth);
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-link a:hover {
+  color: var(--secondary-color);
+  transform: translateX(5px);
+}
+
+.footer-link a i {
+  margin-right: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--muted-text);
+  transition: var(--transition-smooth);
+}
+
+.footer-social-link:hover {
+  background-color: var(--secondary-color);
+  color: var(--light-text);
+  transform: translateY(-5px);
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+}
+
+.footer-copyright {
+  color: var(--muted-text);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 992px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Back to Top */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--secondary-color);
+  color: var(--light-text);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+}
+
+.back-to-top.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-5px);
+}
+
+/* Animations */
+.animate-fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-fade-right {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-fade-left {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-fade-in {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.animate-delay-100 {
+  transition-delay: 0.1s;
+}
+
+.animate-delay-200 {
+  transition-delay: 0.2s;
+}
+
+.animate-delay-300 {
+  transition-delay: 0.3s;
+}
+
+.animate-delay-400 {
+  transition-delay: 0.4s;
+}
+
+.animate-delay-500 {
+  transition-delay: 0.5s;
+}
+
+.in-view {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  :root {
+    --section-padding: 80px 0;
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+  
+  h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  :root {
+    --section-padding: 70px 0;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    max-width: 300px;
+  }
+  
+  .hero-image {
+    margin-top: 3rem;
+  }
+  
+  .portfolio-grid,
+  .cert-grid,
+  .education-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 60px 0;
+    --header-height: 70px;
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .row {
+    margin: 0 -0.5rem;
+  }
+  
+  .col {
+    padding: 0 0.5rem;
+  }
+  
+  .hero {
+    text-align: center;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+  
+  .clients-grid {
+    justify-content: center;
+  }
+  
+  .skills-grid,
+  .portfolio-grid,
+  .volunteer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --section-padding: 50px 0;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.6rem;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  
+  .footer {
+    padding: 3rem 0 1rem;
+  }
+}
+
+/* Preloader */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--dark-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(221, 110, 66, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--secondary-color);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+  </style>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">Alfeo<span class="logo-color">Raymond</span></a>
+            <nav class="nav">
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list" id="nav-list">
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                    <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+                    <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
+                    <li class="nav-item"><a href="#certifications" class="nav-link">Certifications</a></li>
+                    <li class="nav-item"><a href="#volunteering" class="nav-link">Volunteering</a></li>
+                    <li class="nav-item"><a href="#honors" class="nav-link">Honors</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="hero-content animate-fade-up">
+                            <span class="hero-subtitle">Hello, I'm</span>
+                            <h1 class="hero-title">Alfeo Raymond</h1>
+                            <p class="hero-description">ICT & Digital Transformation Specialist with a passion for Human-Centered Design and creating innovative, scalable solutions across health, education, and humanitarian sectors.</p>
+                            <div class="hero-buttons">
+                                <a href="#about" class="btn btn-primary">Learn More</a>
+                                <a href="#contact" class="btn btn-outline">Get In Touch</a>
+                            </div>
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/pheogrammer" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://github.com/yourusername" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                                <a href="mailto:ngelime07@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="hero-image animate-fade-left">
+                            <img src="images/profile-photo.jpg" alt="Alfeo Raymond" width="400" height="400">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clients/Partners Section -->
+        <section class="clients">
+            <div class="container">
+                <p class="clients-title">Worked With</p>
+                <div class="clients-grid">
+                    <img src="images/logos/unicc-logo.png" alt="UNICC" class="client-logo">
+                    <img src="images/logos/msf-logo.png" alt="Médecins Sans Frontières" class="client-logo">
+                    <img src="images/logos/bookbot-logo.png" alt="Bookbot" class="client-logo">
+                    <img src="images/logos/save-the-children-logo.png" alt="Save the Children" class="client-logo">
+                    <img src="images/logos/moh-logo.png" alt="Ministry of Health" class="client-logo">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section about" id="about">
+            <div class="container">
+                <div class="section-title-container">
+                    <h2 class="section-title animate-fade-up">About Me</h2>
+                </div>
+                <p class="section-subtitle animate-fade-up">I am an ICT and Digital Transformation Specialist with over six years of experience designing and implementing innovative, scalable solutions across health, education, and humanitarian sectors.</p>
+                
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 animate-fade-right">
+                        <div class="about-content">
+                            <p>Throughout my career, I've combined technical expertise with a passion for social impact, delivering solutions that have transformed lives for thousands across Tanzania and beyond. My expertise spans:</p>
+                            <ul>
+                                <li><strong class="highlighted-text">Software Development:</strong> Full-stack web/mobile solutions with React, Node, and cloud technologies</li>
+                                <li><strong class="highlighted-text">Human-Centered Design:</strong> Creating solutions that truly meet user needs through iterative prototyping</li>
+                                <li><strong class="highlighted-text">AI/ML Applications:</strong> Implementing predictive analytics for healthcare and development programs</li>
+                                <li><strong class="highlighted-text">Open Source Leadership:</strong> Maintaining projects like Laravel-Lang with 3.6k+ GitHub stars</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 animate-fade-left">
+                        <div class="stats-container">
+                            <div class="stat-item">
+                                <div class="stat-number" data-count="6">0</div>
+                                <div class="stat-label">Years of Experience</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" data-count="15">0</div>
+                                <div class="stat-label">Projects Completed</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" data-count="3000">0</div>
+                                <div class="stat-label">Lives Impacted</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Skills Section -->
+        <section class="section" id="skills">
+            <div class="container">
+                <div class="section-title-container">
+                    <h2 class="section-title animate-fade-up">Technical & Professional Skills</h2>
+                </div>
+                <p class="section-subtitle animate-fade-up">Key competencies developed through practical experience and continuous learning</p>
+                
+                <div class="skills-grid stagger-container">
+                    <!-- Human-Centered Design -->
+                    <div class="skill-card stagger-item animate-fade-up">
+                        <div class="skill-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Human-Centered Design</h3>
+                        <ul class="skill-list">
+                            <li>Led 12+ co-creation workshops (Ministry of Health/UNICEF)</li>
+                            <li>Developed 8 HCD prototypes tested with 200+ users</li>
+                            <li>Trained 50+ health workers in HCD methodologies</li>
+                            <li>Designed USSD/SMS interfaces for 3,000+ mothers</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Software Development -->
+                    <div class="skill-card stagger-item animate-fade-up">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Software Development</h3>
+                        <ul class="skill-list">
+                            <li>Frontend: React, JavaScript (Bookbot UI, weather app)</li>
+                            <li>Backend: Node.js, PHP/Laravel (LMS plugins)</li>
+                            <li>Mobile: USSD/SMS platforms (Digital Parental Kit)</li>
+                            <li>CMS: SharePoint, Moodle (70k+ students)</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Cloud & Infrastructure -->
+                    <div class="skill-card stagger-item animate-fade-up">
+                        <div class="skill-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Cloud & Infrastructure</h3>
+                        <ul class="skill-list">
+                            <li>Google Cloud Certified | Docker | CI/CD</li>
+                            <li>Ubuntu/Debian servers (99.9% uptime)</li>
+                            <li>VSAT network management (98.5% availability)</li>
+                            <li>Zabbix monitoring (60% faster incident response)</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Data Systems & AI -->
+                    <div class="skill-card stagger-item animate-fade-up">
+                        <div class="skill-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Data Systems & AI</h3>
+                        <ul class="skill-list">
+                            <li>PowerBI dashboards for 5M+ records</li>
+                            <li>AI analysis module for nutrition data</li>
+                            <li>KoboToolbox integration</li>
+                            <li>GIS mapping (15+ epidemic maps)</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Cybersecurity -->
+                    <div class="skill-card stagger-item animate-fade-up">
+                        <div class="skill-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Cybersecurity</h3>
+                        <ul class="skill-list">
+                            <li>GDPR-compliant systems implementation</li>
+                            <li>Reduced breaches by 60% via firewall rules</li>
+                            <li>Penetration testing (OPSWAT certified)</li>
+                            <li>Encrypted backups for sensitive data</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Project Management -->
+                    <div class="skill-card stagger-item animate-fade-up">
+                        <div class="skill-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h3>Project Management</h3>
+                        <ul class="skill-list">
+                            <li>Agile methodologies & Scrum framework</li>
+                            <li>Stakeholder coordination & engagement</li>
+                            <li>Resource allocation & optimization</li>
+                            <li>MEAL frameworks & impact monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="tech-proficiencies animate-fade-up mt-5">
+                    <h3 class="text-center mb-4">Technical Proficiencies</h3>
+                    <div class="tech-tags text-center">
+                        <span class="tech-tag">JavaScript (React/Node)</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PHP/Laravel</span>
+                        <span class="tech-tag">Google Cloud</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Git/GitHub</span>
+                        <span class="tech-tag">AI/ML</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">Twilio API</span>
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">VSAT Systems</span>
+                        <span class="tech-tag">HF/VHF Radios</span>
+                        <span class="tech-tag">Articulate 360</span>
+                        <span class="tech-tag">PowerBI</span>
+                        <span class="tech-tag">KoboToolbox</span>
+                        <span class="tech-tag">SharePoint</span>
+                        <span class="tech-tag">Moodle</span>
+                        <span class="tech-tag">Linux</span>
+                        <span class="tech-tag">Zabbix</span>
+                        <span class="tech-tag">GIS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <!-- Experience Section -->
+<section class="section" id="experience">
+    <div class="container">
+        <div class="section-title-container">
+            <h2 class="section-title animate-fade-up">Professional Journey</h2>
+        </div>
+        <p class="section-subtitle animate-fade-up">A track record of delivering innovative solutions across healthcare, education, and humanitarian sectors</p>
+        
+        <div class="timeline">
+            <!-- UNICC -->
+            <div class="timeline-item timeline-left animate-fade-right">
+                <div class="timeline-date">Sep 2024 - Present</div>
+                <div class="timeline-content">
+                    <h3 class="timeline-title">Innovative Technologies Intern</h3>
+                    <div class="timeline-organization">
+                        <img src="images/logos/unicc-logo.png" alt="UNICC Logo">
+                        United Nations International Computing Centre
+                    </div>
+                    <span class="timeline-type internship">Internship</span>
+                    <div class="timeline-location">
+                        <i class="fas fa-map-marker-alt"></i> Brindisi, Italy (Remote)
+                    </div>
+                    
+                    <div class="experience-details">
+                        <h4>Emerging Technology Research:</h4>
+                        <ul>
+                            <li>Conducted in-depth analysis of AI, ML, Blockchain, and IoT applications for humanitarian work</li>
+                            <li>Produced technical briefs for UN agencies on emerging tech adoption</li>
+                            <li>Evaluated metaverse platforms and immersive tech (VR/AR/MR) solutions for learning applications</li>
+                        </ul>
+                        
+                        <h4>Data Analysis & Tech Solutions:</h4>
+                        <ul>
+                            <li>Identified trends across various data sources to recommend technology solutions aligned with SDGs</li>
+                            <li>Tested AI tools for document processing, creating comparative analysis matrices</li>
+                            <li>Analyzed user feedback from immersive learning programs to identify improvements</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-tags">
+                        <span class="tech-tag">AI/ML Research</span>
+                        <span class="tech-tag">VR/AR/MR</span>
+                        <span class="tech-tag">Blockchain</span>
+                        <span class="tech-tag">IoT</span>
+                        <span class="tech-tag">Procedural Analysis</span>
+                        <span class="tech-tag">Creativity and Innovation</span>
+                        <span class="tech-tag">Business Development</span>
+                        <span class="tech-tag">Analytical Skills</span>
+                        <span class="tech-tag">Leadership</span>
+                        <span class="tech-tag">Requirements Analysis</span>
+                        <span class="tech-tag">Cloud Storage</span>
+                        <span class="tech-tag">Communication</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- MSF -->
+            <div class="timeline-item timeline-right animate-fade-left">
+                <div class="timeline-date">May 2024 - Present</div>
+                <div class="timeline-content">
+                    <h3 class="timeline-title">ICT Supervisor</h3>
+                    <div class="timeline-organization">
+                        <img src="images/logos/msf-logo.png" alt="MSF Logo">
+                        Médecins Sans Frontières (Switzerland)
+                    </div>
+                    <span class="timeline-type fulltime">Full-time</span>
+                    <div class="timeline-location">
+                        <i class="fas fa-map-marker-alt"></i> Liwale, Tanzania (On-site)
+                    </div>
+                    
+                    <div class="experience-details">
+                        <h4>IT Infrastructure & Systems Management:</h4>
+                        <ul>
+                            <li>Maintained multiple endpoint devices across project sites with 99.8% operational uptime</li>
+                            <li>Standardized OS configurations for Windows/Linux environments, improving system interoperability</li>
+                            <li>Implemented preventive maintenance program that reduced equipment downtime by 35%</li>
+                            <li>Managed ICT equipment lifecycle including procurement, deployment, and retirement</li>
+                        </ul>
+                        
+                        <h4>Telecommunications Systems Engineering:</h4>
+                        <ul>
+                            <li>Deployed HF and VHF radio systems with emergency channel mapping for critical communications</li>
+                            <li>Configured and optimized satellite communication terminals for reliable connectivity</li>
+                            <li>Developed and delivered radio operation training for staff members</li>
+                            <li>Maintained 24/7 emergency communication readiness across all mission and project sites</li>
+                        </ul>
+                        
+                        <h4>Information Security & Data Protection:</h4>
+                        <ul>
+                            <li>Implemented encrypted backup system for sensitive patient records, ensuring data integrity</li>
+                            <li>Designed and deployed firewall ruleset that reduced unauthorized access attempts by 5%</li>
+                            <li>Conducted comprehensive security audits achieving full MSF international compliance</li>
+                            <li>Established and supported user access controls and authentication protocols for all systems</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="key-achievement">
+                        <h4>Key Achievement:</h4>
+                        <p>Designed and implemented an integrated emergency communication protocol combining radio, satellite, and mobile systems that improved emergency response times by 80% during critical incidents.</p>
+                    </div>
+                    
+                    <div class="tech-tags">
+                        <span class="tech-tag">Healthcare IT Systems</span>
+                        <span class="tech-tag">Cybersecurity</span>
+                        <span class="tech-tag">Radio Systems</span>
+                        <span class="tech-tag">Satellite Communications</span>
+                        <span class="tech-tag">Project Management</span>
+                        <span class="tech-tag">Healthcare Information Technology</span>
+                        <span class="tech-tag">Strategic HR Planning</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bookbot -->
+            <div class="timeline-item timeline-left animate-fade-right">
+                <div class="timeline-date">Jun 2024 - Aug 2024</div>
+                <div class="timeline-content">
+                    <h3 class="timeline-title">Graphics & UI/UX Design Consultant</h3>
+                    <div class="timeline-organization">
+                        <img src="images/logos/bookbot-logo.png" alt="Bookbot Logo">
+                        Bookbot
+                    </div>
+                    <span class="timeline-type contract">Part-time</span>
+                    <div class="timeline-location">
+                        <i class="fas fa-map-marker-alt"></i> Melbourne, Australia (Remote)
+                    </div>
+                    
+                    <div class="experience-details">
+                        <h4>UI/UX Design:</h4>
+                        <ul>
+                            <li>Designed user-friendly app interfaces, preview layouts, and book covers for the Bookbot Kiswahili app</li>
+                            <li>Developed interactive prototypes in Figma</li>
+                            <li>Conducted usability testing with Swahili learners</li>
+                        </ul>
+                        
+                        <h4>Content Localization:</h4>
+                        <ul>
+                            <li>Localized digital storybooks into Kiswahili while maintaining cultural relevance and educational value</li>
+                            <li>Adapted 500+ storybooks maintaining cultural authenticity</li>
+                            <li>Designed 600+ book covers reflecting Tanzanian themes</li>
+                            <li>Ensured age-appropriate vocabulary grading</li>
+                        </ul>
+                        
+                        <h4>Audiobook Production:</h4>
+                        <ul>
+                            <li>Enhanced the app's library of graded audiobooks to support vocabulary building and comprehension</li>
+                            <li>Edited 900+ audio recordings for clarity</li>
+                            <li>Created listening comprehension activities</li>
+                            <li>Implemented progress tracking features</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-gallery mt-3">
+                        <div class="row">
+                            <div class="col-6">
+                                <img src="images/projects/bookbot-playstore.jpg" alt="Bookbot playstore view" class="img-fluid rounded mb-2">
+                                <p class="text-muted">Bookbot app on Google Play Store</p>
+                            </div>
+                            <div class="col-6">
+                                <img src="images/projects/bookbot-books.jpg" alt="Bookbot books list" class="img-fluid rounded mb-2">
+                                <p class="text-muted">Bookbot Kiswahili books collection</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-tags">
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">Canva</span>
+                        <span class="tech-tag">UI/UX</span>
+                        <span class="tech-tag">Localization</span>
+                        <span class="tech-tag">EdTech</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Save the Children -->
+            <div class="timeline-item timeline-right animate-fade-left">
+                <div class="timeline-date">Nov 2023 - Apr 2024</div>
+                <div class="timeline-content">
+                    <h3 class="timeline-title">Technology for Development Officer</h3>
+                    <div class="timeline-organization">
+                        <img src="images/logos/save-the-children-logo.png" alt="Save the Children Logo">
+                        Save the Children International
+                    </div>
+                    <span class="timeline-type contract">Contract</span>
+                    <div class="timeline-location">
+                        <i class="fas fa-map-marker-alt"></i> Dar es Salaam, Tanzania
+                    </div>
+                    
+                    <div class="experience-details">
+                        <h4>AI-Driven Digital Health Solution Development:</h4>
+                        <ul>
+                            <li>Designed and maintained mobile health platforms, improving access to essential healthcare services</li>
+                            <li>Led development of USSD/SMS platform serving 3,000+ mothers with nutritional guidance</li>
+                            <li>Designed and implemented AI analysis module to identify usage patterns and improve content delivery</li>
+                            <li>Integrated KoboToolbox for real-time data collection and monitoring</li>
+                        </ul>
+                        
+                        <h4>System Integration & Data Management:</h4>
+                        <ul>
+                            <li>Implemented AI-powered monitoring systems for early intervention identification and program evaluation</li>
+                            <li>Connected mobile platform to PowerBI dashboards for real-time program monitoring</li>
+                            <li>Developed API bridges between multiple health information systems to streamline data flow</li>
+                            <li>Conducted unit and security testing to ensure compliance with data protection standards</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="key-achievement">
+                        <h4>Key Achievement:</h4>
+                        <p>Developed the "Digital Parental Kit" that reduced missed pediatric appointments by 28% in Dodoma region through automated SMS reminders and AI-powered nutrition guidance, reaching 3,000+ beneficiaries within first 6 months.</p>
+                        <img src="images/projects/digital-parental-kit.jpg" alt="Digital Parental Kit USSD interface showing maternal health options" class="img-fluid rounded">
+                        <p class="text-muted mt-2">USSD interface providing maternal health information and appointment reminders</p>
+                        <p class="mt-2"><strong>Project Impact:</strong> Transformed more than 3,000 lives of mothers and children in Dodoma and Morogoro region through AI-Powered Personalized Nutrition Guide for Navigating the First 1000 Days of Life.</p>
+                    </div>
+                    
+                    <div class="tech-tags">
+                        <span class="tech-tag">USSD/SMS Platforms</span>
+                        <span class="tech-tag">AI/ML Solutions</span>
+                        <span class="tech-tag">KoboToolbox</span>
+                        <span class="tech-tag">PowerBI Analytics</span>
+                        <span class="tech-tag">Conflict Resolution</span>
+                        <span class="tech-tag">Project Management</span>
+                        <span class="tech-tag">Incident Response</span>
+                        <span class="tech-tag">Business Development</span>
+                        <span class="tech-tag">Consulting</span>
+                        <span class="tech-tag">Customer Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ministry of Health -->
+            <div class="timeline-item timeline-left animate-fade-right">
+                <div class="timeline-date">Apr 2023 - Nov 2023</div>
+                <div class="timeline-content">
+                    <h3 class="timeline-title">Human-Centered Design Consultant</h3>
+                    <div class="timeline-organization">
+                        <img src="images/logos/moh-logo.png" alt="Ministry of Health Logo">
+                        Tanzania Ministry of Health (UNICEF Collaboration)
+                    </div>
+                    <span class="timeline-type contract">Contract</span>
+                    <div class="timeline-location">
+                        <i class="fas fa-map-marker-alt"></i> Dar es Salaam, Tanzania
+                    </div>
+                    
+                    <div class="experience-details">
+                        <h4>Vaccination Program Redesign (Ilala District):</h4>
+                        <ul>
+                            <li>Implemented Human-Centered Design (HCD) project with UNICEF and Tanzania MoH to boost vaccine utilization among under-five children</li>
+                            <li>Increased childhood vaccination rates by 25% through human-centered design approach</li>
+                            <li>Identified and addressed systemic gaps in immunization tracking, revealing 9,899 undocumented defaulters</li>
+                            <li>Conducted 12 co-creation workshops with health workers and community stakeholders</li>
+                        </ul>
+                        
+                        <h4>Community Research & Needs Assessment:</h4>
+                        <ul>
+                            <li>Identified challenges and opportunities within at-risk populations, leading to tailored interventions</li>
+                            <li>Interviewed 150+ parents in high-risk communities to understand vaccination barriers</li>
+                            <li>Mapped vaccination journeys for 5 age cohorts, identifying 7 critical service gaps</li>
+                            <li>Facilitated stakeholder workshops that surfaced 29 barriers and 9 opportunities</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="key-achievement">
+                        <h4>Key Achievement:</h4>
+                        <p>Pioneered the "Ilala Prototype" community-designed vaccination system that reduced missed immunizations by 40% and became a model for urban vaccine delivery in Tanzania, reaching 131,088 families.</p>
+                        <div class="row mt-3">
+                            <div class="col-md-6 mb-3">
+                                <img src="images/projects/hcd-workshop.jpg" alt="Health workers engaged in participatory design session" class="img-fluid rounded">
+                                <p class="text-muted">Co-creation workshop with health workers and community leaders</p>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <img src="images/projects/ilala-prototype.jpg" alt="Implementation of Ilala Prototype" class="img-fluid rounded">
+                                <p class="text-muted">Implementation of "Ilala Prototype" vaccination system</p>
+                            </div>
+                        </div>
+                        <a href="documents/Promoting-Vaccine-Utilization-HCD.pdf" target="_blank" class="btn btn-outline btn-sm mt-2">View Project Report</a>
+                    </div>
+                    
+                    <div class="tech-tags">
+                        <span class="tech-tag">Human-Centered Design</span>
+                        <span class="tech-tag">Co-Creation</span>
+                        <span class="tech-tag">Mobile Tracking</span>
+                        <span class="tech-tag">Project Management</span>
+                        <span class="tech-tag">Business Planning</span>
+                        <span class="tech-tag">Creativity and Innovation</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- UDSM -->
+            <div class="timeline-item timeline-right animate-fade-left">
+                <div class="timeline-date">Nov 2019 - Nov 2023</div>
+                <div class="timeline-content">
+                    <h3 class="timeline-title">Software & e-Learning Systems Engineer</h3>
+                    <div class="timeline-organization">
+                        <img src="images/logos/udsm-logo.png" alt="UDSM Logo">
+                        University of Dar es Salaam
+                    </div>
+                    <span class="timeline-type contract">Contract</span>
+                    <div class="timeline-location">
+                        <i class="fas fa-map-marker-alt"></i> Dar es Salaam, Tanzania
+                    </div>
+                    
+                    <div class="experience-details">
+                        <h4>eLearning Platform Development:</h4>
+                        <ul>
+                            <li>Designed and developed software systems for operational support, management, and e-learning, tailored to institutional and user needs</li>
+                            <li>Developed 3 custom Moodle plugins serving 70,000+ students, enhancing platform functionality</li>
+                            <li>Built video lecture platform hosting 500+ hours of educational content with 98% uptime</li>
+                            <li>Optimized system performance, reducing downtime from 5% to 0.2% annually</li>
+                        </ul>
+                        
+                        <h4>Systems Administration:</h4>
+                        <ul>
+                            <li>Maintained servers, ensuring optimal performance and minimal downtime</li>
+                            <li>Conducted system monitoring and performance analysis to proactively address potential issues</li>
+                            <li>Administered Ubuntu/Debian servers handling 3M+ monthly requests</li>
+                            <li>Deployed Zabbix monitoring system reducing incident response time by 60%</li>
+                        </ul>
+                        
+                        <h4>Content Management & Production:</h4>
+                        <ul>
+                            <li>Produced 120+ educational videos with interactive elements and accessibility features</li>
+                            <li>Created reusable course templates following instructional design best practices</li>
+                            <li>Developed auto-grading assessment system reducing grading time by 70%</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-tags">
+                        <span class="tech-tag">Moodle Development</span>
+                        <span class="tech-tag">PHP/Python</span>
+                        <span class="tech-tag">Linux Administration</span>
+                        <span class="tech-tag">Customer Service</span>
+                        <span class="tech-tag">Project Management</span>
+                        <span class="tech-tag">Data Analysis</span>
+                        <span class="tech-tag">Unit Testing</span>
+                        <span class="tech-tag">Business Development</span>
+                        <span class="tech-tag">Leadership</span>
+                        <span class="tech-tag">Web Development</span>
+                        <span class="tech-tag">Customer Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- dLab Tanzania -->
+            <div class="timeline-item timeline-left animate-fade-right">
+                <div class="timeline-date">Sep 2023 - Oct 2023</div>
+                <div class="timeline-content">
+                    <h3 class="timeline-title">Data Engineering Consultant</h3>
+                    <div class="timeline-organization">
+                        <img src="images/logos/dlab-logo.png" alt="dLab Tanzania Logo">
+                        dLab Tanzania
+                    </div>
+                    <span class="timeline-type contract">Part-time</span>
+                    <div class="timeline-location">
+                        <i class="fas fa-map-marker-alt"></i> Dar es Salaam, Tanzania
+                    </div>
+                    
+                    <div class="experience-details">
+                        <h4>Census Data Platform:</h4>
+                        <ul>
+                            <li>Streamlined data collection and processing workflows for the 2022 census, enhancing accuracy and efficiency</li>
+                            <li>Reduced data cleaning time by 40%</li>
+                            <li>Implemented quality validation checks</li>
+                        </ul>
+                        
+                        <h4>Dashboard Development:</h4>
+                        <ul>
+                            <li>Contributed to the creation of a user-friendly platform for internal data analysis, supporting data-driven decision-making</li>
+                            <li>Created 8 interactive PowerBI dashboards</li>
+                            <li>Designed and developed interactive dashboards to effectively communicate key demographic and health statistics to stakeholders</li>
+                            <li>Visualized demographic trends for 20+ indicators</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="key-achievement">
+                        <h4>Key Achievement:</h4>
+                        <p>Developed a center for accessibility and exchange of census information that enables various stakeholders to access census information and the processes used to collect it. The census visualization platform enabled policymakers to identify 15 underserved districts for targeted resource allocation.</p>
+                        <img src="images/projects/census-dashboard.jpg" alt="Interactive census data dashboard showing demographic information" class="img-fluid rounded mt-3">
+                        <p class="text-muted">Interactive census data visualization interface</p>
+                    </div>
+                    
+                    <div class="tech-tags">
+                        <span class="tech-tag">Data Processing</span>
+                        <span class="tech-tag">PowerBI</span>
+                        <span class="tech-tag">API Development</span>
+                        <span class="tech-tag">Data Quality</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- UDSM Intern -->
+            <div class="timeline-item timeline-right animate-fade-left">
+                <div class="timeline-date">Sep 2019 - Nov 2019</div>
+                <div class="timeline-content">
+                    <h3 class="timeline-title">Software Developer Intern</h3>
+                    <div class="timeline-organization">
+                        <img src="images/logos/udsm-logo.png" alt="UDSM Logo">
+                        University of Dar es Salaam
+                    </div>
+                    <span class="timeline-type internship">Internship</span>
+                    <div class="timeline-location">
+                        <i class="fas fa-map-marker-alt"></i> Dar es Salaam, Tanzania
+                    </div>
+                    
+                    <div class="experience-details">
+                        <h4>User Research:</h4>
+                        <ul>
+                            <li>Conducted user research and testing to enhance system designs and improve user experience</li>
+                            <li>Identified key system requirements</li>
+                            <li>Created user personas for various departments</li>
+                        </ul>
+                        
+                        <h4>System Testing:</h4>
+                        <ul>
+                            <li>Executed 150+ test cases</li>
+                            <li>Documented 30+ bug reports</li>
+                            <li>Improved UI based on user feedback</li>
+                        </ul>
+                        
+                        <h4>Documentation:</h4>
+                        <ul>
+                            <li>Prepared detailed technical documentation for accurate system use and efficient maintenance processes</li>
+                            <li>Created system administration guides</li>
+                            <li>Developed training materials</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-tags">
+                        <span class="tech-tag">User Testing</span>
+                        <span class="tech-tag">QA Testing</span>
+                        <span class="tech-tag">Technical Writing</span>
+                        <span class="tech-tag">Web Development</span>
+                        <span class="tech-tag">Customer Service</span>
+                        <span class="tech-tag">Unit Testing</span>
+                        <span class="tech-tag">Software Updates</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="documents/Alfeo-Raymond-CV.pdf" target="_blank" class="btn btn-primary">Download Full CV</a>
+        </div>
+    </div>
+</section>
+
+        <!-- Education Section -->
+       <!-- Education Section -->
+<section class="section" id="education">
+    <div class="container">
+        <div class="section-title-container">
+            <h2 class="section-title animate-fade-up">Education</h2>
+        </div>
+        <p class="section-subtitle animate-fade-up">Academic foundation supporting continuous learning and professional growth</p>
+        
+        <div class="education-grid">
+            <!-- Master's Degree -->
+            <div class="education-card animate-fade-up">
+                <div class="education-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>Master's in Engineering Management - Project Management</h3>
+                <div class="education-institution">
+                    <img src="images/logos/udsm-logo.png" alt="University of Dar es Salaam Logo">
+                    University of Dar es Salaam (UDSM)
+                </div>
+                <div class="education-date">2024 - 2026 (In Progress)</div>
+                <p>Currently pursuing advanced studies in Engineering Management with a specialization in Project Management, expanding knowledge in leadership, strategic planning, and complex project execution.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Project Management</span>
+                    <span class="tech-tag">Engineering Management</span>
+                    <span class="tech-tag">Leadership</span>
+                    <span class="tech-tag">Strategic Planning</span>
+                </div>
+            </div>
+            
+            <!-- Bachelor's Degree -->
+            <div class="education-card animate-fade-up">
+                <div class="education-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>Bachelor's Degree in Information Technology</h3>
+                <div class="education-institution">
+                    <img src="images/logos/cbe-logo.png" alt="College of Business Education Logo">
+                    College of Business Education
+                </div>
+                <div class="education-date">Nov 2020 - Jul 2023</div>
+                <p>Specialized in software engineering and systems analysis, with coursework in AI fundamentals and cloud computing, providing a comprehensive foundation in modern information technology.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Software Engineering</span>
+                    <span class="tech-tag">Systems Analysis</span>
+                    <span class="tech-tag">AI Fundamentals</span>
+                    <span class="tech-tag">Cloud Computing</span>
+                </div>
+            </div>
+            
+            <!-- Diploma -->
+            <div class="education-card animate-fade-up">
+                <div class="education-icon">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3>Diploma in Computer Science</h3>
+                <div class="education-institution">
+                    <img src="images/logos/udsm-logo.png" alt="University of Dar es Salaam Logo">
+                    University of Dar es Salaam (UDSM)
+                </div>
+                <div class="education-date">2017 - 2019</div>
+                <p>Focus on programming fundamentals, database systems, and network administration, building core technical competencies and practical implementation skills.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Programming</span>
+                    <span class="tech-tag">Database Systems</span>
+                    <span class="tech-tag">Network Administration</span>
+                </div>
+            </div>
+            
+            <!-- Certificate -->
+            <div class="education-card animate-fade-up">
+                <div class="education-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <h3>Certificate in Information Technology</h3>
+                <div class="education-institution">
+                    <img src="images/logos/cbe-logo.png" alt="College of Business Education Logo">
+                    College of Business Education
+                </div>
+                <div class="education-date">Aug 2016 - May 2017</div>
+                <p>Introductory program covering computer systems, basic programming, and IT fundamentals, establishing a strong foundation for further technological studies.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Computer Systems</span>
+                    <span class="tech-tag">Basic Programming</span>
+                    <span class="tech-tag">IT Fundamentals</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Certifications Section -->
+       <!-- Certifications Section -->
+<section class="section" id="certifications">
+    <div class="container">
+        <div class="section-title-container">
+            <h2 class="section-title animate-fade-up">Licenses & Certifications</h2>
+        </div>
+        <p class="section-subtitle animate-fade-up">Demonstrated expertise through accredited credentials and continuous learning</p>
+        
+        <div class="cert-grid">
+            <!-- Linux Foundation Security -->
+            <div class="cert-card animate-fade-up">
+                <img src="images/certs/linux-foundation-logo.png" alt="The Linux Foundation Logo" class="cert-logo">
+                <h3>LFD125: Security for Software Development Managers</h3>
+                <div class="cert-info">
+                    <span class="cert-date">Issued: Apr 2025</span>
+                    <div>Credential ID: LF-lpccn1u52l</div>
+                </div>
+                <p>Advanced training in security management for software development leaders.</p>
+                <a href="#" class="btn btn-outline btn-sm mt-2">Show Credential</a>
+            </div>
+            
+            <!-- Linux Foundation Ethics in AI -->
+            <div class="cert-card animate-fade-up">
+                <img src="images/certs/linux-foundation-logo.png" alt="The Linux Foundation Logo" class="cert-logo">
+                <h3>LFS112: Ethics in AI and Data Science</h3>
+                <div class="cert-info">
+                    <span class="cert-date">Issued: Apr 2025</span>
+                    <div>Credential ID: LF-mqmthqhrn0</div>
+                </div>
+                <p>Training in ethical considerations and responsible practices in AI development.</p>
+                <a href="#" class="btn btn-outline btn-sm mt-2">Show Credential</a>
+            </div>
+            
+            <!-- GitHub Digital Public Goods -->
+            <div class="cert-card animate-fade-up">
+                <img src="images/certs/github-logo.png" alt="GitHub Logo" class="cert-logo">
+                <h3>GitHub Digital Public Goods Open Source Community Manager Program</h3>
+                <div class="cert-info">
+                    <span class="cert-date">Issued: Jan 2025</span>
+                </div>
+                <p>Advanced training in open source community building, contributor onboarding, and project governance for digital public goods.</p>
+                <a href="#" class="btn btn-outline btn-sm mt-2">Show Credential</a>
+            </div>
+            
+            <!-- Hindsight Ventures -->
+            <div class="cert-card animate-fade-up">
+                <img src="images/certs/hindsight-logo.png" alt="Hindsight Ventures Logo" class="cert-logo">
+                <h3>Innovation Managers Executive Learning Program 2024</h3>
+                <div class="cert-info">
+                    <span class="cert-date">Issued: Dec 2024</span>
+                    <div>ID: e9ed95ba-13c5-4d36-bfca-b2283da74ac9</div>
+                </div>
+                <p>Executive education program focusing on innovation leadership and strategic management.</p>
+                <a href="#" class="btn btn-outline btn-sm mt-2">View Credential</a>
+            </div>
+            
+            <!-- Human-Centered Design -->
+            <div class="cert-card animate-fade-up">
+                <img src="images/certs/acumen-logo.png" alt="Acumen Academy Logo" class="cert-logo">
+                <h3>Human-Centered Design</h3>
+                <div class="cert-info">
+                    <span class="cert-date">Issued: Aug 2024</span>
+                    <div>ID: 34012-3759403</div>
+                </div>
+                <p>Foundational training in human-centered design principles and practices.</p>
+                <a href="#" class="btn btn-outline btn-sm mt-2">Download PDF</a>
+            </div>
+            
+            <!-- Human-Centered Design Prototyping -->
+            <div class="cert-card animate-fade-up">
+                <img src="images/certs/acumen-logo.png" alt="Acumen Academy Logo" class="cert-logo">
+                <h3>Human-Centered Design 201: Prototyping</h3>
+                <div class="cert-info">
+                    <span class="cert-date">Issued: Aug 2024</span>
+                    <div>ID: 35737-3759403</div>
+                </div>
+                <p>Advanced training in prototyping and iterative design methodologies.</p>
+                <a href="#" class="btn btn-outline btn-sm mt-2">Download PDF</a>
+            </div>
+        </div>
+        
+        <!-- View More/Less Toggle Button for Additional Certifications -->
+        <div class="text-center mt-4">
+            <button class="btn btn-primary" id="view-more-certs">View More Certifications</button>
+        </div>
+        
+        <!-- Hidden additional certifications (will be shown via JavaScript) -->
+        <div class="cert-grid mt-4" id="more-certs" style="display: none;">
+            <!-- OPSWAT -->
+            <div class="cert-card">
+                <img src="images/certs/opswat-logo.png" alt="OPSWAT Logo" class="cert-logo">
+                <h3>Critical Infrastructure Protection Certificate</h3>
+                <div class="cert-info">
+                    <span class="cert-date">Issued: Jul 2024 · Expires: Jun 2025</span>
+                    <div>ID: hqLOUi1Dkw</div>
+                </div>
+                <p>Training in protecting industrial control systems and critical infrastructure.</p>
+                <a href="#" class="btn btn-outline btn-sm mt-2">View Credential</a>
+            </div>
+            
+            <!-- EC-Council -->
+            <div class="cert-card">
+                <img src="images/certs/ec-council-logo.png" alt="EC-Council Logo" class="cert-logo">
+                <h3>Cybersecurity for Businesses</h3>
+                <div class="cert-info">
+                    <span class="cert-date">Issued: Jul 2024</span>
+                    <div>ID: 345539</div>
+                </div>
+                <p>Comprehensive training in organizational cybersecurity strategies and risk mitigation.</p>
+                <div class="cert-tags">
+                    <span class="cert-tag">Cybersecurity</span>
+                    <span class="cert-tag">Risk Management</span>
+                    <span class="cert-tag">Data Protection</span>
+                </div>
+                <a href="#" class="btn btn-outline btn-sm mt-2">View Credential</a>
+            </div>
+            
+            <!-- University of Illinois -->
+            <div class="cert-card">
+                <img src="images/certs/illinois-logo.png" alt="University of Illinois Logo" class="cert-logo">
+                <h3>Learning, Knowledge, and Human Development</h3>
+                <div class="cert-info">
+                    <span class="cert-date">Issued: Jul 2024</span>
+                    <div>ID: SCSWTAK32J7X</div>
+                </div>
+                <p>Coursework in educational theory and human development principles.</p>
+                <a href="#" class="btn btn-outline btn-sm mt-2">View Credential</a>
+            </div>
+            
+            <!-- MEAL Essentials -->
+            <div class="cert-card">
+                <img src="images/certs/cornerstone-logo.png" alt="Cornerstone OnDemand Logo" class="cert-logo">
+                <h3>Monitoring, Evaluation, Accountability and Learning (MEAL) Essentials</h3>
+                <div class="cert-info">
+                    <span class="cert-date">Issued: Jul 2024</span>
+                </div>
+                <p>Training in MEAL frameworks for development programs.</p>
+                <div class="cert-tags">
+                    <span class="cert-tag">MEAL</span>
+                    <span class="cert-tag">Impact Assessment</span>
+                    <span class="cert-tag">Data Collection</span>
+                </div>
+                <a href="#" class="btn btn-outline btn-sm mt-2">View Credential</a>
+            </div>
+            
+            <!-- Google Cloud Engineer -->
+            <div class="cert-card">
+                <img src="images/certs/google-logo.png" alt="Google for Developers Logo" class="cert-logo">
+                <h3>Google Cloud Engineer</h3>
+                <div class="cert-info">
+                    <span class="cert-date">Issued: Mar 2023</span>
+                    <div>ID: 36AFB0471BB37A6</div>
+                </div>
+                <p>Training in Google Cloud engineering principles.</p>
+                <div class="cert-tags">
+                    <span class="cert-tag">Cloud Storage</span>
+                    <span class="cert-tag">Google Cloud Platform</span>
+                    <span class="cert-tag">Cloud Dataflow</span>
+                    <span class="cert-tag">Cloud Firestore</span>
+                </div>
+                <a href="#" class="btn btn-outline btn-sm mt-2">View Credential</a>
+            </div>
+            
+            <!-- MLH Prep -->
+            <div class="cert-card">
+                <img src="images/certs/mlh-logo.png" alt="Major League Hacking Logo" class="cert-logo">
+                <h3>MLH Prep Fellow</h3>
+                <div class="cert-info">
+                    <span class="cert-date">Issued: Apr 2023</span>
+                </div>
+                <p>Prep fellowship program in software development.</p>
+                <a href="documents/Alfeo-Raymond.pdf" class="btn btn-outline btn-sm mt-2" target="_blank">Download PDF</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Volunteering Section -->
+       <!-- Volunteering Section -->
+<section class="section" id="volunteering">
+    <div class="container">
+        <div class="section-title-container">
+            <h2 class="section-title animate-fade-up">Community Engagement</h2>
+        </div>
+        <p class="section-subtitle animate-fade-up">Contributing to tech education, open source ecosystems, and youth empowerment</p>
+        
+        <div class="volunteer-grid">
+            <!-- GitHub DPG Community Manager -->
+            <div class="volunteer-card animate-fade-up">
+                <img src="images/volunteer/github-community.jpg" alt="GitHub DPG Community Manager" class="volunteer-img">
+                <div class="volunteer-content">
+                    <div class="volunteer-org">
+                        <img src="images/logos/github-logo.png" alt="GitHub Logo">
+                        GitHub DPG Community Manager
+                    </div>
+                    <div class="volunteer-date">Jul 2024 - Jan 2025 · 7 mos</div>
+                    <div class="text-muted mb-3">Social Services</div>
+                    <div class="volunteer-desc">
+                        <h4>Community Building:</h4>
+                        <ul>
+                            <li>Attracting and onboarding new contributors</li>
+                            <li>Building and maintaining a strong online community (forums, social media, etc.)</li>
+                            <li>Organizing community events, meetups, or workshops</li>
+                        </ul>
+                        <h4>Project Management:</h4>
+                        <ul>
+                            <li>Assisting with project planning and execution</li>
+                            <li>Managing GitHub issues, discussions, and project boards</li>
+                            <li>Supporting project management tasks</li>
+                        </ul>
+                        <h4>Communication:</h4>
+                        <ul>
+                            <li>Effective communication with the DPG team and community members</li>
+                            <li>Creating and managing content (blog posts, documentation, etc.)</li>
+                            <li>Representing the DPG at conferences or events</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SmartGirlz Project Advisor -->
+            <div class="volunteer-card animate-fade-up">
+                <img src="images/volunteer/smartgirlz-event.jpg" alt="SmartGirlz event with participants" class="volunteer-img">
+                <div class="volunteer-content">
+                    <div class="volunteer-org">
+                        <img src="images/logos/smartgirlz-logo.png" alt="SmartGirlz in ICT Tanzania Logo">
+                        SmartGirlz in ICT Tanzania
+                    </div>
+                    <div class="volunteer-role">Project Advisor</div>
+                    <div class="volunteer-date">Dec 2023 - May 2024 · 6 mos</div>
+                    <div class="text-muted mb-3">Science and Technology</div>
+                    <div class="volunteer-desc">
+                        <ul>
+                            <li>Recruited and trained facilitators and coordinators to ensure program success and alignment with project goals</li>
+                            <li>Led school recruitment and organized induction training for focal persons to establish program foundations</li>
+                            <li>Conducted stakeholder meetings to report program progress, showcase impact, and foster continued engagement</li>
+                            <li>Provided strategic guidance on planning, execution, budgeting, and partnership development to enhance program outcomes</li>
+                        </ul>
+                        <p class="mt-3 mb-2">#HABARI,SMART GIRLZ IN ICT TANZANIA NA UKOMBOZI WA WASICHANA KATIKA TEHAMA</p>
+                        <div class="row">
+                            <div class="col-6">
+                                <img src="images/volunteer/smartgirlz-1.jpg" alt="SmartGirlz training session in progress" class="img-fluid rounded">
+                            </div>
+                            <div class="col-6">
+                                <img src="images/volunteer/smartgirlz-2.jpg" alt="SmartGirlz participants" class="img-fluid rounded">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SmartGirlz Project Manager -->
+            <div class="volunteer-card animate-fade-up">
+                <img src="images/volunteer/smartgirlz-competition.jpg" alt="Student competition showcase" class="volunteer-img">
+                <div class="volunteer-content">
+                    <div class="volunteer-org">
+                        <img src="images/logos/smartgirlz-logo.png" alt="SmartGirlz in ICT Tanzania Logo">
+                        SmartGirlz in ICT Tanzania
+                    </div>
+                    <div class="volunteer-role">Project Manager</div>
+                    <div class="volunteer-date">Dec 2021 - Dec 2023 · 2 yrs 1 mo</div>
+                    <div class="text-muted mb-3">Science and Technology</div>
+                    <div class="volunteer-desc">
+                        <ul>
+                            <li>Supervised student competitions, guiding participants in developing working prototypes tailored to user needs and teaching effective pitching techniques</li>
+                            <li>Recruited, trained, and managed facilitators to ensure program success and quality delivery</li>
+                            <li>Managed program accounting and optimized financial resources for program objectives</li>
+                            <li>Conducted stakeholder meetings to report program progress and showcase impact to sponsors</li>
+                        </ul>
+                        <div class="row mt-3">
+                            <div class="col-6">
+                                <img src="images/volunteer/smartgirlz-comp1.jpg" alt="Student competition" class="img-fluid rounded mb-2">
+                            </div>
+                            <div class="col-6">
+                                <img src="images/volunteer/smartgirlz-comp2.jpg" alt="Program participants presenting their projects" class="img-fluid rounded mb-2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- GitHub Campus Expert -->
+            <div class="volunteer-card animate-fade-up">
+                <img src="images/volunteer/github-campus.jpg" alt="GitHub Campus Expert" class="volunteer-img">
+                <div class="volunteer-content">
+                    <div class="volunteer-org">
+                        <img src="images/logos/github-logo.png" alt="GitHub Logo">
+                        GitHub Campus Expert
+                    </div>
+                    <div class="volunteer-date">Oct 2021 - Jul 2024 · 2 yrs 10 mos</div>
+                    <div class="text-muted mb-3">Education</div>
+                    <div class="volunteer-desc">
+                        <ul>
+                            <li>Collaborated with other Campus Experts to plan and execute events including hackathons, meetups, and code clinics</li>
+                            <li>Worked with local sponsors to secure funding and resources for these events</li>
+                            <li>Developed relationships with student groups, faculty, and administrators to promote the program</li>
+                            <li>Contributed to program development through feedback and suggestions to GitHub staff</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Laravel Open Source Maintainer -->
+            <div class="volunteer-card animate-fade-up">
+                <img src="images/volunteer/open-source.jpg" alt="Open Source Contribution" class="volunteer-img">
+                <div class="volunteer-content">
+                    <div class="volunteer-org">
+                        <img src="images/logos/laravel-logo.png" alt="Laravel Logo">
+                        Open Source Maintainer (Laravel-Lang)
+                    </div>
+                    <div class="volunteer-date">Oct 2021 - Present · 3 yrs 7 mos</div>
+                    <div class="text-muted mb-3">Science and Technology</div>
+                    <div class="volunteer-desc">
+                        <ul>
+                            <li>Contributing to improving and shaping the future of technology through open source</li>
+                            <li>Maintained Laravel-Lang package for language localization (laravel-lang.com)</li>
+                            <li>Contributed to Githut package for monitoring GitHub activity (trending languages, forks, pulls)</li>
+                        </ul>
+                        <div class="row mt-3">
+                            <div class="col-6">
+                                <a href="https://github.com/Laravel-Lang/lang" target="_blank" class="btn btn-outline btn-sm">Laravel-Lang Repository</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="https://githut.info/" target="_blank" class="btn btn-outline btn-sm">Githut Visualization</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- MLH Fellowship -->
+            <div class="volunteer-card animate-fade-up">
+                <img src="images/volunteer/mlh-fellowship.jpg" alt="MLH Fellowship" class="volunteer-img">
+                <div class="volunteer-content">
+                    <div class="volunteer-org">
+                        <img src="images/logos/mlh-logo.png" alt="MLH Fellowship Logo">
+                        MLH Fellowship
+                    </div>
+                    <div class="volunteer-role">Software Engineering (Prep Fellowship)</div>
+                    <div class="volunteer-date">Mar 2023 · 1 mo</div>
+                    <div class="text-muted mb-3">Education</div>
+                    <div class="volunteer-desc">
+                        <ul>
+                            <li>Selected from over 30,000 applicants and worked in a team of 15 remote engineers</li>
+                            <li>Developed a weather-based trip-planning web application using ReactJS, NodeJS, and OpenWeatherMap API</li>
+                            <li>Engineered a full stack web application end-to-end, earning a 4.7/5 endorsement from project mentors</li>
+                            <li>Implemented real-time weather data modules for over 75 locations, enhancing travel efficiency by 20%</li>
+                        </ul>
+                        <div class="tech-tags mt-3">
+                            <span class="tech-tag">React App</span>
+                            <span class="tech-tag">Personal Portfolio</span>
+                        </div>
+                        <a href="documents/Alfeo-Raymond.pdf" class="btn btn-outline btn-sm mt-3" target="_blank">View Fellowship Certificate</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Honors Section -->
+       <!-- Honors Section -->
+<section class="section" id="honors">
+    <div class="container">
+        <div class="section-title-container">
+            <h2 class="section-title animate-fade-up">Honors & Awards</h2>
+        </div>
+        <p class="section-subtitle animate-fade-up">Recognition for technical excellence and contributions to the field</p>
+        
+        <div class="honors-grid">
+            <!-- TechGig Code Gladiators -->
+            <div class="honor-card animate-fade-up">
+                <div class="honor-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h3 class="honor-title">TechGig Code Gladiators 2021</h3>
+                <div class="honor-issuer">Issued by TechGig · May 2021</div>
+                <p>Selected from thousands of applicants for prestigious coding competition</p>
+                <ul>
+                    <li>Competed in Cloud Computing, E-commerce, and IoT challenges</li>
+                    <li>Implemented solutions addressing real-world technical problems</li>
+                </ul>
+                <div class="tech-tags mt-3">
+                    <span class="tech-tag">Coding Competition</span>
+                    <span class="tech-tag">Cloud Computing</span>
+                    <span class="tech-tag">IoT</span>
+                </div>
+            </div>
+            
+            <!-- Best Facilities Mapper -->
+            <div class="honor-card animate-fade-up">
+                <div class="honor-icon">
+                    <i class="fas fa-medal"></i>
+                </div>
+                <h3 class="honor-title">Best Facilities Mapper, dLab Mapathon 2021</h3>
+                <div class="honor-issuer">Issued by Tanzania Data Lab · Mar 2021</div>
+                <p>Won first place in HIV/AIDS Hot-spots and Testing Facilities mapping challenge</p>
+                <ul>
+                    <li>Contributed geospatial data supporting healthcare resource allocation</li>
+                    <li>Recognized by MCC-PEPFAR Data Collaboratives for Local Impact</li>
+                </ul>
+                <div class="tech-tags mt-3">
+                    <span class="tech-tag">GIS Mapping</span>
+                    <span class="tech-tag">Healthcare</span>
+                    <span class="tech-tag">Data Visualization</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Contact Section -->
+       <!-- Contact Section -->
+<section class="section contact-section" id="contact">
+    <div class="container">
+        <div class="section-title-container">
+            <h2 class="section-title animate-fade-up">Get In Touch</h2>
+        </div>
+        <p class="section-subtitle animate-fade-up">Let's collaborate on projects that leverage technology for social good</p>
+        
+        <div class="contact-container">
+            <div class="contact-info animate-fade-right">
+                <h3>Contact Information</h3>
+                <div class="contact-info-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-info-details">
+                        <h4>Location</h4>
+                        <p>Liwale, Lindi Region, Tanzania</p>
+                    </div>
+                </div>
+                
+                <div class="contact-info-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-info-details">
+                        <h4>Phone</h4>
+                        <p><a href="tel:+255745909129">+255 745 909 129</a></p>
+                    </div>
+                </div>
+                
+                <div class="contact-info-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-info-details">
+                        <h4>Email</h4>
+                        <p><a href="mailto:ngelime07@gmail.com">ngelime07@gmail.com</a></p>
+                    </div>
+                </div>
+                
+                <div class="contact-info-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                    <div class="contact-info-details">
+                        <h4>LinkedIn</h4>
+                        <p><a href="https://linkedin.com/in/pheogrammer" target="_blank">linkedin.com/in/pheogrammer</a></p>
+                    </div>
+                </div>
+                
+                <div class="contact-info-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="contact-info-details">
+                        <h4>GitHub</h4>
+                        <p><a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <blockquote>
+                        "I'm particularly interested in opportunities at the intersection of healthcare, education, and innovative technology solutions."
+                    </blockquote>
+                </div>
+            </div>
+            
+            <div class="contact-form animate-fade-left">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Your Email</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" id="subject" name="subject" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <span class="footer-logo">Alfeo<span class="logo-color">Raymond</span></span>
+                    <p class="footer-description">ICT & Digital Transformation Specialist with a passion for human-centered design and creating innovative solutions with social impact.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/pheogrammer" target="_blank" class="footer-social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/yourusername" target="_blank" class="footer-social-link"><i class="fab fa-github"></i></a>
+                        <a href="mailto:ngelime07@gmail.com" class="footer-social-link"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="#about"><i class="fas fa-chevron-right"></i> About</a></li>
+                        <li class="footer-link"><a href="#experience"><i class="fas fa-chevron-right"></i> Experience</a></li>
+                        <li class="footer-link"><a href="#certifications"><i class="fas fa-chevron-right"></i> Certifications</a></li>
+                        <li class="footer-link"><a href="#education"><i class="fas fa-chevron-right"></i> Education</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Contact</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="mailto:ngelime07@gmail.com"><i class="fas fa-envelope"></i> ngelime07@gmail.com</a></li>
+                        <li class="footer-link"><a href="tel:+255745909129"><i class="fas fa-phone"></i> +255 745 909 129</a></li>
+                        <li class="footer-link"><a><i class="fas fa-map-marker-alt"></i> Liwale, Lindi Region, Tanzania</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2025 Alfeo Raymond. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Custom JavaScript -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    'use strict';
+    
+    // Preloader
+    const preloader = document.querySelector('.preloader');
+    
+    window.addEventListener('load', function() {
+        preloader.classList.add('fade-out');
+        
+        setTimeout(() => {
+            preloader.style.display = 'none';
+            
+            // Start animations once page is loaded
+            animateOnScroll();
+        }, 500);
+    });
+
+    // Mobile Navigation
+    const hamburger = document.getElementById('hamburger');
+    const navList = document.getElementById('nav-list');
+    
+    if (hamburger && navList) {
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('open');
+            navList.classList.toggle('open');
+            document.body.classList.toggle('no-scroll');
+        });
+        
+        // Close mobile nav when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!hamburger.contains(e.target) && !navList.contains(e.target) && navList.classList.contains('open')) {
+                hamburger.classList.remove('open');
+                navList.classList.remove('open');
+                document.body.classList.remove('no-scroll');
+            }
+        });
+        
+        // Close mobile nav when clicking on a nav link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('open');
+                navList.classList.remove('open');
+                document.body.classList.remove('no-scroll');
+            });
+        });
+    }
+
+    // Smooth scrolling with offset for fixed header
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                
+                window.scrollTo({
+                    top: targetPosition - headerHeight,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Header scroll effect
+    const header = document.querySelector('.header');
+    const headerScrollThreshold = 100;
+    
+    function checkHeaderScroll() {
+        if (window.scrollY > headerScrollThreshold) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    }
+    
+    window.addEventListener('scroll', checkHeaderScroll);
+    checkHeaderScroll(); // Check initially
+
+    // Back to top button
+    const backToTop = document.getElementById('back-to-top');
+    
+    function checkBackToTopVisibility() {
+        if (window.scrollY > 600) {
+            backToTop.classList.add('active');
+        } else {
+            backToTop.classList.remove('active');
+        }
+    }
+    
+    window.addEventListener('scroll', checkBackToTopVisibility);
+    
+    if (backToTop) {
+        backToTop.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // Animate elements on scroll
+    function animateOnScroll() {
+        const animatedElements = document.querySelectorAll('.animate-fade-up, .animate-fade-right, .animate-fade-left, .animate-fade-in');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        });
+        
+        animatedElements.forEach(el => {
+            observer.observe(el);
+        });
+    }
+
+    // Highlight active navigation item based on scroll position
+    const sections = document.querySelectorAll('section[id]');
+    
+    function highlightNavigation() {
+        const scrollPosition = window.scrollY;
+        const headerHeight = document.querySelector('.header').offsetHeight;
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - headerHeight - 100;
+            const sectionBottom = sectionTop + section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                // Remove active class from all nav links
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                
+                // Add active class to corresponding nav link
+                const correspondingNavLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+                if (correspondingNavLink) {
+                    correspondingNavLink.classList.add('active');
+                }
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', highlightNavigation);
+    highlightNavigation(); // Check initially
+
+    // Certifications View More/Less functionality
+    const viewMoreCertsBtn = document.getElementById('view-more-certs');
+    const moreCerts = document.getElementById('more-certs');
+    
+    if (viewMoreCertsBtn && moreCerts) {
+        viewMoreCertsBtn.addEventListener('click', function() {
+            if (moreCerts.style.display === 'none' || getComputedStyle(moreCerts).display === 'none') {
+                moreCerts.style.display = 'grid';
+                viewMoreCertsBtn.textContent = 'View Less Certifications';
+            } else {
+                moreCerts.style.display = 'none';
+                viewMoreCertsBtn.textContent = 'View More Certifications';
+            }
+        });
+    }
+
+    // Portfolio filter functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    
+    if (filterButtons.length > 0 && portfolioItems.length > 0) {
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filterValue = this.getAttribute('data-filter');
+                
+                if (filterValue === 'all') {
+                    // Show all items
+                    portfolioItems.forEach(item => {
+                        item.style.display = 'block';
+                    });
+                } else {
+                    // Show only filtered items
+                    portfolioItems.forEach(item => {
+                        if (item.classList.contains(filterValue)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                }
+            });
+        });
+    }
+
+    // Animated counter for stats
+    function animateCounter(element, target, duration = 2000) {
+        let start = 0;
+        const increment = target / (duration / 16); // 16ms is roughly 60fps
+        
+        const updateCounter = () => {
+            start += increment;
+            
+            if (start >= target) {
+                element.textContent = target;
+                return;
+            }
+            
+            element.textContent = Math.floor(start);
+            requestAnimationFrame(updateCounter);
+        };
+        
+        updateCounter();
+    }
+    
+    function initCounters() {
+        const countElements = document.querySelectorAll('.stat-number');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = parseInt(entry.target.getAttribute('data-count'), 10);
+                    animateCounter(entry.target, target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+        
+        countElements.forEach(el => {
+            observer.observe(el);
+        });
+    }
+    
+    initCounters();
+
+    // Form validation and submission
+    const contactForm = document.getElementById('contact-form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic form validation
+            let valid = true;
+            
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const subject = document.getElementById('subject');
+            const message = document.getElementById('message');
+            
+            // Clear previous error messages
+            const errorElements = contactForm.querySelectorAll('.error-message');
+            errorElements.forEach(el => el.remove());
+            
+            // Validate name
+            if (!name.value.trim()) {
+                showError(name, 'Please enter your name');
+                valid = false;
+            }
+            
+            // Validate email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email.value.trim() || !emailRegex.test(email.value.trim())) {
+                showError(email, 'Please enter a valid email address');
+                valid = false;
+            }
+            
+            // Validate subject
+            if (!subject.value.trim()) {
+                showError(subject, 'Please enter a subject');
+                valid = false;
+            }
+            
+            // Validate message
+            if (!message.value.trim()) {
+                showError(message, 'Please enter your message');
+                valid = false;
+            }
+            
+            // If valid, simulate form submission
+            if (valid) {
+                // Show loading state
+                const submitBtn = contactForm.querySelector('[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+                
+                // Simulate server request
+                setTimeout(() => {
+                    // Reset form
+                    contactForm.reset();
+                    
+                    // Show success message
+                    const successMessage = document.createElement('div');
+                    successMessage.className = 'success-message';
+                    successMessage.textContent = 'Your message has been sent successfully!';
+                    contactForm.appendChild(successMessage);
+                    
+                    // Reset button
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                    
+                    // Remove success message after 5 seconds
+                    setTimeout(() => {
+                        successMessage.remove();
+                    }, 5000);
+                }, 1500);
+            }
+        });
+        
+        // Helper function to show error message
+        function showError(element, message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.textContent = message;
+            errorDiv.style.color = '#dc3545';
+            errorDiv.style.fontSize = '0.85rem';
+            errorDiv.style.marginTop = '0.5rem';
+            
+            element.parentNode.appendChild(errorDiv);
+            element.style.borderColor = '#dc3545';
+            
+            // Remove error message when input changes
+            element.addEventListener('input', function() {
+                const error = this.parentNode.querySelector('.error-message');
+                if (error) {
+                    error.remove();
+                    this.style.borderColor = '';
+                }
+            });
+        }
+    }
+
+    // Add parallax effect to sections with bg images
+    const parallaxElements = document.querySelectorAll('.parallax-bg');
+    
+    function updateParallax() {
+        parallaxElements.forEach(element => {
+            const scrollTop = window.pageYOffset;
+            const elementTop = element.offsetTop;
+            const distance = scrollTop - elementTop;
+            
+            // Move the background at a different speed than the scroll
+            element.style.backgroundPosition = `center ${distance * 0.5}px`;
+        });
+    }
+    
+    if (parallaxElements.length > 0) {
+        window.addEventListener('scroll', updateParallax);
+        window.addEventListener('resize', updateParallax);
+        updateParallax(); // Initialize
+    }
+
+    // Typed.js for hero section dynamic text (if applicable)
+    const typedElement = document.getElementById('typed-text');
+    
+    if (typedElement && typeof Typed !== 'undefined') {
+        new Typed(typedElement, {
+            strings: [
+                'ICT Specialist',
+                'Digital Transformation Specialist',
+                'Human-Centered Design Advocate',
+                'Software Developer'
+            ],
+            typeSpeed: 80,
+            backSpeed: 50,
+            backDelay: 1500,
+            startDelay: 500,
+            loop: true,
+            smartBackspace: true
+        });
+    }
+
+    // Scroll reveal for elements with staggered animation
+    function setupStaggeredAnimations() {
+        const containers = document.querySelectorAll('.stagger-container');
+        
+        containers.forEach(container => {
+            const items = container.querySelectorAll('.stagger-item');
+            let delay = 0;
+            const increment = 0.1;
+            
+            items.forEach(item => {
+                item.style.transitionDelay = `${delay}s`;
+                delay += increment;
+            });
+        });
+    }
+    
+    setupStaggeredAnimations();
+
+    // Tilt effect for cards (optional decorative effect)
+    const tiltCards = document.querySelectorAll('.tilt-card');
+    
+    tiltCards.forEach(card => {
+        card.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            // Calculate tilt values
+            const tiltX = (y / rect.height - 0.5) * 20;
+            const tiltY = -(x / rect.width - 0.5) * 20;
+            
+            // Apply the tilt effect
+            this.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            // Reset the tilt when mouse leaves
+            this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+        });
+    });
+
+    // Dark/Light theme toggle (if applicable)
+    const themeToggle = document.getElementById('theme-toggle');
+    
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('light-theme');
+            
+            // Save theme preference to local storage
+            if (document.body.classList.contains('light-theme')) {
+                localStorage.setItem('theme', 'light');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            } else {
+                localStorage.setItem('theme', 'dark');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            }
+        });
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        
+        if (savedTheme === 'light') {
+            document.body.classList.add('light-theme');
+            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        } else {
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+    }
+
+    // Smooth page transitions (if applicable)
+    document.addEventListener('click', function(e) {
+        const link = e.target.closest('a');
+        
+        if (link && link.getAttribute('href').indexOf('#') !== 0 && link.getAttribute('href').indexOf('mailto:') !== 0 && link.getAttribute('href').indexOf('tel:') !== 0 && !link.getAttribute('target') && link.getAttribute('href') !== '') {
+            e.preventDefault();
+            
+            // Add page exit animation
+            document.body.classList.add('page-transition-out');
+            
+            // Navigate to new page after animation completes
+            setTimeout(() => {
+                window.location.href = link.getAttribute('href');
+            }, 500);
+        }
+    });
+    
+    // Add page enter animation
+    document.body.classList.add('page-transition-in');
+    
+    setTimeout(() => {
+        document.body.classList.remove('page-transition-in');
+    }, 500);
+
+    // Custom cursor (optional decorative effect)
+    const cursor = document.querySelector('.custom-cursor');
+    
+    if (cursor) {
+        document.addEventListener('mousemove', function(e) {
+            cursor.style.left = `${e.clientX}px`;
+            cursor.style.top = `${e.clientY}px`;
+        });
+        
+        // Add hover effect when over links and buttons
+        const interactiveElements = document.querySelectorAll('a, button, .interactive');
+        
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', function() {
+                cursor.classList.add('cursor-hover');
+            });
+            
+            el.addEventListener('mouseleave', function() {
+                cursor.classList.remove('cursor-hover');
+            });
+        });
+    }
+
+    // Initialize AOS (Animate On Scroll) if available
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+    }
+});
+    </script>
+</body>
+</html>
