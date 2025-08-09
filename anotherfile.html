@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfeo Raymond - ICT & Digital Transformation Specialist</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #f0f0f0;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 2rem 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(1deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: slideInUp 1s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: slideInUp 1s ease-out 0.2s both;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            animation: slideInUp 1s ease-out 0.4s both;
+        }
+
+        .hero-highlights {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+            animation: slideInUp 1s ease-out 0.5s both;
+        }
+
+        .hero-highlight {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem 1.5rem;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .value-proposition {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            animation: slideInUp 1s ease-out 0.6s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: slideInUp 1s ease-out 0.6s both;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #333;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+            display: block;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Experience Section */
+        .experience-timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            background: white;
+            margin: 2rem 0;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 2rem;
+            width: 15px;
+            height: 15px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #667eea;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .job-info {
+            flex: 1;
+        }
+
+        .job-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .company {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .duration {
+            color: #888;
+            font-size: 0.9rem;
+            font-weight: 500;
+            background: #f0f0f0;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .location {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .job-description {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .achievements {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        .achievements h4 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .achievements ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .achievements li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .achievements li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-size: 0.8rem;
+        }
+
+        .skills-used {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .skill-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-subtitle {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .project-impact {
+            background: #e8f4f8;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            margin-top: 1rem;
+        }
+
+        .impact-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .timeline-item::before {
+                display: none;
+            }
+
+            .timeline-item {
+                padding: 2rem;
+            }
+
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Alfeo Raymond</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Alfeo Raymond</h1>
+            <p class="hero-subtitle">ICT Supervisor & Digital Transformation Specialist</p>
+            <p class="hero-description">
+                Transforming communities through technology. From humanitarian response in remote Tanzania 
+                to AI-driven health platforms reaching thousands - I bridge innovation with real-world impact.
+            </p>
+            <div class="hero-highlights">
+                <div class="hero-highlight">🎯 131K+ Lives Impacted</div>
+                <div class="hero-highlight">🚀 GitHub Campus Expert</div>
+                <div class="hero-highlight">🌍 UN Technology Innovation</div>
+                <div class="hero-highlight">💡 20+ Certifications</div>
+            </div>
+            <div class="value-proposition">
+                <p><strong>I blend technical mastery with empathy-led design</strong> to deliver solutions that are both scalable and people-centered. 
+                Whether it's AI-powered health platforms, humanitarian ICT infrastructure, or community empowerment through technology - 
+                I create innovation that transforms lives.</p>
+            </div>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> Get in Touch
+                </a>
+                <a href="#experience" class="btn btn-secondary">
+                    <i class="fas fa-user"></i> View Experience
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div>
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="stat-number">6+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">131K+</span>
+                            <span class="stat-label">Lives Impacted</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">1000+</span>
+                            <span class="stat-label">Students Mentored</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Organizations</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p>
+                        I'm a Tanzanian ICT and Digital Transformation Specialist currently serving as ICT Supervisor 
+                        at Médecins Sans Frontières (MSF) Switzerland in Liwale, managing critical technology infrastructure 
+                        in humanitarian settings. My passion lies at the intersection of technology and social impact.
+                    </p>
+                    <p>
+                        My journey spans humanitarian response, public health innovation, community education, and 
+                        enterprise systems. I've led projects that reached over 131,000 families, implemented AI-driven 
+                        health platforms serving 3,000+ mothers and children, and mentored 900+ young women in technology.
+                    </p>
+                    <p>
+                        With expertise in software engineering, human-centered design, and project management, I specialize 
+                        in building technology solutions that are not just innovative, but truly serve the people who need them most.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" style="background: #f8f9fa;">
+        <div class="container">
+            <h2>Professional Experience</h2>
+            <div class="experience-timeline">
+                
+                <div class="timeline-item">
+                    <div class="job-header">
+                        <div class="job-info">
+                            <div class="job-title">ICT Supervisor</div>
+                            <div class="company">Médecins Sans Frontières (Switzerland)</div>
+                        </div>
+                        <div class="duration">May 2024 - Present</div>
+                    </div>
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i> Liwale, Lindi Region, Tanzania
+                    </div>
+                    <div class="job-description">
+                        Managing comprehensive IT and telecommunications infrastructure across project sites in remote humanitarian settings, 
+                        ensuring operational continuity and adherence to MSF standards in challenging environments.
+                    </div>
+                    <div class="achievements">
+                        <h4>Key Responsibilities & Achievements</h4>
+                        <ul>
+                            <li>Installed and configured LAN/WAN networks, captive portals, and coordinated upgrades with third-party providers</li>
+                            <li>Deployed and optimized HF/VHF radio and satellite communication systems for reliable connectivity in remote settings</li>
+                            <li>Maintained endpoint devices with standardized Windows/Linux configurations and preventive maintenance programs</li>
+                            <li>Supervised data security protocols including backups, user access controls, and firewall maintenance</li>
+                            <li>Led logistics teams, managed equipment inventories, and ensured compliance with security protocols</li>
+                        </ul>
+                    </div>
+                    <div class="skills-used">
+                        <span class="skill-badge">Project Management</span>
+                        <span class="skill-badge">Healthcare IT</span>
+                        <span class="skill-badge">Network Administration</span>
+                        <span class="skill-badge">Security Protocols</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-header">
+                        <div class="job-info">
+                            <div class="job-title">Innovative Technologies - Learning & Development Intern</div>
+                            <div class="company">UNICC (United Nations)</div>
+                        </div>
+                        <div class="duration">Sep 2024 - May 2025</div>
+                    </div>
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i> Brindisi, Italy (Remote)
+                    </div>
+                    <div class="job-description">
+                        Leading cutting-edge technology initiatives for humanitarian applications, managing international expert 
+                        collaboration across emerging technology domains.
+                    </div>
+                    <div class="achievements">
+                        <h4>Key Achievements</h4>
+                        <ul>
+                            <li>Developed and maintained Learning Management Systems using Moodle with UX enhancements</li>
+                            <li>Coordinated CitiVerse initiative across 7 technology domains (AI, Blockchain, Digital Twins, AR/VR, IoT) with 24+ global stakeholders</li>
+                            <li>Built private SharePoint solutions for UN agencies with integrated data visualization features</li>
+                            <li>Created multilingual content with AI integration across 5+ languages using advanced AI tools</li>
+                            <li>Developed automated reporting tools and monthly digital learning newsletters</li>
+                        </ul>
+                    </div>
+                    <div class="skills-used">
+                        <span class="skill-badge">AI/ML</span>
+                        <span class="skill-badge">Blockchain</span>
+                        <span class="skill-badge">Digital Twins</span>
+                        <span class="skill-badge">AR/VR</span>
+                        <span class="skill-badge">IoT</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-header">
+                        <div class="job-info">
+                            <div class="job-title">Graphics Design Consultant</div>
+                            <div class="company">Bookbot</div>
+                        </div>
+                        <div class="duration">Jun 2024 - Aug 2024</div>
+                    </div>
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i> Melbourne, Australia (Remote)
+                    </div>
+                    <div class="job-description">
+                        Designed user-friendly app interfaces and localized content for AI-powered reading technology expansion to Tanzania.
+                    </div>
+                    <div class="achievements">
+                        <h4>Key Achievements</h4>
+                        <ul>
+                            <li>Localized over 1,000 digital storybooks into Kiswahili while maintaining cultural relevance</li>
+                            <li>Enhanced graded audiobook library supporting vocabulary building for school children</li>
+                            <li>Contributed to EdTech solution demonstrating twofold improvement in reading fluency</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-header">
+                        <div class="job-info">
+                            <div class="job-title">Technology for Development (T4D) Officer</div>
+                            <div class="company">Save the Children International</div>
+                        </div>
+                        <div class="duration">Nov 2023 - Apr 2024</div>
+                    </div>
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i> Dar es Salaam, Tanzania
+                    </div>
+                    <div class="job-description">
+                        Led design and implementation of AI-driven personalized nutritional guidance solutions for vulnerable populations, 
+                        transforming healthcare delivery through mobile technology.
+                    </div>
+                    <div class="achievements">
+                        <h4>Key Achievements</h4>
+                        <ul>
+                            <li>Developed "Digital Parental Kit" serving 3,000+ mothers and children in Dodoma and Morogoro regions</li>
+                            <li>Implemented AI-powered monitoring systems for early intervention identification</li>
+                            <li>Trained Community Health Workers on USSD system utilization for data collection</li>
+                            <li>Maintained rigorous data privacy standards through comprehensive security testing protocols</li>
+                            <li>Created interactive dashboards for real-time data analysis and automated report generation</li>
+                        </ul>
+                    </div>
+                    <div class="project-impact">
+                        <div class="impact-number">3,000+</div>
+                        Lives transformed through AI-driven health platform
+                    </div>
+                    <div class="skills-used">
+                        <span class="skill-badge">AI Implementation</span>
+                        <span class="skill-badge">Data Analysis</span>
+                        <span class="skill-badge">Mobile Health</span>
+                        <span class="skill-badge">USSD Technology</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-header">
+                        <div class="job-info">
+                            <div class="job-title">Human Centered Design (HCD) Consultant</div>
+                            <div class="company">Tanzania Ministry of Health</div>
+                        </div>
+                        <div class="duration">Apr 2023 - Nov 2023</div>
+                    </div>
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i> Dar es Salaam, Tanzania
+                    </div>
+                    <div class="job-description">
+                        Led community-centered vaccine intervention design in partnership with UNICEF and University of Dar es Salaam, 
+                        focusing on closing zero-dose vaccination gaps.
+                    </div>
+                    <div class="achievements">
+                        <h4>Measurable Impact</h4>
+                        <ul>
+                            <li>Reached 131,088 families (83% of target) through advocacy and house-to-house mobilization</li>
+                            <li>Provided vaccination services to 387 zero-dose children</li>
+                            <li>Generated 309 innovative ideas refined to 3 prioritized interventions</li>
+                            <li>Facilitated co-creation workshops with 483 diverse stakeholders</li>
+                            <li>Trained 24 core participants in HCD methodologies for sustainable implementation</li>
+                            <li>Coordinated multi-level advocacy with 189 Community Health Workers</li>
+                        </ul>
+                    </div>
+                    <div class="project-impact">
+                        <div class="impact-number">131,088</div>
+                        Families reached through vaccination campaigns
+                    </div>
+                    <div class="skills-used">
+                        <span class="skill-badge">Human-Centered Design</span>
+                        <span class="skill-badge">Stakeholder Engagement</span>
+                        <span class="skill-badge">Theory of Change</span>
+                        <span class="skill-badge">Community Mobilization</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-header">
+                        <div class="job-info">
+                            <div class="job-title">SmartGirlz in ICT Tanzania - Multiple Roles</div>
+                            <div class="company">SmartGirlz in ICT Tanzania</div>
+                        </div>
+                        <div class="duration">Jun 2019 - May 2024 (5 Years)</div>
+                    </div>
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i> Dar es Salaam, Tanzania
+                    </div>
+                    
+                    <div style="margin-top: 1.5rem;">
+                        <h4 style="color: #667eea; margin-bottom: 1rem;">Project Advisor (Dec 2023 - May 2024)</h4>
+                        <div class="achievements">
+                            <ul>
+                                <li>Led strategic expansion to reach 900+ students and 45+ volunteer facilitators</li>
+                                <li>Orchestrated high-level meetings with UDSM, UNICEF, TCRA, ICT Commission</li>
+                                <li>Designed comprehensive training systems for teachers and coordinators</li>
+                                <li>Established M&E frameworks for impact measurement and donor reporting</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 1.5rem;">
+                        <h4 style="color: #667eea; margin-bottom: 1rem;">Project Manager (Dec 2021 - Dec 2023)</h4>
+                        <div class="achievements">
+                            <ul>
+                                <li>Successfully recruited, trained, and managed 27+ facilitators</li>
+                                <li>Directed end-to-end program operations and curriculum refinement</li>
+                                <li>Supervised student innovation competitions with user-centered prototypes</li>
+                                <li>Managed program accounting and budget allocation for maximum impact</li>
+                                <li>Created compelling presentations strengthening donor relationships</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 1.5rem;">
+                        <h4 style="color: #667eea; margin-bottom: 1rem;">Learning Facilitator (Jun 2019 - Dec 2021)</h4>
+                        <div class="achievements">
+                            <ul>
+                                <li>Co-developed innovative Human-Centered Design curricula for secondary school girls</li>
+                                <li>Delivered comprehensive training combining ICT skills, business development, and entrepreneurship</li>
+                                <li>Guided students in applying HCD principles to create user-centric solutions</li>
+                                <li>Taught advanced user data collection, analysis, and processing techniques</li>
+                                <li>Empowered young women to solve real-world community problems through technology</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="project-impact">
+                        <div class="impact-number">900+</div>
+                        Students reached across Dar es Salaam districts
+                    </div>
+                    <div class="skills-used">
+                        <span class="skill-badge">Strategic Planning</span>
+                        <span class="skill-badge">Partnership Development</span>
+                        <span class="skill-badge">Curriculum Design</span>
+                        <span class="skill-badge">Youth Mentorship</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-header">
+                        <div class="job-info">
+                            <div class="job-title">Software and Systems Engineer</div>
+                            <div class="company">University of Dar es Salaam (UDSM)</div>
+                        </div>
+                        <div class="duration">Nov 2019 - Nov 2023</div>
+                    </div>
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i> Dar es Salaam, Tanzania
+                    </div>
+                    <div class="job-description">
+                        Managed enterprise database infrastructure and developed software systems for operational support, 
+                        managing the complete software development lifecycle for critical business systems.
+                    </div>
+                    <div class="achievements">
+                        <h4>Key Responsibilities</h4>
+                        <ul>
+                            <li>Managed enterprise database infrastructure (Oracle, SQL Server, PostgreSQL, MySQL) across Production, DR, UAT, SIT environments</li>
+                            <li>Led core database upgrades, data migrations, and performance optimization</li>
+                            <li>Designed and developed software systems using Python, Laravel/PHP, JavaScript, and Java</li>
+                            <li>Built and deployed systems to cloud infrastructure using containerization technologies</li>
+                            <li>Maintained campus network infrastructure ensuring optimal performance and minimal downtime</li>
+                            <li>Created performance reports, capacity planning assessments, and disaster recovery plans</li>
+                        </ul>
+                    </div>
+                    <div class="skills-used">
+                        <span class="skill-badge">Database Management</span>
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">Laravel/PHP</span>
+                        <span class="skill-badge">Cloud Infrastructure</span>
+                        <span class="skill-badge">DevOps</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-header">
+                        <div class="job-info">
+                            <div class="job-title">Data Engineering Consultant</div>
+                            <div class="company">dLab Tanzania</div>
+                        </div>
+                        <div class="duration">Sep 2023 - Oct 2023</div>
+                    </div>
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i> Dar es Salaam, Tanzania (Hybrid)
+                    </div>
+                    <div class="job-description">
+                        Streamlined data collection and processing workflows for national census data, 
+                        enhancing accuracy and supporting data-driven decision-making.
+                    </div>
+                    <div class="achievements">
+                        <h4>Key Achievements</h4>
+                        <ul>
+                            <li>Streamlined data collection and processing workflows for the 2022 census</li>
+                            <li>Created user-friendly platform for internal data analysis and decision-making</li>
+                            <li>Designed interactive dashboards communicating key demographic and health statistics</li>
+                        </ul>
+                    </div>
+                    <div class="skills-used">
+                        <span class="skill-badge">Data Engineering</span>
+                        <span class="skill-badge">Dashboard Design</span>
+                        <span class="skill-badge">Statistical Analysis</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>Key Projects & Impact</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <div class="project-title">Digital Parental Kit</div>
+                    <div class="project-subtitle">Save the Children International</div>
+                    <div class="project-description">
+                        AI-Powered Personalized Nutrition Guide for navigating the first 1000 days of life. 
+                        A comprehensive mobile health platform delivering educational materials through USSD and SMS technology.
+                    </div>
+                    <div class="project-impact">
+                        <div class="impact-number">3,000+</div>
+                        Lives of mothers and children transformed in Dodoma and Morogoro regions
+                    </div>
+                    <div class="skills-used">
+                        <span class="skill-badge">AI/ML</span>
+                        <span class="skill-badge">USSD Technology</span>
+                        <span class="skill-badge">Mobile Health</span>
+                        <span class="skill-badge">Data Analytics</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">Vaccine Intervention Design</div>
+                    <div class="project-subtitle">Tanzania Ministry of Health</div>
+                    <div class="project-description">
+                        Community-centered vaccine intervention using Human-Centered Design methodology to close 
+                        zero-dose vaccination gaps among under-five children in Ilala District.
+                    </div>
+                    <div class="project-impact">
+                        <div class="impact-number">131,088</div>
+                        Families reached through advocacy and house-to-house mobilization campaigns
+                    </div>
+                    <div class="achievements">
+                        <ul>
+                            <li>387 zero-dose children provided vaccination services</li>
+                            <li>309 innovative ideas generated and refined to 3 prioritized interventions</li>
+                            <li>483 diverse stakeholders engaged in co-creation workshops</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">Bookbot Kiswahili Literacy App</div>
+                    <div class="project-subtitle">Bookbot Australia</div>
+                    <div class="project-description">
+                        AI-powered reading technology expansion to Tanzania through culturally relevant content localization 
+                        and user interface design for improved reading fluency.
+                    </div>
+                    <div class="project-impact">
+                        <div class="impact-number">1,000+</div>
+                        Digital storybooks localized into Kiswahili with cultural relevance
+                    </div>
+                    <div class="achievements">
+                        <ul>
+                            <li>Twofold improvement in reading fluency demonstrated</li>
+                            <li>Enhanced graded audiobook library for vocabulary building</li>
+                            <li>Speech recognition and text-to-speech technology integration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">CitiVerse Technology Initiative</div>
+                    <div class="project-subtitle">UNICC - United Nations</div>
+                    <div class="project-description">
+                        International technology working groups coordination across 7 emerging technology domains 
+                        for humanitarian applications with global stakeholder management.
+                    </div>
+                    <div class="project-impact">
+                        <div class="impact-number">24+</div>
+                        Global stakeholders from academia, private sector, and public organizations
+                    </div>
+                    <div class="achievements">
+                        <ul>
+                            <li>7 technology domains: AI, Blockchain, Digital Twins, AR/VR, IoT</li>
+                            <li>Multilingual content creation across 5+ languages</li>
+                            <li>AI-integrated voice synthesis using advanced tools</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">SmartGirlz Program Expansion</div>
+                    <div class="project-subtitle">SmartGirlz in ICT Tanzania</div>
+                    <div class="project-description">
+                        Strategic scaling of ICT education program for secondary school girls, combining technology 
+                        skills with entrepreneurship and human-centered design thinking.
+                    </div>
+                    <div class="project-impact">
+                        <div class="impact-number">900+</div>
+                        Students reached across Dar es Salaam with 45+ volunteer facilitators
+                    </div>
+                    <div class="achievements">
+                        <ul>
+                            <li>Partnerships with UDSM, UNICEF, TCRA, ICT Commission established</li>
+                            <li>27+ facilitators trained with comprehensive protocols</li>
+                            <li>M&E frameworks for impact measurement implemented</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">UDSM Enterprise Systems</div>
+                    <div class="project-subtitle">University of Dar es Salaam</div>
+                    <div class="project-description">
+                        Comprehensive database infrastructure management and software system development 
+                        supporting critical university operations and e-learning platforms.
+                    </div>
+                    <div class="project-impact">
+                        <div class="impact-number">24/7</div>
+                        Operations support for critical business systems
+                    </div>
+                    <div class="achievements">
+                        <ul>
+                            <li>Multi-environment database management (Production, DR, UAT, SIT)</li>
+                            <li>Campus network infrastructure maintenance</li>
+                            <li>Disaster recovery planning and implementation</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" style="background: #f8f9fa;">
+        <div class="container">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Software Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Laravel/PHP</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">Git/GitHub</span>
+                        <span class="skill-tag">API Development</span>
+                        <span class="skill-tag">Web Development</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> Database & Infrastructure</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Oracle</span>
+                        <span class="skill-tag">SQL Server</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Cloud Infrastructure</span>
+                        <span class="skill-tag">Network Administration</span>
+                        <span class="skill-tag">System Administration</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-brain"></i> AI & Data Science</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AI Implementation</span>
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Data Engineering</span>
+                        <span class="skill-tag">Data Analysis</span>
+                        <span class="skill-tag">Dashboard Design</span>
+                        <span class="skill-tag">ETL Processes</span>
+                        <span class="skill-tag">Statistical Analysis</span>
+                        <span class="skill-tag">Predictive Analytics</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-heart"></i> Human-Centered Design</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">User Research</span>
+                        <span class="skill-tag">Journey Mapping</span>
+                        <span class="skill-tag">Co-creation Workshops</span>
+                        <span class="skill-tag">Prototyping</span>
+                        <span class="skill-tag">Stakeholder Engagement</span>
+                        <span class="skill-tag">Design Thinking</span>
+                        <span class="skill-tag">User Experience Design</span>
+                        <span class="skill-tag">Community Research</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-project-diagram"></i> Project Management</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Agile/Scrum</span>
+                        <span class="skill-tag">Theory of Change</span>
+                        <span class="skill-tag">MEAL (M&E)</span>
+                        <span class="skill-tag">Risk Management</span>
+                        <span class="skill-tag">Stakeholder Management</span>
+                        <span class="skill-tag">Change Management</span>
+                        <span class="skill-tag">Budget Management</span>
+                        <span class="skill-tag">Strategic Planning</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-laptop-medical"></i> Healthcare Technology</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Mobile Health (mHealth)</span>
+                        <span class="skill-tag">USSD Technology</span>
+                        <span class="skill-tag">Health Information Systems</span>
+                        <span class="skill-tag">Telemedicine</span>
+                        <span class="skill-tag">Data Security & Privacy</span>
+                        <span class="skill-tag">Humanitarian Tech</span>
+                        <span class="skill-tag">Community Health</span>
+                        <span class="skill-tag">Digital Health</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-network-wired"></i> ICT Infrastructure</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">LAN/WAN Networks</span>
+                        <span class="skill-tag">HF/VHF Radio Systems</span>
+                        <span class="skill-tag">Satellite Communications</span>
+                        <span class="skill-tag">Firewall Management</span>
+                        <span class="skill-tag">Backup Systems</span>
+                        <span class="skill-badge">Windows/Linux Administration</span>
+                        <span class="skill-tag">Microsoft 365</span>
+                        <span class="skill-tag">IT Security</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-users"></i> Leadership & Community</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Team Leadership</span>
+                        <span class="skill-tag">Community Building</span>
+                        <span class="skill-tag">Mentorship</span>
+                        <span class="skill-tag">Training & Facilitation</span>
+                        <span class="skill-tag">Partnership Development</span>
+                        <span class="skill-tag">Youth Empowerment</span>
+                        <span class="skill-tag">Cross-cultural Communication</span>
+                        <span class="skill-tag">Capacity Building</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Current Location</h4>
+                            <p>Liwale, Lindi Region, Tanzania</p>
+                            <small>MSF Field Operations</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div>
+                            <h4>Home Base</h4>
+                            <p>Dar es Salaam, Tanzania</p>
+                            <small>Available for projects & collaborations</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>alfeoraymond@example.com</p>
+                            <small>Professional inquiries welcome</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div>
+                            <h4>Languages</h4>
+                            <p>English (Fluent), Kiswahili (Native)</p>
+                            <small>Multilingual project experience</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div>
+                            <h4>Specializations</h4>
+                            <p>Humanitarian Tech, Health Innovation, Community Impact</p>
+                            <small>Technology for Social Good</small>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <p style="font-size: 1.1rem; margin-bottom: 2rem; text-align: center; line-height: 1.8;">
+                        I'm passionate about collaborating on projects that use technology to create meaningful social impact. 
+                        Whether you're looking to discuss humanitarian technology solutions, community development initiatives, 
+                        or innovative approaches to public health challenges, I'd love to connect.
+                    </p>
+                    <p style="font-size: 1rem; margin-bottom: 2rem; text-align: center; color: #666;">
+                        <strong>Current Focus Areas:</strong><br>
+                        Humanitarian Response Technology • AI for Social Good • Community Health Systems • 
+                        Youth Empowerment through ICT • Human-Centered Design for Development
+                    </p>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/alfeoraymond" class="social-link" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/alfeoraymond" class="social-link" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://twitter.com/alfeoraymond" class="social-link" target="_blank" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="mailto:alfeoraymond@example.com" class="social-link" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="#" class="social-link" target="_blank" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Alfeo Raymond. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+                Building technology that serves people • Transforming communities through innovation
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(102, 126, 234, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.timeline-item, .skill-category, .stat, .project-card').forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px)';
+            item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(item);
+        });
+
+        // Add mobile menu toggle (if needed)
+        const mobileMenuToggle = document.createElement('div');
+        mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        mobileMenuToggle.style.cssText = `
+            display: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            @media (max-width: 768px) { display: block; }
+        `;
+        
+        // Contact form enhancement (placeholder for future implementation)
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+            contactSection.addEventListener('click', (e) => {
+                if (e.target.closest('.social-link')) {
+                    // Track social link clicks for analytics if needed
+                    console.log('Social link clicked:', e.target.closest('.social-link').getAttribute('href'));
+                }
+            });
+        }
+
+        // Enhanced stats counter animation
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const stat = entry.target.querySelector('.stat-number');
+                    const finalNumber = stat.textContent;
+                    const numericValue = parseInt(finalNumber.replace(/[^\d]/g, ''));
+                    
+                    if (numericValue) {
+                        let currentNumber = 0;
+                        const increment = numericValue / 50; // Adjust animation speed
+                        const timer = setInterval(() => {
+                            currentNumber += increment;
+                            if (currentNumber >= numericValue) {
+                                stat.textContent = finalNumber;
+                                clearInterval(timer);
+                            } else {
+                                stat.textContent = Math.floor(currentNumber) + (finalNumber.includes('+') ? '+' : '');
+                            }
+                        }, 40);
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat').forEach(stat => {
+            statsObserver.observe(stat);
+        });
+    </script>
+</body>
+</html>
