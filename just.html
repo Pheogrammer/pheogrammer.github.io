@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfeo Raymond - ICT & Digital Transformation Specialist</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --dark-gradient: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            --light-gradient: linear-gradient(135deg, #f8f9ff 0%, #e8f4f8 100%);
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --text-light: #718096;
+            --white: #ffffff;
+            --shadow-light: 0 5px 15px rgba(0,0,0,0.08);
+            --shadow-medium: 0 10px 30px rgba(0,0,0,0.12);
+            --shadow-heavy: 0 20px 50px rgba(0,0,0,0.15);
+            --border-radius: 20px;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            overflow-x: hidden;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+
+        /* Advanced Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        /* Enhanced Header with Glassmorphism */
+        header {
+            background: rgba(102, 126, 234, 0.9);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header-scrolled {
+            background: rgba(102, 126, 234, 0.95) !important;
+            backdrop-filter: blur(25px) saturate(200%) !important;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, #fff, #e0e7ff, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% 200%;
+            animation: shimmer 4s ease-in-out infinite;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #fff, #e0e7ff);
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-links a:hover {
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Revolutionary Hero Section */
+        .hero {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 140px 2rem 100px;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Advanced Background Effects */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(255,255,255,0.08) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 0%, transparent 50%);
+            animation: breathe 8s ease-in-out infinite;
+        }
+
+        .hero-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float-particle 20s linear infinite;
+        }
+
+        .particle:nth-child(1) { width: 4px; height: 4px; left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { width: 6px; height: 6px; left: 20%; animation-delay: 2s; }
+        .particle:nth-child(3) { width: 3px; height: 3px; left: 30%; animation-delay: 4s; }
+        .particle:nth-child(4) { width: 5px; height: 5px; left: 40%; animation-delay: 6s; }
+        .particle:nth-child(5) { width: 4px; height: 4px; left: 50%; animation-delay: 8s; }
+        .particle:nth-child(6) { width: 7px; height: 7px; left: 60%; animation-delay: 10s; }
+        .particle:nth-child(7) { width: 3px; height: 3px; left: 70%; animation-delay: 12s; }
+        .particle:nth-child(8) { width: 5px; height: 5px; left: 80%; animation-delay: 14s; }
+        .particle:nth-child(9) { width: 4px; height: 4px; left: 90%; animation-delay: 16s; }
+
+        .hero-geometric {
+            position: absolute;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .geo-1 {
+            top: 15%;
+            right: 15%;
+            width: 120px;
+            height: 120px;
+            border-radius: 30px;
+            transform: rotate(45deg);
+            animation: rotate-slow 40s linear infinite;
+        }
+
+        .geo-2 {
+            bottom: 25%;
+            left: 10%;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            animation: pulse-glow 6s ease-in-out infinite;
+        }
+
+        .geo-3 {
+            top: 45%;
+            left: 5%;
+            width: 60px;
+            height: 60px;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            background: rgba(255, 255, 255, 0.05);
+            animation: float-up-down 12s ease-in-out infinite;
+        }
+
+        /* Enhanced Hero Content */
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5rem);
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #fff, #e0e7ff, #fff, #c7d2fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 400% 400%;
+            animation: slideInUp 1s ease-out, gradient-shift 6s ease-in-out infinite;
+            font-weight: 900;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: slideInUp 1s ease-out 0.2s both;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+        }
+
+        .hero-description {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            animation: slideInUp 1s ease-out 0.4s both;
+            line-height: 1.8;
+            max-width: 850px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 3rem;
+        }
+
+        /* Premium Highlight Badges */
+        .hero-highlights {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+            animation: slideInUp 1s ease-out 0.5s both;
+        }
+
+        .hero-highlight {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .hero-highlight::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hero-highlight:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .hero-highlight:hover::before {
+            left: 100%;
+        }
+
+        /* Revolutionary Value Proposition */
+        .value-proposition {
+            background: rgba(255, 255, 255, 0.12);
+            padding: 2.5rem;
+            border-radius: 25px;
+            margin: 3rem 0;
+            backdrop-filter: blur(25px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: slideInUp 1s ease-out 0.6s both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-proposition::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+            animation: scan 4s ease-in-out infinite;
+        }
+
+        .value-proposition p {
+            font-size: clamp(1rem, 2.5vw, 1.15rem);
+            line-height: 1.8;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Next-Gen CTA Buttons */
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: slideInUp 1s ease-out 0.7s both;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            min-width: 200px;
+            justify-content: center;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translate(-50%, -50%);
+        }
+
+        .btn:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .btn-primary {
+            background: rgba(255, 255, 255, 0.95);
+            color: #667eea;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .btn-primary:hover {
+            background: white;
+            color: #5a67d8;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+        }
+
+        /* Advanced Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.8);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .scroll-indicator:hover {
+            color: white;
+            transform: translateX(-50%) scale(1.1);
+        }
+
+        .scroll-indicator .fas {
+            font-size: 1.5rem;
+            animation: bounce-smooth 2s infinite;
+        }
+
+        .scroll-indicator span {
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Enhanced Main Content */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 120px 0;
+        }
+
+        /* Revolutionary Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+            position: relative;
+            font-weight: 800;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--primary-gradient);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Premium About Section */
+        .about {
+            background: var(--light-gradient);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .about-sidebar {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-medium);
+            position: sticky;
+            top: 120px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .about-main {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .about-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--primary-gradient);
+            transform: translateX(-100%);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .about-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .about-card:hover::before {
+            transform: translateX(0);
+        }
+
+        .section-subtitle {
+            color: #667eea;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .bio-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            text-align: justify;
+        }
+
+        .bio-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e8f4f8 0%, #f0f8ff 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        /* Premium Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8f4f8 100%);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--primary-gradient);
+            transform: translateX(-100%);
+            transition: transform 0.4s ease;
+        }
+
+        .stat:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .stat:hover::before {
+            transform: translateX(0);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #667eea;
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-top: 0.75rem;
+            font-weight: 500;
+        }
+
+        /* Enhanced Collaboration CTA */
+        .collaboration-cta {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin-top: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .collaboration-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            animation: breathe 6s ease-in-out infinite;
+        }
+
+        .collaboration-cta h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .collaboration-cta p {
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+            opacity: 0.9;
+        }
+
+        /* Premium Contact Section */
+        .contact {
+            background: var(--dark-gradient);
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 4rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+        .social-link {
+            width: 70px;
+            height: 70px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transition: all 0.4s ease;
+            transform: translate(-50%, -50%);
+        }
+
+        .social-link:hover::before {
+            width: 100px;
+            height: 100px;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Premium Footer */
+        footer {
+            background: #1a202c;
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 3rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Advanced Animations */
+        @keyframes shimmer {
+            0%, 100% { background-position: -200% 0; }
+            50% { background-position: 200% 0; }
+        }
+
+        @keyframes breathe {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.5; }
+            50% { transform: scale(1.05) rotate(2deg); opacity: 0.8; }
+        }
+
+        @keyframes float-particle {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes rotate-slow {
+            from { transform: rotate(45deg); }
+            to { transform: rotate(405deg); }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+        }
+
+        @keyframes float-up-down {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes scan {
+            0%, 100% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
+        }
+
+        @keyframes bounce-smooth {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-8px); }
+            60% { transform: translateY(-4px); }
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 120px 1rem 80px;
+                min-height: 90vh;
+            }
+
+            .hero-highlights {
+                gap: 1rem;
+            }
+
+            .hero-highlight {
+                font-size: 0.85rem;
+                padding: 0.8rem 1.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-sidebar {
+                position: static;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .btn {
+                min-width: 250px;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .social-links {
+                gap: 1rem;
+            }
+
+            .social-link {
+                width: 60px;
+                height: 60px;
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Performance optimizations */
+        .hero-particles,
+        .hero-geometric {
+            will-change: transform;
+        }
+
+        .btn,
+        .stat,
+        .about-card {
+            will-change: transform, box-shadow;
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Enhanced Header -->
+    <header id="header">
+        <nav>
+            <div class="logo">Alfeo Raymond</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Revolutionary Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        
+        <div class="hero-geometric geo-1"></div>
+        <div class="hero-geometric geo-2"></div>
+        <div class="hero-geometric geo-3"></div>
+        
+        <div class="hero-content">
+            <h1>Alfeo Raymond</h1>
+            <p class="hero-subtitle">ICT Supervisor & Digital Transformation Specialist</p>
+            <p class="hero-description">
+                Bridging technology and humanity to create meaningful impact. I design and implement digital solutions 
+                that transform healthcare delivery, empower communities, and drive sustainable development across East Africa and beyond.
+            </p>
+            
+            <div class="hero-highlights">
+                <div class="hero-highlight">🚑 MSF ICT Supervisor</div>
+                <div class="hero-highlight">🇺🇳 UN Technology Innovation</div>
+                <div class="hero-highlight">👩‍💻 900+ Girls in ICT Trained</div>
+                <div class="hero-highlight">🏆 Best Facilities Mapper 2021</div>
+            </div>
+            
+            <div class="value-proposition">
+                <p>
+                    <strong>Where Innovation Meets Impact:</strong> I combine technical excellence in AI/ML, 
+                    full-stack development, and human-centered design to build scalable solutions that serve 
+                    the world's most vulnerable communities. From UN technology innovation to MSF field operations, 
+                    I deliver technology that saves lives and transforms futures.
+                </p>
+            </div>
+            
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-rocket"></i> 
+                    <span>Let's Collaborate</span>
+                </a>
+                <a href="#about" class="btn btn-secondary">
+                    <i class="fas fa-user-astronaut"></i>
+                    <span>Discover My Journey</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- Premium About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <p>Transforming communities through technology, one innovation at a time</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-sidebar">
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="stat-number">6+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">131K+</span>
+                            <span class="stat-label">Lives Impacted</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">1000+</span>
+                            <span class="stat-label">Students Mentored</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Certifications</span>
+                        </div>
+                    </div>
+                    
+                    <div class="collaboration-cta">
+                        <h3><i class="fas fa-handshake"></i> Let's Build Something Amazing</h3>
+                        <p>Ready to create technology that matters? I specialize in projects that combine innovation with social impact.</p>
+                        <a href="#contact" class="btn" style="background: white; color: #667eea; margin-top: 1rem; border-radius: 50px; padding: 12px 24px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease;">
+                            <i class="fas fa-paper-plane"></i> Start a Conversation
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="about-main">
+                    <div class="about-card">
+                        <div class="section-subtitle">
+                            <i class="fas fa-user-circle"></i> Professional Profile
+                        </div>
+                        <div class="bio-text">
+                            <p>
+                                I'm a <strong>Technology Innovator and Digital Transformation Specialist</strong> from Tanzania, 
+                                dedicated to leveraging cutting-edge technology to solve critical challenges in healthcare, 
+                                education, and community development across Africa and globally.
+                            </p>
+                            <p>
+                                With a unique blend of technical expertise and humanitarian experience, I specialize in 
+                                building AI-powered health platforms, managing ICT infrastructure in challenging environments, 
+                                and designing human-centered solutions that scale impact. My work spans from UN technology 
+                                innovation to MSF humanitarian operations, always with a focus on serving those who need it most.
+                            </p>
+                            <div class="highlight-box">
+                                <strong>My Purpose:</strong> To democratize access to technology and create digital solutions 
+                                that bridge the gap between innovation and real-world impact, especially in underserved communities 
+                                where technology can be truly transformative.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-card">
+                        <div class="section-subtitle">
+                            <i class="fas fa-graduation-cap"></i> Education & Continuous Learning
+                        </div>
+                        <div class="bio-text">
+                            <div style="margin-bottom: 1.5rem;">
+                                <strong>Master's in Engineering Management (In Progress)</strong><br>
+                                <em style="color: #667eea;">University of Dar es Salaam – Centre of Excellence (UDSM-CoE)</em><br>
+                                <small style="color: #718096;">Specialization: Project Management</small>
+                            </div>
+                            <div style="margin-bottom: 1.5rem;">
+                                <strong>Bachelor's in Information Technology</strong><br>
+                                <em style="color: #667eea;">College of Business Education (CBE)</em><br>
+                                <small style="color: #718096;">Focus: Systems Development & IT Service Delivery</small>
+                            </div>
+                            <div>
+                                <strong>Diploma in Computer Science</strong><br>
+                                <em style="color: #667eea;">University of Dar es Salaam (UDSM)</em><br>
+                                <small style="color: #718096;">Foundation in Software Engineering</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-card">
+                        <div class="section-subtitle">
+                            <i class="fas fa-award"></i> Professional Excellence & Recognition
+                        </div>
+                        <div class="bio-text">
+                            <p>With <strong>20+ professional certifications</strong> spanning cybersecurity, data engineering, AI ethics, innovation management, 
+                            ITIL, and agile leadership, I maintain cutting-edge expertise across diverse technology domains.</p>
+                            
+                            <div class="highlight-box">
+                                <strong>Recent Recognition:</strong>
+                                <ul style="margin: 1rem 0; padding-left: 1.5rem; line-height: 1.6;">
+                                    <li><strong>Best Facilities Mapper</strong> - 2021 dLab Mapathon</li>
+                                    <li><strong>TechGig Code Gladiators Finalist</strong></li>
+                                    <li><strong>GitHub Campus Expert</strong> - Community Leadership</li>
+                                    <li><strong>MLH Software Engineering Fellow</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-card">
+                        <div class="section-subtitle">
+                            <i class="fas fa-users"></i> Community Leadership & Open Source
+                        </div>
+                        <div class="bio-text">
+                            <p>
+                                As a <strong>GitHub Campus Expert</strong> and <strong>Open Source Maintainer</strong> for Laravel-Lang, 
+                                I've mentored developers and helped make open-source resources more accessible across Africa.
+                            </p>
+                            <div class="highlight-box">
+                                <strong>Active Community Roles:</strong>
+                                <ul style="margin: 1rem 0; padding-left: 1.5rem; line-height: 1.6;">
+                                    <li><strong>Community Manager</strong> - GitHub's Digital Public Goods initiatives</li>
+                                    <li><strong>Active Member</strong> - Google Developer Group (GDG) Dar es Salaam</li>
+                                    <li><strong>Facilitator</strong> - HCD and web development sessions at dLab Tanzania</li>
+                                    <li><strong>Major League Hacking</strong> - Community contributor</li>
+                                </ul>
+                            </div>
+                            <p>
+                                Through these roles, I enable students, early-career technologists, and grassroots innovators to build 
+                                practical skills in digital innovation and entrepreneurship.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: white;">Let's Create Impact Together</h2>
+                <p style="color: rgba(255, 255, 255, 0.8);">Ready to collaborate on meaningful technology projects? Let's build something amazing.</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4 style="color: white; margin-bottom: 0.5rem;">Current Location</h4>
+                            <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 0.25rem;">Liwale, Lindi Region, Tanzania</p>
+                            <small style="color: rgba(255, 255, 255, 0.7);">MSF Field Operations</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 style="color: white; margin-bottom: 0.5rem;">Email</h4>
+                            <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 0.25rem;">alfeoraymond@example.com</p>
+                            <small style="color: rgba(255, 255, 255, 0.7);">Professional inquiries welcome</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div>
+                            <h4 style="color: white; margin-bottom: 0.5rem;">Open to Opportunities</h4>
+                            <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 0.25rem;">Consulting • Full-time • Partnerships • Speaking</p>
+                            <small style="color: rgba(255, 255, 255, 0.7);">Technology for Social Good Focus</small>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div>
+                            <h4 style="color: white; margin-bottom: 0.5rem;">Languages</h4>
+                            <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 0.25rem;">English (Fluent), Kiswahili (Native)</p>
+                            <small style="color: rgba(255, 255, 255, 0.7);">Multilingual project experience</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div style="background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 20px; backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); margin-bottom: 2rem;">
+                        <h4 style="color: white; margin-bottom: 1.5rem; text-align: center; font-size: 1.3rem;">
+                            <i class="fas fa-handshake"></i> What I'm Looking For
+                        </h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; text-align: center;">
+                            <div>
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🌍</div>
+                                <strong style="color: white;">Global Impact Projects</strong><br>
+                                <small style="color: rgba(255, 255, 255, 0.7);">Humanitarian, health, education initiatives</small>
+                            </div>
+                            <div>
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🚀</div>
+                                <strong style="color: white;">Innovation Partnerships</strong><br>
+                                <small style="color: rgba(255, 255, 255, 0.7);">AI/ML, digital transformation, startups</small>
+                            </div>
+                            <div>
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">💼</div>
+                                <strong style="color: white;">Consulting Opportunities</strong><br>
+                                <small style="color: rgba(255, 255, 255, 0.7);">Technology strategy, HCD, project leadership</small>
+                            </div>
+                            <div>
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎤</div>
+                                <strong style="color: white;">Speaking & Training</strong><br>
+                                <small style="color: rgba(255, 255, 255, 0.7);">Conferences, workshops, mentorship programs</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p style="font-size: 1.1rem; margin-bottom: 2rem; text-align: center; line-height: 1.8; color: rgba(255, 255, 255, 0.9);">
+                        <strong style="color: white;">Available for:</strong> Remote collaboration • On-site consulting • Project partnerships • Technical advisory roles
+                    </p>
+                    
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/alfeoraymond" class="social-link" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/alfeoraymond" class="social-link" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://twitter.com/alfeoraymond" class="social-link" target="_blank" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="mailto:alfeoraymond@example.com" class="social-link" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="#" class="social-link" target="_blank" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Footer -->
+    <footer>
+        <div class="container">
+            <p style="font-size: 1rem; margin-bottom: 0.5rem;">&copy; 2025 Alfeo Raymond. All rights reserved.</p>
+            <p style="font-size: 0.9rem; opacity: 0.8;">
+                Building technology that serves humanity • Creating digital solutions with social impact
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize smooth page load
+        document.body.style.opacity = '0';
+        document.body.style.transform = 'translateY(20px)';
+        document.body.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+
+        // Enhanced smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Premium header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Enhanced scroll indicator
+        document.querySelector('.scroll-indicator')?.addEventListener('click', () => {
+            document.querySelector('#about').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        // Advanced intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -80px 0px'
+        };
+
+        const fadeInObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.stat, .about-card, .contact-item').forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(40px)';
+            item.style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+            fadeInObserver.observe(item);
+        });
+
+        // Premium stats counter animation
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const stat = entry.target.querySelector('.stat-number');
+                    if (stat && !stat.classList.contains('counted')) {
+                        stat.classList.add('counted');
+                        const finalNumber = stat.textContent;
+                        const numericValue = parseInt(finalNumber.replace(/[^\d]/g, ''));
+                        
+                        if (numericValue) {
+                            let currentNumber = 0;
+                            const increment = numericValue / 60;
+                            const duration = 2000;
+                            const stepTime = duration / 60;
+                            
+                            const timer = setInterval(() => {
+                                currentNumber += increment;
+                                if (currentNumber >= numericValue) {
+                                    stat.textContent = finalNumber;
+                                    clearInterval(timer);
+                                } else {
+                                    stat.textContent = Math.floor(currentNumber) + (finalNumber.includes('+') ? '+' : '');
+                                }
+                            }, stepTime);
+                        }
+                    }
+                }
+            });
+        }, { threshold: 0.6 });
+
+        document.querySelectorAll('.stat').forEach(stat => {
+            statsObserver.observe(stat);
+        });
+
+        // Enhanced button interactions
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-4px) scale(1.02)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Advanced parallax effect for hero elements
+        let ticking = false;
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.hero-geometric');
+            const particles = document.querySelectorAll('.particle');
+            
+            parallaxElements.forEach((element, index) => {
+                const speed = 0.3 + (index * 0.1);
+                const yPos = -(scrolled * speed);
+                element.style.transform = `translate3d(0, ${yPos}px, 0) rotate(${scrolled * 0.1}deg)`;
+            });
+            
+            particles.forEach((particle, index) => {
+                const speed = 0.1 + (index * 0.02);
+                const yPos = -(scrolled * speed);
+                particle.style.transform = `translate3d(0, ${yPos}px, 0)`;
+            });
+            
+            ticking = false;
+        }
+
+        function requestParallaxUpdate() {
+            if (!ticking) {
+                requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', requestParallaxUpdate);
+
+        // Premium page load animation
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+                document.body.style.transform = 'translateY(0)';
+            }, 100);
+        });
+
+        // Enhanced social link interactions
+        document.querySelectorAll('.social-link').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.15) rotate(5deg)';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1) rotate(0deg)';
+            });
+        });
+
+        // Advanced mobile menu (for future expansion)
+        const createMobileMenu = () => {
+            // Mobile menu implementation can be added here
+        };
+
+        // Performance optimization
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if (prefersReducedMotion.matches) {
+            document.documentElement.style.setProperty('--transition', 'none');
+        }
+
+        // Enhanced error handling
+        window.addEventListener('error', (e) => {
+            console.warn('Non-critical error:', e.message);
+        });
+
+        // Analytics tracking (placeholder)
+        const trackInteraction = (element, action) => {
+            // Analytics implementation can be added here
+            console.log(`Tracked: ${action} on ${element}`);
+        };
+
+        // Track CTA button clicks
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                trackInteraction('CTA Button', 'Click');
+            });
+        });
+    </script>
+</body>
+</html>
